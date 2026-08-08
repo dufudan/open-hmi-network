@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
+<title id="t">Compact HMI illustration</title><desc id="d">A compact embedded display with gauges and control indicators.</desc>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4263eb"/><stop offset="1" stop-color="#16b8c4"/></linearGradient></defs>
+<rect width="640" height="360" rx="30" fill="#f3f6fb"/>
+<g opacity=".52" stroke="#dbe3ee" stroke-width="2"><path d="M0 72h640M0 144h640M0 216h640M0 288h640"/><path d="M80 0v360M160 0v360M240 0v360M320 0v360M400 0v360M480 0v360M560 0v360"/></g>
+<rect x="120" y="68" width="400" height="224" rx="28" fill="#172033" stroke="#2b3548" stroke-width="10"/>
+<rect x="142" y="90" width="356" height="180" rx="16" fill="#101828"/>
+<circle cx="236" cy="180" r="56" fill="none" stroke="#32415f" stroke-width="12"/><path d="M191 206a56 56 0 0 1 90-66" fill="none" stroke="url(#g)" stroke-width="12" stroke-linecap="round"/>
+<path d="M236 180l38-25" stroke="#fff" stroke-width="6" stroke-linecap="round"/><circle cx="236" cy="180" r="7" fill="#fff"/>
+<rect x="326" y="128" width="128" height="20" rx="10" fill="#263451"/><rect x="326" y="128" width="82" height="20" rx="10" fill="#4263eb"/>
+<rect x="326" y="169" width="96" height="18" rx="9" fill="#263451"/><rect x="326" y="169" width="62" height="18" rx="9" fill="#16b8c4"/>
+<g fill="#fff"><circle cx="340" cy="225" r="8"/><circle cx="380" cy="225" r="8"/><circle cx="420" cy="225" r="8"/></g>
+</svg>

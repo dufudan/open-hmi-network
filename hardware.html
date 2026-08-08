@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Evaluate embedded HMI hardware by architecture and configure compute, display, memory and connectivity."><title>Evaluate Hardware — Open HMI Network</title><link rel="stylesheet" href="assets/css/styles.css?v=033"></head><body>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Evaluate embedded HMI hardware by architecture and configure compute, display, memory and connectivity."><title>Evaluate Hardware — Open HMI Network</title><link rel="stylesheet" href="assets/css/styles.css?v=0332"></head><body>
 <header class="nav-wrap"><div class="container nav"><a class="brand" href="index.html"><span class="brand-mark"></span><span>Open HMI Network</span></a><button class="menu-btn" data-menu aria-label="Toggle menu">Menu</button><nav class="nav-links" data-nav-links><a href="selector.html">Find HMI</a><a class="nav-active" href="hardware.html">Hardware</a><a href="resources.html">Resources</a><a href="partners.html">Engineering</a><a href="projects.html">Projects</a><a class="btn btn-primary" href="submit-project.html">Submit Project</a></nav></div></header>
 <main>
 <section class="page-hero"><div class="container"><div class="eyebrow">02 Evaluate</div><h1>Configure the hardware around the architecture.</h1><p class="section-copy">Start with the HMI architecture, then match the compute platform, display and touch, memory, and connectivity needed for evaluation and production.</p><div class="page-actions"><a class="btn btn-primary" href="hardware-application.html">Request Hardware →</a><a class="btn btn-secondary" href="selector.html">Not sure? Start Selector</a></div></div></section>
@@ -7,10 +7,22 @@
 <section class="section--tight"><div class="container">
 <div class="eyebrow">Architecture first</div><h2 class="section-title hardware-section-title">Choose the system direction.</h2><p class="section-copy">The architecture determines the practical range for compute, software, display interfaces, memory and peripheral integration.</p>
 <div class="grid-4 hardware-architecture-grid">
-<article class="card"><div class="card-num">RTOS</div><h3>Compact HMI</h3><p>Fast boot · LVGL · control I/O.</p><a class="card-link" href="hardware-application.html">Evaluate →</a></article>
-<article class="card"><div class="card-num">RTOS+</div><h3>Performance HMI</h3><p>Richer graphics · more memory · more I/O.</p><a class="card-link" href="hardware-application.html">Evaluate →</a></article>
-<article class="card"><div class="card-num">LINUX</div><h3>Linux HMI</h3><p>Qt/QML · networking · larger displays.</p><a class="card-link" href="hardware-application.html">Evaluate →</a></article>
-<article class="card"><div class="card-num">VISION</div><h3>Vision / Media HMI</h3><p>Camera · video · AI · high bandwidth.</p><a class="card-link" href="hardware-application.html">Evaluate →</a></article>
+<a class="architecture-card" href="hardware-application.html?architecture=compact-hmi" aria-label="Evaluate Compact HMI architecture">
+  <div class="architecture-card-visual"><img src="assets/images/architecture-compact.svg" alt="Compact HMI dashboard illustration"></div>
+  <div class="architecture-card-body"><div class="card-num">RTOS</div><h3>Compact HMI</h3><p>Fast boot · LVGL · control I/O.</p><span class="architecture-card-cta">Evaluate this path <span aria-hidden="true">→</span></span></div>
+</a>
+<a class="architecture-card" href="hardware-application.html?architecture=performance-hmi" aria-label="Evaluate Performance HMI architecture">
+  <div class="architecture-card-visual"><img src="assets/images/architecture-performance.svg" alt="Performance HMI dashboard illustration"></div>
+  <div class="architecture-card-body"><div class="card-num">RTOS+</div><h3>Performance HMI</h3><p>Richer graphics · more memory · more I/O.</p><span class="architecture-card-cta">Evaluate this path <span aria-hidden="true">→</span></span></div>
+</a>
+<a class="architecture-card" href="hardware-application.html?architecture=linux-hmi" aria-label="Evaluate Linux HMI architecture">
+  <div class="architecture-card-visual"><img src="assets/images/architecture-linux.svg" alt="Linux HMI application illustration"></div>
+  <div class="architecture-card-body"><div class="card-num">LINUX</div><h3>Linux HMI</h3><p>Qt/QML · networking · larger displays.</p><span class="architecture-card-cta">Evaluate this path <span aria-hidden="true">→</span></span></div>
+</a>
+<a class="architecture-card" href="hardware-application.html?architecture=vision-media-hmi" aria-label="Evaluate Vision and Media HMI architecture">
+  <div class="architecture-card-visual"><img src="assets/images/architecture-vision.svg" alt="Vision and media HMI illustration"></div>
+  <div class="architecture-card-body"><div class="card-num">VISION</div><h3>Vision / Media HMI</h3><p>Camera · video · AI · high bandwidth.</p><span class="architecture-card-cta">Evaluate this path <span aria-hidden="true">→</span></span></div>
+</a>
 </div></div></section>
 
 <section class="section hardware-stack-section" id="hardware-stack"><div class="container">

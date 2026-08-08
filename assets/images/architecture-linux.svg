@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
+<title id="t">Linux HMI illustration</title><desc id="d">A larger Linux HMI with application panels, networking and system services.</desc>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4263eb"/><stop offset="1" stop-color="#16b8c4"/></linearGradient></defs>
+<rect width="640" height="360" rx="30" fill="#f3f6fb"/>
+<rect x="84" y="48" width="472" height="264" rx="24" fill="#172033" stroke="#2b3548" stroke-width="9"/>
+<rect x="104" y="68" width="432" height="224" rx="14" fill="#f8fafc"/>
+<rect x="104" y="68" width="432" height="34" rx="14" fill="#e9eef6"/><circle cx="126" cy="85" r="5" fill="#ff8a65"/><circle cx="143" cy="85" r="5" fill="#f5c451"/><circle cx="160" cy="85" r="5" fill="#30a46c"/>
+<rect x="121" y="120" width="118" height="150" rx="12" fill="#172033"/>
+<rect x="138" y="140" width="84" height="10" rx="5" fill="#4263eb"/><rect x="138" y="164" width="60" height="9" rx="4" fill="#52617e"/><rect x="138" y="188" width="72" height="9" rx="4" fill="#52617e"/><rect x="138" y="212" width="48" height="9" rx="4" fill="#52617e"/>
+<rect x="258" y="120" width="260" height="72" rx="12" fill="#eef2ff"/><path d="M278 171l38-24 37 8 36-29 42 20 55-31" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="258" y="208" width="120" height="62" rx="12" fill="#eaf9fa"/><rect x="394" y="208" width="124" height="62" rx="12" fill="#eef2ff"/>
+<g stroke="#4263eb" stroke-width="5" fill="#fff"><circle cx="292" cy="237" r="10"/><circle cx="330" cy="237" r="10"/><path d="M302 237h18"/></g>
+<g stroke="#16b8c4" stroke-width="5" fill="none" stroke-linecap="round"><path d="M424 245c15-18 30-18 45 0"/><path d="M433 252c9-10 18-10 27 0"/><circle cx="446.5" cy="258" r="2" fill="#16b8c4" stroke="none"/></g>
+</svg>

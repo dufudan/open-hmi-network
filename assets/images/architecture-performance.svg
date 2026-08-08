@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
+<title id="t">Performance HMI illustration</title><desc id="d">A richer embedded dashboard with charts, status cards and multiple interface elements.</desc>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4263eb"/><stop offset="1" stop-color="#16b8c4"/></linearGradient></defs>
+<rect width="640" height="360" rx="30" fill="#f4f7fc"/>
+<rect x="76" y="52" width="488" height="256" rx="26" fill="#172033" stroke="#2b3548" stroke-width="9"/>
+<rect x="96" y="72" width="448" height="216" rx="14" fill="#101828"/>
+<rect x="116" y="94" width="182" height="84" rx="14" fill="url(#g)" opacity=".9"/>
+<path d="M130 154l31-24 31 9 34-32 33 18 25-11" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="318" y="94" width="100" height="84" rx="14" fill="#202c45"/><circle cx="368" cy="136" r="28" fill="none" stroke="#31415f" stroke-width="9"/><path d="M346 150a28 28 0 0 1 40-34" fill="none" stroke="#16b8c4" stroke-width="9" stroke-linecap="round"/>
+<rect x="438" y="94" width="86" height="84" rx="14" fill="#202c45"/><rect x="454" y="111" width="54" height="8" rx="4" fill="#60708e"/><rect x="454" y="129" width="38" height="8" rx="4" fill="#4263eb"/><rect x="454" y="147" width="47" height="8" rx="4" fill="#16b8c4"/>
+<rect x="116" y="198" width="126" height="68" rx="12" fill="#202c45"/><rect x="259" y="198" width="126" height="68" rx="12" fill="#202c45"/><rect x="402" y="198" width="122" height="68" rx="12" fill="#202c45"/>
+<g fill="#4263eb"><rect x="132" y="236" width="16" height="14" rx="3"/><rect x="154" y="222" width="16" height="28" rx="3"/><rect x="176" y="211" width="16" height="39" rx="3"/><rect x="198" y="229" width="16" height="21" rx="3"/></g>
+<path d="M279 245c16-25 31-9 45-26s28-2 41-12" fill="none" stroke="#16b8c4" stroke-width="5" stroke-linecap="round"/>
+<circle cx="463" cy="232" r="20" fill="#4263eb" opacity=".9"/><circle cx="498" cy="232" r="11" fill="#16b8c4"/>
+</svg>
