@@ -1,0 +1,21 @@
+{
+  "id": "agricultural-monitoring-hmi",
+  "title": "Agricultural Monitoring HMI",
+  "type": "demo",
+  "contributor_id": "open-hmi-network",
+  "summary": "7-inch touch HMI concept for machine monitoring, mode selection, operator guidance and field equipment workflows.",
+  "architecture": "Performance RTOS HMI",
+  "application": ["Industrial", "Agricultural Equipment"],
+  "gui": ["LVGL"],
+  "os": ["RTOS"],
+  "hardware": ["7-inch 1024x600 TFT"],
+  "publication_model": "open-reference",
+  "access": "public",
+  "source": "open-hmi",
+  "repository_url": "",
+  "resource_url": "projects.html#agriculture",
+  "license": "Reference demo; source availability depends on the originating project.",
+  "maintained": true,
+  "available_for_projects": true,
+  "tags": ["industrial", "agriculture", "monitoring", "lvgl"]
+}

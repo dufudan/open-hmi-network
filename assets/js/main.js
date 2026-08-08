@@ -73,7 +73,7 @@
   const ctx = selectorContext();
   if (ctx) {
     renderSelectorContext(ctx);
-    document.querySelectorAll('[data-mail-form]').forEach(form => {
+  document.querySelectorAll('[data-mail-form]').forEach(form => {
       addHidden(form, 'Selector Architecture', ctx.architecture);
       addHidden(form, 'Selector UI', ctx.ui);
       addHidden(form, 'Selector Connectivity', ctx.connectivity);
@@ -119,9 +119,120 @@
     });
   }
 
+  function clearFieldError(el) {
+    if (!el) return;
+    el.classList.remove('is-invalid');
+    el.removeAttribute('aria-invalid');
+    const field = el.closest('.field');
+    if (field) field.querySelectorAll('.input-error').forEach(node => node.remove());
+  }
+
+  function errorMessage(el) {
+    const name = el.name || '';
+    const emptyMessages = {
+      'Name': 'Please enter your name.',
+      'Email': 'Please enter your work email.',
+      'Company': 'Please enter your company.',
+      'Country / Region': 'Please enter your region.',
+      'Project Description': 'Please describe what you are building.',
+      'Project Summary': 'Please add a short project summary.',
+      'Project Stage': 'Please select a project stage.'
+    };
+    if (el.type === 'email' && el.value.trim() && el.validity.typeMismatch) {
+      return 'Please enter a valid work email.';
+    }
+    return emptyMessages[name] || 'Please complete this field.';
+  }
+
+  function showFieldError(el, message) {
+    clearFieldError(el);
+    el.classList.add('is-invalid');
+    el.setAttribute('aria-invalid', 'true');
+    const field = el.closest('.field');
+    if (field) {
+      const note = document.createElement('div');
+      note.className = 'input-error';
+      note.setAttribute('role', 'alert');
+      note.textContent = message;
+      field.appendChild(note);
+    }
+  }
+
+  function validateMailForm(form) {
+    let firstInvalid = null;
+    const required = Array.from(form.querySelectorAll('[required]'));
+
+    required.forEach(el => {
+      clearFieldError(el);
+      let invalid = false;
+
+      if (el.type === 'radio' || el.type === 'checkbox') {
+        const group = Array.from(form.querySelectorAll(`[name="${CSS.escape(el.name)}"]`));
+        invalid = !group.some(item => item.checked);
+      } else {
+        invalid = !String(el.value || '').trim();
+        if (!invalid && el.type === 'email') invalid = el.validity.typeMismatch;
+      }
+
+      if (invalid) {
+        showFieldError(el, errorMessage(el));
+        if (!firstInvalid) firstInvalid = el;
+      }
+    });
+
+    const status = form.querySelector('.form-status');
+    if (firstInvalid) {
+      if (status) {
+        status.style.display = 'block';
+        status.classList.add('form-status-error');
+        status.textContent = 'Please complete the highlighted fields.';
+      }
+      const field = firstInvalid.closest('.field');
+      if (field) field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      window.setTimeout(() => firstInvalid.focus({ preventScroll: true }), 250);
+      return false;
+    }
+
+    if (status) {
+      status.classList.remove('form-status-error');
+      status.textContent = '';
+      status.style.display = 'none';
+    }
+    return true;
+  }
+
+  // Generic contribution/project context from contributor and demo links.
+  const referenceTitle = params.get('reference');
+  const referenceContributor = params.get('contributor');
+  if (referenceTitle || referenceContributor) {
+    document.querySelectorAll('[data-mail-form]').forEach(form => {
+      const summary = form.elements['Project Summary'];
+      if (summary && !summary.value) {
+        const lines = [];
+        if (referenceTitle) lines.push(`Reference: ${referenceTitle}`);
+        if (referenceContributor) lines.push(`Contributor: ${referenceContributor}`);
+        lines.push('Project: ');
+        summary.value = lines.join('\n');
+      }
+      addHidden(form, 'Reference Contribution', referenceTitle || '');
+      addHidden(form, 'Reference Contributor', referenceContributor || '');
+    });
+  }
+
   document.querySelectorAll('[data-mail-form]').forEach(form => {
+    // Native browser validation messages follow the browser UI language.
+    // Use our own English inline validation instead for a consistent experience.
+    form.noValidate = true;
+
+    form.querySelectorAll('input, textarea, select').forEach(el => {
+      el.addEventListener('input', () => clearFieldError(el));
+      el.addEventListener('change', () => clearFieldError(el));
+    });
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (!validateMailForm(form)) return;
+
       const recipient = form.dataset.recipient || 'project@openhmi.network';
       const subject = form.dataset.subject || 'Open HMI Network Project Inquiry';
       const fd = new FormData(form);
@@ -135,6 +246,7 @@
       const mailto = `mailto:${encodeURIComponent(recipient)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
       const status = form.querySelector('.form-status');
       if (status) {
+        status.classList.remove('form-status-error');
         status.style.display = 'block';
         status.textContent = `Opening email. If nothing happens, send the brief to ${recipient}.`;
       }
@@ -142,3 +254,11 @@
     });
   });
 })();
+
+// Demo case videos: keep a clean fallback until the corresponding MP4 exists.
+document.querySelectorAll('[data-demo-video]').forEach(video => {
+  const wrap = video.closest('.demo-video-wrap');
+  const showVideo = () => wrap && wrap.classList.add('has-video');
+  video.addEventListener('loadedmetadata', showVideo, { once: true });
+  video.addEventListener('canplay', showVideo, { once: true });
+});

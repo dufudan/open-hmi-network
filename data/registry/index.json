@@ -1,0 +1,11 @@
+{
+  "version": "0.3.1",
+  "contributors": [
+    "contributors/open-hmi-network.json"
+  ],
+  "contributions": [
+    "contributions/2w-cluster-hmi.json",
+    "contributions/agricultural-monitoring-hmi.json",
+    "contributions/smart-home-appliance-hmi.json"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "open-hmi-network",
+  "name": "Open HMI Network",
+  "headline": "Open embedded HMI resources, demos and project connections",
+  "region": "Global",
+  "bio": "Open HMI Network organizes reusable HMI resources and connects architecture, evaluation hardware, engineering and production paths.",
+  "skills": ["Embedded HMI", "LVGL", "RTOS", "Linux HMI", "Display Integration", "Reference Demos"],
+  "github_url": "https://github.com/dufudan/open-hmi-network",
+  "website_url": "https://openhmi.network",
+  "available_for_projects": true,
+  "project_types": ["Architecture Review", "Evaluation Hardware", "Engineering Match", "Production Path"],
+  "profile_status": "verified"
+}

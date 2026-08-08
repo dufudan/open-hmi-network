@@ -1,0 +1,21 @@
+{
+  "id": "2w-cluster-hmi",
+  "title": "2W Cluster HMI",
+  "type": "demo",
+  "contributor_id": "open-hmi-network",
+  "summary": "Compact digital cluster concept for 2-wheel mobility with gauges, status pages and settings in a responsive embedded UI.",
+  "architecture": "Compact RTOS HMI",
+  "application": ["Transportation", "2-Wheel Mobility"],
+  "gui": ["LVGL"],
+  "os": ["RTOS"],
+  "hardware": ["ArtInChip D12", "5-inch TFT"],
+  "publication_model": "open-reference",
+  "access": "public",
+  "source": "open-hmi",
+  "repository_url": "",
+  "resource_url": "projects.html#cluster",
+  "license": "Reference demo; source availability depends on the originating project.",
+  "maintained": true,
+  "available_for_projects": true,
+  "tags": ["cluster", "mobility", "lvgl", "tft"]
+}

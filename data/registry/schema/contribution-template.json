@@ -1,0 +1,21 @@
+{
+  "id": "short-contribution-id",
+  "title": "Contribution title",
+  "type": "demo",
+  "contributor_id": "your-github-name",
+  "summary": "What the contribution demonstrates or solves.",
+  "architecture": "Compact RTOS HMI",
+  "application": ["Industrial"],
+  "gui": ["LVGL"],
+  "os": ["RTOS"],
+  "hardware": ["Platform / board / display"],
+  "publication_model": "open-source",
+  "access": "public",
+  "source": "community",
+  "repository_url": "https://github.com/your-name/repository",
+  "resource_url": "",
+  "license": "MIT",
+  "maintained": true,
+  "available_for_projects": true,
+  "tags": ["lvgl", "industrial"]
+}

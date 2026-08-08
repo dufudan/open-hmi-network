@@ -1,0 +1,13 @@
+{
+  "id": "your-github-name",
+  "name": "Your display name",
+  "headline": "What you are strongest at",
+  "region": "Country / Region",
+  "bio": "Short contributor bio.",
+  "skills": ["LVGL", "Firmware"],
+  "github_url": "https://github.com/your-name",
+  "website_url": "",
+  "available_for_projects": true,
+  "project_types": ["GUI Development", "Firmware"],
+  "profile_status": "community"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "smart-home-appliance-hmi",
+  "title": "Smart Home Appliance HMI",
+  "type": "demo",
+  "contributor_id": "open-hmi-network",
+  "summary": "Consumer appliance HMI concept with mode selection, timing control and polished touch interaction on an embedded platform.",
+  "architecture": "Performance RTOS HMI",
+  "application": ["Smart Appliance", "Consumer HMI"],
+  "gui": ["LVGL"],
+  "os": ["RTOS"],
+  "hardware": ["ArtInChip platform", "Touch TFT"],
+  "publication_model": "open-reference",
+  "access": "public",
+  "source": "open-hmi",
+  "repository_url": "",
+  "resource_url": "projects.html#appliance",
+  "license": "Reference demo; source availability depends on the originating project.",
+  "maintained": true,
+  "available_for_projects": true,
+  "tags": ["appliance", "touch", "lvgl", "consumer-ui"]
+}
