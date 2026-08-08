@@ -204,7 +204,7 @@
   };
   const hardwareFocus = hardwareFocusMap[params.get('focus') || ''];
   if (hardwareFocus) {
-    document.querySelectorAll('[data-mail-form][data-recipient="hardware@openhmi.network"] input[name="Hardware Focus"]').forEach(cb => {
+    document.querySelectorAll('[data-mail-form][data-recipient="hardware@openhmi.network"] input[name="Hardware Building Blocks"]').forEach(cb => {
       if (cb.value === hardwareFocus) cb.checked = true;
     });
   }
