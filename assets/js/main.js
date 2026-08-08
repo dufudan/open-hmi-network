@@ -8,6 +8,81 @@
 
   const params = new URLSearchParams(window.location.search);
 
+  // Campaign attribution --------------------------------------------------
+  // Cloudflare Web Analytics intentionally does not store query strings,
+  // so Open HMI keeps lightweight UTM attribution locally and attaches it
+  // to inquiry emails. No personal data is stored here.
+  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  const ATTRIBUTION_KEY = 'openhmi_campaign_attribution_v1';
+  const ATTRIBUTION_TTL_MS = 30 * 24 * 60 * 60 * 1000;
+
+  function safeStorageGet(key) {
+    try {
+      const raw = window.localStorage.getItem(key);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (!parsed || !parsed.savedAt || (Date.now() - parsed.savedAt) > ATTRIBUTION_TTL_MS) {
+        window.localStorage.removeItem(key);
+        return null;
+      }
+      return parsed;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function safeStorageSet(key, value) {
+    try {
+      window.localStorage.setItem(key, JSON.stringify(value));
+    } catch (_) {
+      // Storage can be disabled by the browser; attribution remains optional.
+    }
+  }
+
+  function cleanCampaignValue(value) {
+    return String(value || '').trim().slice(0, 120);
+  }
+
+  function captureCampaignAttribution() {
+    const incoming = {};
+    UTM_KEYS.forEach(key => {
+      const value = cleanCampaignValue(params.get(key));
+      if (value) incoming[key] = value;
+    });
+
+    const existing = safeStorageGet(ATTRIBUTION_KEY);
+    const hasIncoming = Object.keys(incoming).length > 0;
+
+    if (hasIncoming) {
+      const record = {
+        ...incoming,
+        landing_page: window.location.pathname,
+        original_referrer: document.referrer || '',
+        savedAt: Date.now()
+      };
+      safeStorageSet(ATTRIBUTION_KEY, record);
+      return record;
+    }
+
+    return existing;
+  }
+
+  const campaignAttribution = captureCampaignAttribution();
+
+  function attachCampaignAttribution(form) {
+    if (!campaignAttribution) return;
+    const fields = [
+      ['UTM Source', campaignAttribution.utm_source],
+      ['UTM Medium', campaignAttribution.utm_medium],
+      ['UTM Campaign', campaignAttribution.utm_campaign],
+      ['UTM Content', campaignAttribution.utm_content],
+      ['UTM Term', campaignAttribution.utm_term],
+      ['Landing Page', campaignAttribution.landing_page],
+      ['Original Referrer', campaignAttribution.original_referrer]
+    ];
+    fields.forEach(([name, value]) => addHidden(form, name, value || ''));
+  }
+
   function setField(form, name, value) {
     if (!value) return;
     const el = form.elements[name];
@@ -119,6 +194,21 @@
     });
   }
 
+
+  // Hardware stack focus --------------------------------------------------
+  const hardwareFocusMap = {
+    'compute': 'Compute',
+    'display-touch': 'Display & Touch',
+    'memory-storage': 'Memory & Storage',
+    'connectivity': 'Connectivity'
+  };
+  const hardwareFocus = hardwareFocusMap[params.get('focus') || ''];
+  if (hardwareFocus) {
+    document.querySelectorAll('[data-mail-form][data-recipient="hardware@openhmi.network"] input[name="Hardware Focus"]').forEach(cb => {
+      if (cb.value === hardwareFocus) cb.checked = true;
+    });
+  }
+
   function clearFieldError(el) {
     if (!el) return;
     el.classList.remove('is-invalid');
@@ -220,6 +310,8 @@
   }
 
   document.querySelectorAll('[data-mail-form]').forEach(form => {
+    attachCampaignAttribution(form);
+
     // Native browser validation messages follow the browser UI language.
     // Use our own English inline validation instead for a consistent experience.
     form.noValidate = true;
