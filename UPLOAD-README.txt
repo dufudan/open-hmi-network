@@ -1,14 +1,15 @@
-Open HMI Network V0.3.2.2 — Resource Navigation Hotfix
-
-Upload these paths to the ROOT of the GitHub repository and overwrite existing files:
-- resources.html
-- assets/css/styles.css
+Open HMI Network V0.3.2.3 Analytics Upgrade
 
 Purpose:
-- Makes Open HMI Guides the primary action on the Resources page.
-- Adds a prominent "What are you looking for?" entry section.
-- Separates Guides / Technical Resources / Community into three clear paths.
-- Adds a direct link to the Guide Library from the Open HMI source card.
+- Adds Cloudflare Web Analytics to all 17 HTML pages.
+- Uses token: 2225a1474800498ebd3f45242de300e6
+- Includes the latest Resources navigation CSS from V0.3.2.2.
+
+Upload:
+1. Unzip this package.
+2. In the GitHub repository root, choose Add file > Upload files.
+3. Drag the CONTENTS of this folder into the repository root and overwrite matching files.
+4. Commit to main.
 
 Suggested commit:
-Improve Resources navigation and Guide discovery v0.3.2.2
+Add Cloudflare Web Analytics v0.3.2.3
