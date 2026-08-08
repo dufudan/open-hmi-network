@@ -1,10 +1,9 @@
-Open HMI Network V0.2.3 navigation patch
+Open HMI Network V0.2.5 — Partners Map Patch
 
-Fixes:
-- Correctly hides Continue on Step 5 and shows the active "Show Architecture" button.
-- Prevents hidden buttons from being forced visible by shared .btn styles.
-- Shows Back from Step 2 onward.
-- Lets users click completed steps in the left progress panel to return and revise choices.
-- Adds clear disabled-button styling only when a button is actually unavailable.
+Upload these files to the existing GitHub repository and overwrite matching paths:
+- partners.html
+- assets/css/styles.css
+- assets/images/global-engineering-network.png
 
-Upload assets/css/styles.css and assets/js/selector.js to the GitHub repository and overwrite the current files.
+Suggested commit message:
+Add global engineering network map to partners page

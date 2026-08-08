@@ -395,3 +395,48 @@ button, input, select, textarea { font: inherit; }
   .page-actions .btn { width: 100%; }
   .io-group .selector-check-grid { grid-template-columns: 1fr; }
 }
+
+/* V0.2.4 — consistent English form validation */
+.field input.is-invalid,
+.field select.is-invalid,
+.field textarea.is-invalid {
+  border-color: #d92d20;
+  box-shadow: 0 0 0 4px rgba(217,45,32,.08);
+}
+.input-error {
+  margin-top: 7px;
+  color: #b42318;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.form-status.form-status-error {
+  background: #fef3f2;
+  color: #b42318;
+  border: 1px solid #fecdca;
+}
+
+/* V0.2.5 — Engineering network map */
+.engineering-page-hero { padding-bottom: 34px; }
+.engineering-network-map { padding: 0 0 24px; }
+.engineering-network-visual {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 14px 40px rgba(16, 24, 40, 0.06);
+}
+.engineering-network-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.engineering-capabilities { padding-top: 40px; }
+.engineering-capabilities .page-actions { margin-top: 28px; }
+
+@media (max-width: 760px) {
+  .engineering-page-hero { padding-bottom: 24px; }
+  .engineering-network-map { padding-bottom: 8px; }
+  .engineering-network-visual { border-radius: 14px; }
+  .engineering-capabilities { padding-top: 32px; }
+}
