@@ -58,5 +58,77 @@
     "architecture": "Multi-platform",
     "url": "partners.html",
     "description": "Regional GUI, BSP, firmware and product-integration support for HMI projects."
+  },
+  {
+    "id": "ohn-contributors",
+    "vendor": "Open HMI Network",
+    "title": "Contributor Directory",
+    "category": "Community",
+    "type": "Contributor Registry",
+    "source": "open-hmi",
+    "access": "public",
+    "architecture": "Multi-platform",
+    "url": "contributors.html",
+    "description": "Discover HMI engineers through published demos, guides and integration work."
+  },
+  {
+    "id": "ohn-contribute-github",
+    "vendor": "Open HMI Network",
+    "title": "Submit a GitHub Contribution",
+    "category": "Community",
+    "type": "Contribution Workflow",
+    "source": "open-hmi",
+    "access": "public",
+    "architecture": "Multi-platform",
+    "url": "contribute.html",
+    "description": "Register a contributor-owned GitHub demo, guide or integration without transferring repository ownership."
+  },
+  {
+    "id": "ohn-guide-serial-hmi",
+    "vendor": "Open HMI Network",
+    "title": "When Should You Move Beyond a Serial HMI?",
+    "category": "Open HMI Guides",
+    "type": "Architecture Guide",
+    "source": "open-hmi",
+    "access": "public",
+    "architecture": "Serial HMI / Chip-level HMI",
+    "url": "guides/serial-hmi-vs-chip-level.html",
+    "description": "A practical decision guide covering cost, convenience, flexibility, scale and the ecosystem needed for chip-level HMI."
+  },
+  {
+    "id": "ohn-guide-mcu-mpu-soc",
+    "vendor": "Open HMI Network",
+    "title": "MCU, MPU or SoC for Embedded HMI?",
+    "category": "Open HMI Guides",
+    "type": "Architecture Guide",
+    "source": "open-hmi",
+    "access": "public",
+    "architecture": "Multi-platform",
+    "url": "guides/mcu-mpu-soc-for-hmi.html",
+    "description": "Choose between compact MCU, performance RTOS and Linux / multimedia HMI from product requirements."
+  },
+  {
+    "id": "ohn-guide-gui-tool",
+    "vendor": "Open HMI Network",
+    "title": "Choosing the Right GUI Tool for Your Embedded Workflow",
+    "category": "Open HMI Guides",
+    "type": "GUI Guide",
+    "source": "open-hmi",
+    "access": "public",
+    "architecture": "Multi-platform",
+    "url": "guides/choosing-embedded-gui-tool.html",
+    "description": "Compare embedded GUI workflows by team ownership, target platform, hand-off, integration and maintenance."
+  },
+  {
+    "id": "ohn-guide-production",
+    "vendor": "Open HMI Network",
+    "title": "From Chip to Production HMI: What Is Actually Needed?",
+    "category": "Open HMI Guides",
+    "type": "Production Guide",
+    "source": "open-hmi",
+    "access": "public",
+    "architecture": "Multi-platform",
+    "url": "guides/chip-to-production-hmi.html",
+    "description": "A practical framework for combining compute, display, BSP, GUI, engineering delivery and production supply."
   }
 ]

@@ -1,19 +1,25 @@
-Open HMI Network V0.3.1 upgrade
+Open HMI Network V0.3.2 incremental upgrade
 
-Upload the CONTENTS of this folder to the root of your existing GitHub repository and allow matching files to be replaced.
+Base version: V0.3.1
 
-New items include:
-- contributors.html / contributor.html
-- GitHub contribution form in contribute.html
-- data/registry/
-- assets/js/registry.js
-- assets/js/contributors.js
-- assets/js/contribution-submit.js
-- CONTRIBUTING.md
-- .github contribution template and registry validation workflow
+GitHub upload:
+1. Unzip this package.
+2. Open the extracted open-hmi-network-v0.3.2-upgrade folder.
+3. Drag ALL files and folders inside it to the ROOT of your GitHub repository.
+4. Allow GitHub to replace files with the same names.
+5. Commit to main.
 
-After GitHub Pages deploys, test:
-1. /contributors.html
-2. /contributor.html?id=open-hmi-network
-3. /contribute.html
-4. /resources.html (Community Registry section)
+This upgrade adds Open HMI Guides and does NOT duplicate the existing demo videos/images.
+
+New pages:
+- guides.html
+- guides/serial-hmi-vs-chip-level.html
+- guides/mcu-mpu-soc-for-hmi.html
+- guides/choosing-embedded-gui-tool.html
+- guides/chip-to-production-hmi.html
+
+Modified:
+- index.html
+- resources.html
+- assets/css/styles.css
+- data/resources/open-hmi.json
