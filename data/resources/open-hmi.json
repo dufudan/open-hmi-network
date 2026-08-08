@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ohn-selector",
+    "vendor": "Open HMI Network",
+    "title": "HMI Architecture Selector",
+    "category": "Getting Started",
+    "type": "Architecture Tool",
+    "source": "open-hmi",
+    "access": "public",
+    "architecture": "Architecture First",
+    "url": "selector.html",
+    "description": "Define display, UI, OS and connectivity needs before choosing a platform."
+  },
+  {
+    "id": "ohn-cluster",
+    "vendor": "Open HMI Network",
+    "title": "2W Cluster HMI Case Study",
+    "category": "Learn",
+    "type": "Demo Case",
+    "source": "open-hmi",
+    "access": "public",
+    "architecture": "Compact RTOS HMI",
+    "url": "projects.html#cluster",
+    "description": "A 5-inch LVGL cluster demo covering gauges, status pages and settings."
+  },
+  {
+    "id": "ohn-agri",
+    "vendor": "Open HMI Network",
+    "title": "Agricultural Monitoring HMI Case Study",
+    "category": "Learn",
+    "type": "Demo Case",
+    "source": "open-hmi",
+    "access": "public",
+    "architecture": "Performance RTOS HMI",
+    "url": "projects.html#agriculture",
+    "description": "A 7-inch touch HMI for machine status, monitoring and operator workflows."
+  },
+  {
+    "id": "ohn-appliance",
+    "vendor": "Open HMI Network",
+    "title": "Smart Appliance HMI Case Study",
+    "category": "Learn",
+    "type": "Demo Case",
+    "source": "open-hmi",
+    "access": "public",
+    "architecture": "Performance RTOS HMI",
+    "url": "projects.html#appliance",
+    "description": "A consumer-style appliance UI with mode selection, timing and touch interaction."
+  },
+  {
+    "id": "ohn-engineering",
+    "vendor": "Open HMI Network",
+    "title": "Global Engineering Network",
+    "category": "Engineering",
+    "type": "Engineering Network",
+    "source": "open-hmi",
+    "access": "public",
+    "architecture": "Multi-platform",
+    "url": "partners.html",
+    "description": "Regional GUI, BSP, firmware and product-integration support for HMI projects."
+  }
+]

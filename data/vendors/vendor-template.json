@@ -1,0 +1,8 @@
+{
+  "id": "vendor-id",
+  "name": "Vendor Name",
+  "status": "available",
+  "summary": "Short description of the vendor ecosystem.",
+  "access_note": "Explain how this vendor wants resources to be accessed.",
+  "resource_file": "data/resources/vendor-id.json"
+}

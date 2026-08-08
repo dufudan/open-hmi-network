@@ -1,0 +1,14 @@
+[
+  {
+    "id": "vendor-resource-id",
+    "vendor": "Vendor Name",
+    "title": "Resource Title",
+    "category": "Getting Started",
+    "type": "SDK",
+    "source": "official",
+    "access": "public",
+    "architecture": "RTOS HMI",
+    "url": "https://official-source.example/resource",
+    "description": "Short developer-facing description."
+  }
+]

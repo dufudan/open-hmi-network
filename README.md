@@ -42,3 +42,6 @@ Connect the GitHub repository to Cloudflare Pages. Build command is blank; outpu
 
 ## Content note
 The three homepage projects are labeled as **Reference Application Concepts** so visitors do not mistake them for completed customer case studies. Convert them to **Featured HMI Projects** only when verified demos/case studies are available.
+
+## V0.3
+Adds a multi-vendor Developer Resources hub and contributor ecosystem. See `README-V0.3.md` for the data model, vendor-workspace structure and contributor model.
