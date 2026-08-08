@@ -86,6 +86,9 @@ button, input, select, textarea { font: inherit; }
 .btn-secondary { background: var(--surface); border-color: var(--border); color: var(--text); }
 .btn-dark { color: #fff; background: var(--dark); }
 .btn-link { padding: 0; min-height: auto; color: var(--blue); }
+[hidden] { display: none !important; }
+.btn:disabled { background: #e7ebf1; border-color: #e0e5ec; color: #98a2b3; box-shadow: none; cursor: not-allowed; transform: none; }
+.btn:disabled:hover { transform: none; }
 
 .hero { padding: 78px 0 72px; }
 .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 58px; align-items: center; }
@@ -287,6 +290,9 @@ button, input, select, textarea { font: inherit; }
 .selector-progress li.active > span { border-color: rgba(159,178,255,.7); color: #cbd5ff; }
 .selector-progress li.done { color: #aeb7c6; }
 .selector-progress li.done > span { color: #7ce2cb; border-color: rgba(48,164,108,.45); }
+.selector-progress li.can-return { cursor: pointer; }
+.selector-progress li.can-return:hover { background: rgba(255,255,255,.07); color: #fff; }
+.selector-progress li.can-return:focus-visible { outline: 2px solid #9db1ff; outline-offset: 2px; }
 .selector-card { background: var(--surface); border: 1px solid var(--border); border-radius: 22px; padding: 34px; box-shadow: var(--shadow); min-height: 560px; }
 .selector-step { display: none; }
 .selector-step.active { display: block; animation: selectorFade .22s ease; }
@@ -310,6 +316,7 @@ button, input, select, textarea { font: inherit; }
 .selector-check-grid .check { cursor: pointer; background: #fff; transition: .16s ease; }
 .selector-check-grid .check:has(input:checked) { background: var(--soft-blue); border-color: #cdd8ff; color: #304ec6; }
 .selector-actions { display: flex; justify-content: space-between; gap: 12px; margin-top: 34px; padding-top: 24px; border-top: 1px solid var(--border); }
+.selector-actions #selectorBack:not(:disabled) { color: #344054; background: #fff; }
 .selector-validation { min-height: 22px; margin-top: 10px; color: #b42318; font-size: 13px; }
 .selector-result-section { border-top: 1px solid var(--border); background: #f2f5fa; }
 .result-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; }

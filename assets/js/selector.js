@@ -54,8 +54,20 @@
       item.classList.toggle('done', n < step);
     });
     backBtn.disabled = step === 1;
+    backBtn.hidden = step === 1;
     nextBtn.hidden = step === steps.length;
     finishBtn.hidden = step !== steps.length;
+    finishBtn.disabled = false;
+
+    progressItems.forEach(item => {
+      const n = Number(item.dataset.progressStep);
+      const canReturn = n < step;
+      item.classList.toggle('can-return', canReturn);
+      item.tabIndex = canReturn ? 0 : -1;
+      item.setAttribute('role', canReturn ? 'button' : 'listitem');
+      item.setAttribute('aria-label', canReturn ? `Return to step ${n}` : `Step ${n}`);
+    });
+
     progressText.textContent = `Step ${step} of ${steps.length}`;
     progressBar.style.width = `${(step / steps.length) * 100}%`;
     validation.textContent = '';
@@ -84,6 +96,20 @@
     showStep(Math.min(currentStep + 1, steps.length));
   });
   backBtn.addEventListener('click', () => showStep(Math.max(1, currentStep - 1)));
+
+  progressItems.forEach(item => {
+    const returnToStep = () => {
+      const target = Number(item.dataset.progressStep);
+      if (target < currentStep) showStep(target);
+    };
+    item.addEventListener('click', returnToStep);
+    item.addEventListener('keydown', (event) => {
+      if ((event.key === 'Enter' || event.key === ' ') && Number(item.dataset.progressStep) < currentStep) {
+        event.preventDefault();
+        returnToStep();
+      }
+    });
+  });
 
   function values(name) {
     return Array.from(form.querySelectorAll(`[name="${name}"]:checked`)).map(x => x.value);
