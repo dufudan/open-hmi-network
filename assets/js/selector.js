@@ -15,33 +15,33 @@
   const ARCHITECTURES = {
     serial: {
       name: 'Smart Display / Serial HMI',
-      description: 'A display-centric architecture that minimizes application-side software effort for straightforward control and status interfaces.',
-      stack: ['Display module with controller', 'Serial / simple host interface', 'Fast integration', 'Lowest software burden'],
-      validate: ['Whether the UI can stay within a fixed display-module feature set', 'Host communication protocol and update rate', 'Long-term display/module availability', 'When future UI growth would justify moving to a programmable HMI platform']
+      description: 'For simple controls where fast integration matters most.',
+      stack: ['Smart display', 'Serial host', 'Fast integration'],
+      validate: ['UI limits', 'Host protocol', 'Lifecycle']
     },
     compact: {
       name: 'Compact RTOS HMI',
-      description: 'A responsive MCU-class HMI architecture for embedded control products that need a polished GUI, fast boot and deterministic behavior without Linux overhead.',
-      stack: ['RTOS or lightweight runtime', 'LVGL-class GUI', 'Integrated display controller', 'Control-oriented connectivity'],
-      validate: ['Framebuffer and graphics memory requirement', 'Display interface and pixel clock', 'Boot-time and real-time constraints', 'Flash / RAM sizing for assets and fonts']
+      description: 'For responsive control HMIs with fast boot and LVGL-class UI.',
+      stack: ['RTOS', 'LVGL-class GUI', 'Control I/O'],
+      validate: ['Memory', 'Display timing', 'Boot / real-time']
     },
     performance: {
       name: 'Performance RTOS HMI',
-      description: 'A higher-headroom real-time HMI architecture for richer graphics, larger displays and multiple interfaces while keeping an RTOS-style product model.',
-      stack: ['Higher-performance MCU / HMI SoC class', 'LVGL-class GUI', 'RTOS', 'Expanded memory and connectivity'],
-      validate: ['Animation and rendering load', 'External memory bandwidth', 'High-resolution display timing', 'Whether application complexity is approaching Linux-class requirements']
+      description: 'For richer graphics and more I/O while keeping an RTOS product model.',
+      stack: ['High-performance HMI MCU/SoC', 'LVGL-class GUI', 'RTOS'],
+      validate: ['Render load', 'Memory bandwidth', 'Display timing']
     },
     linux: {
       name: 'Embedded Linux HMI',
-      description: 'A Linux-class application architecture for larger displays, richer workflows, complex networking and GUI frameworks such as Qt/QML.',
-      stack: ['Embedded Linux', 'Qt/QML or Linux GUI stack', 'MPU / application SoC class', 'Rich networking and storage'],
-      validate: ['Boot-time expectation', 'BSP / kernel / driver ownership', 'Storage and update strategy', 'Long-term software maintenance and security']
+      description: 'For rich workflows, larger displays and complex networking.',
+      stack: ['Embedded Linux', 'Qt/QML or Linux GUI', 'Application-class SoC'],
+      validate: ['Boot time', 'BSP ownership', 'Updates / security']
     },
     edge: {
       name: 'Edge / Vision HMI',
-      description: 'A high-performance HMI architecture for camera, video, AI inference or intensive graphics where the display is part of a broader edge-compute system.',
-      stack: ['Linux / Android-class OS', 'Camera / multimedia pipeline', 'GPU / NPU-capable SoC class', 'High-bandwidth memory and interfaces'],
-      validate: ['Camera sensor and video pipeline', 'AI model and NPU requirements', 'Thermal / power envelope', 'Display, camera and inference concurrency']
+      description: 'For camera, video, AI or other high-bandwidth HMI workloads.',
+      stack: ['Linux / Android', 'Camera / media pipeline', 'GPU / NPU SoC'],
+      validate: ['Camera pipeline', 'AI workload', 'Power / thermal']
     }
   };
 
@@ -152,33 +152,35 @@
 
   function makeReasons(d, architecture) {
     const r = [];
-    if (d.uiComplexity === 'multimedia') r.push('Camera / multimedia-class UI demand strongly increases compute and memory requirements.');
-    else if (d.uiComplexity === 'advanced') r.push('The UI is application-like rather than a simple control panel, so software architecture matters as much as display drive.');
-    else if (d.uiComplexity === 'rich') r.push('The project needs a polished graphical UI but can still benefit from an embedded-first architecture.');
-    else r.push('The UI requirement is control-oriented, so minimizing software and system overhead remains valuable.');
+    const uiReason = {
+      basic: 'Control-oriented UI keeps system overhead important.',
+      rich: 'Richer graphics need more rendering and memory headroom.',
+      advanced: 'Application-like workflows push software architecture higher.',
+      multimedia: 'Camera / media / AI makes compute bandwidth a core requirement.'
+    };
+    if (uiReason[d.uiComplexity]) r.push(uiReason[d.uiComplexity]);
+    if (d.os !== 'Not decided') r.push(`${d.os} is already part of the intended software path.`);
+    else if (d.gui !== 'Not decided') r.push(`${d.gui} is a useful signal for the graphics and application model.`);
 
-    if (d.os !== 'Not decided') r.push(`${d.os} is already a stated software direction and is reflected in the architecture recommendation.`);
-    else r.push('The OS is still open, so the recommendation keeps the software path flexible until performance is measured.');
-
-    if (d.gui !== 'Not decided') r.push(`${d.gui} provides a useful signal for the expected graphics and application model.`);
     const highBandwidth = d.connectivity.filter(x => ['Camera','Audio / Video','Edge AI','Cellular'].includes(x));
-    if (highBandwidth.length) r.push(`System features such as ${highBandwidth.join(', ')} push the design beyond a display-only decision.`);
-    else if (d.connectivity.length) r.push(`Required interfaces (${d.connectivity.join(', ')}) favor an architecture that can integrate control and networking cleanly.`);
+    if (highBandwidth.length) r.push(`${highBandwidth.join(', ')} adds system-level compute or bandwidth needs.`);
+    else if (d.connectivity.length) r.push(`${d.connectivity.join(', ')} must fit cleanly into the control and network architecture.`);
 
-    if (architecture === 'serial') r.push('The current requirement appears simple enough that a smart-display path may reduce engineering effort, provided future UI growth is limited.');
-    if (architecture === 'compact') r.push('The current balance of display size, UI complexity and real-time behavior fits a compact programmable HMI well.');
-    if (architecture === 'performance') r.push('The project needs more graphics or interface headroom than a compact HMI, while still benefiting from an RTOS-style product model.');
-    if (architecture === 'linux') r.push('The combination of display/UI complexity and system features favors an application-class OS and richer software stack.');
-    if (architecture === 'edge') r.push('Vision / multimedia requirements make compute pipeline, memory bandwidth and thermal design first-class architecture constraints.');
-    return r.slice(0, 5);
+    const architectureReason = {
+      serial: 'A smart-display path can minimize engineering effort for this brief.',
+      compact: 'The current balance fits a compact programmable RTOS HMI.',
+      performance: 'The brief needs more headroom while still fitting an RTOS model.',
+      linux: 'The brief favors an application-class OS and richer software stack.',
+      edge: 'Vision / media needs make compute, memory and thermal design first-class constraints.'
+    };
+    if (architectureReason[architecture]) r.push(architectureReason[architecture]);
+    return r.slice(0, 3);
   }
 
   function fitLabel(scores) {
     const sorted = Object.values(scores).sort((a,b) => b-a);
     const gap = sorted[0] - sorted[1];
-    if (gap >= 25) return 'Strong fit';
-    if (gap >= 12) return 'Good fit';
-    return 'Two paths worth evaluating';
+    return gap < 12 ? 'Compare two paths' : 'Primary direction';
   }
 
   function summarize(d) {
@@ -214,7 +216,7 @@
     }
 
     const uiValue = value('uiComplexity');
-    const uiLabels = { basic: 'Basic control UI', rich: 'Rich graphical UI', advanced: 'Advanced application UI', multimedia: 'Multimedia / Vision' };
+    const uiLabels = { basic: 'Basic UI', rich: 'Rich UI', advanced: 'Advanced UI', multimedia: 'Vision / Media' };
     const d = {
       application: value('application'), screenSize: value('screenSize'), resolution: value('resolution'), touch: value('touch'), environment: value('environment'),
       uiComplexity: uiValue, uiComplexityLabel: uiLabels[uiValue] || uiValue, gui: value('gui'), os: value('os'), bootPriority: value('bootPriority'),
@@ -235,9 +237,9 @@
     document.getElementById('reasonList').innerHTML = makeReasons(d, bestKey).map(x => `<li>${x}</li>`).join('');
     document.getElementById('validateList').innerHTML = best.validate.map(x => `<li>${x}</li>`).join('');
     document.getElementById('alternativeName').textContent = alt.name;
-    document.getElementById('alternativeText').textContent = `Also worth keeping in view if your priorities change. The final decision should be confirmed with real UI, display and interface performance testing.`;
+    document.getElementById('alternativeText').textContent = 'Keep this path in view if UI, OS or performance needs change.';
     document.getElementById('fitBadge').textContent = fitLabel(scores);
-    document.getElementById('resultIntro').textContent = `Based on the current brief, ${best.name} is the best architecture direction to evaluate first — before narrowing to a specific processor or display.`;
+    document.getElementById('resultIntro').textContent = `${best.name} is the best starting point for this brief.`;
 
     const summary = document.getElementById('selectorSummary');
     summary.innerHTML = `<div class="mini-label">Your requirement brief</div><div class="summary-grid">${summarize(d).map(([k,v]) => `<div><span>${k}</span><strong>${v}</strong></div>`).join('')}</div>`;
@@ -260,6 +262,14 @@
     document.getElementById('selectorResult').hidden = true;
     showStep(1);
   });
+
+  const incoming = new URLSearchParams(window.location.search);
+  const applicationPrefill = incoming.get('application');
+  if (applicationPrefill) {
+    const application = form.elements.application;
+    const match = Array.from(application.options).find(o => o.text === applicationPrefill || o.value === applicationPrefill);
+    if (match) application.value = match.value;
+  }
 
   showStep(1);
 })();

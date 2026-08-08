@@ -295,9 +295,11 @@ button, input, select, textarea { font: inherit; }
 .selector-step h2 { margin: 8px 0 8px; font-size: clamp(30px,4vw,42px); letter-spacing: -.035em; line-height: 1.05; }
 .selector-step > p { margin: 0 0 28px; color: var(--muted); font-size: 16px; max-width: 720px; }
 .selector-form-grid { gap: 20px; }
+.selector-form-grid-3 { grid-template-columns: repeat(3,1fr); }
 .selector-spacer { margin-top: 24px; }
 .choice-grid { display: grid; gap: 12px; }
 .choice-grid-2 { grid-template-columns: repeat(2,1fr); }
+.choice-grid-4 { grid-template-columns: repeat(4,1fr); }
 .choice-card { position: relative; display: grid; gap: 5px; padding: 18px; border: 1px solid var(--border); border-radius: 14px; background: #fff; cursor: pointer; transition: .18s ease; }
 .choice-card:hover { transform: translateY(-2px); border-color: #cbd6ee; }
 .choice-card input { position: absolute; opacity: 0; }
@@ -340,6 +342,8 @@ button, input, select, textarea { font: inherit; }
 
 @media (max-width: 980px) {
   .selector-hero-grid, .selector-layout { grid-template-columns: 1fr; }
+  .choice-grid-4 { grid-template-columns: repeat(2,1fr); }
+  .selector-form-grid-3 { grid-template-columns: repeat(2,1fr); }
   .selector-progress { position: static; }
   .selector-progress ol { grid-template-columns: repeat(5,1fr); }
   .selector-progress li { display: block; padding: 7px; }
@@ -351,7 +355,7 @@ button, input, select, textarea { font: inherit; }
 }
 @media (max-width: 640px) {
   .selector-card { padding: 24px; min-height: 0; }
-  .choice-grid-2, .selector-check-grid, .summary-grid { grid-template-columns: 1fr; }
+  .choice-grid-2, .choice-grid-4, .selector-check-grid, .summary-grid, .selector-form-grid-3 { grid-template-columns: 1fr; }
   .selector-progress ol { grid-template-columns: repeat(5,1fr); gap: 4px; }
   .selector-progress li > span { width: 100%; }
   .selector-actions { flex-wrap: wrap; }
@@ -360,4 +364,27 @@ button, input, select, textarea { font: inherit; }
   .fit-badge { margin-top: 0; }
   .next-stage-actions { width: 100%; }
   .next-stage-actions .btn { width: 100%; }
+}
+
+/* Compact selector choices */
+.choice-grid-4 .choice-card { min-height: 108px; align-content: start; }
+.choice-grid-4 .choice-title { font-size: 16px; }
+.choice-grid-4 .choice-card > span:last-child { line-height: 1.45; }
+
+/* V0.2.2 — concise funnel refinements */
+.page-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.page-actions + .grid-3, .page-actions + .grid-4 { margin-top: 32px; }
+.io-groups { display: grid; gap: 22px; }
+.io-group { display: grid; gap: 10px; }
+.io-group .selector-check-grid { grid-template-columns: repeat(3, 1fr); }
+.card p { min-height: 0; }
+.page-hero .section-copy { max-width: 680px; }
+.form-section h2 { letter-spacing: -.02em; }
+
+@media (max-width: 980px) {
+  .io-group .selector-check-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .page-actions .btn { width: 100%; }
+  .io-group .selector-check-grid { grid-template-columns: 1fr; }
 }

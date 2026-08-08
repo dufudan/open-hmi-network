@@ -26,14 +26,14 @@
     <section class="page-hero selector-hero">
       <div class="container selector-hero-grid">
         <div>
-          <div class="eyebrow">01 Find · Architecture first</div>
-          <h1>Start with requirements — not a chip part number.</h1>
-          <p class="section-copy">Describe the display, UI, connectivity and project constraints. The selector will suggest a practical HMI architecture direction, then carry your brief into hardware evaluation or project discussion.</p>
+          <div class="eyebrow">01 Find</div>
+          <h1>Find the right HMI architecture.</h1>
+          <p class="section-copy">Answer five quick questions. Get an architecture direction before choosing a chip.</p>
         </div>
         <div class="selector-principle">
           <div class="mini-label">Decision flow</div>
-          <div class="selector-principle-flow"><strong>Requirement</strong><span>→</span><strong>Architecture</strong><span>→</span><strong>Evaluate</strong><span>→</span><strong>Build</strong></div>
-          <p>No vendor lock-in at this stage. Specific silicon and display combinations come later, after the architecture is validated.</p>
+          <div class="selector-principle-flow"><strong>Requirement</strong><span>→</span><strong>Architecture</strong><span>→</span><strong>Evaluate</strong></div>
+          <p>Specific silicon comes later.</p>
         </div>
       </div>
     </section>
@@ -45,11 +45,11 @@
             <div class="selector-progress-head"><span class="mini-label">HMI Architecture Brief</span><span id="progressText">Step 1 of 5</span></div>
             <div class="selector-progress-bar"><span id="progressBar"></span></div>
             <ol>
-              <li class="active" data-progress-step="1"><span>01</span><div><strong>Product & Display</strong><small>Application, size, resolution</small></div></li>
-              <li data-progress-step="2"><span>02</span><div><strong>UI & Software</strong><small>GUI complexity and OS</small></div></li>
-              <li data-progress-step="3"><span>03</span><div><strong>Connectivity</strong><small>Interfaces and system role</small></div></li>
-              <li data-progress-step="4"><span>04</span><div><strong>Project Reality</strong><small>Stage, volume, timeline</small></div></li>
-              <li data-progress-step="5"><span>05</span><div><strong>Support Needed</strong><small>What should happen next</small></div></li>
+              <li class="active" data-progress-step="1"><span>01</span><div><strong>Product</strong><small>Product · Display</small></div></li>
+              <li data-progress-step="2"><span>02</span><div><strong>UI</strong><small>UI · GUI · OS</small></div></li>
+              <li data-progress-step="3"><span>03</span><div><strong>I/O</strong><small>Interfaces</small></div></li>
+              <li data-progress-step="4"><span>04</span><div><strong>Project</strong><small>Stage · Volume</small></div></li>
+              <li data-progress-step="5"><span>05</span><div><strong>Next Step</strong><small>Support</small></div></li>
             </ol>
           </aside>
 
@@ -57,7 +57,7 @@
             <section class="selector-step active" data-step="1">
               <div class="selector-step-kicker">Step 01</div>
               <h2>What are you building?</h2>
-              <p>Start from the product and display requirement. Exact component choices can wait.</p>
+              <p>Product and display.</p>
               <div class="form-grid selector-form-grid">
                 <div class="field full"><label for="application">Application</label><select id="application" name="application" required>
                   <option value="">Select application</option>
@@ -76,65 +76,54 @@
 
             <section class="selector-step" data-step="2">
               <div class="selector-step-kicker">Step 02</div>
-              <h2>How demanding is the user experience?</h2>
-              <p>This is often a better architecture signal than starting with MCU vs MPU.</p>
-              <div class="choice-grid choice-grid-2" data-choice-group="uiComplexity">
-                <label class="choice-card"><input type="radio" name="uiComplexity" value="basic" required><span class="choice-title">Basic control UI</span><span>Status, buttons, settings, simple indicators.</span></label>
-                <label class="choice-card"><input type="radio" name="uiComplexity" value="rich"><span class="choice-title">Rich graphical UI</span><span>Multiple pages, charts, polished transitions.</span></label>
-                <label class="choice-card"><input type="radio" name="uiComplexity" value="advanced"><span class="choice-title">Advanced application UI</span><span>Complex workflows, rich graphics, multitasking.</span></label>
-                <label class="choice-card"><input type="radio" name="uiComplexity" value="multimedia"><span class="choice-title">Multimedia / Vision</span><span>Camera, video, AI overlays or intensive graphics.</span></label>
+              <h2>How complex is the UI?</h2>
+              <p>Choose the closest match.</p>
+              <div class="choice-grid choice-grid-4" data-choice-group="uiComplexity">
+                <label class="choice-card"><input type="radio" name="uiComplexity" value="basic" required><span class="choice-title">Basic UI</span><span>Controls · status · settings</span></label>
+                <label class="choice-card"><input type="radio" name="uiComplexity" value="rich"><span class="choice-title">Rich UI</span><span>Pages · charts · transitions</span></label>
+                <label class="choice-card"><input type="radio" name="uiComplexity" value="advanced"><span class="choice-title">Advanced UI</span><span>Workflows · graphics · multitasking</span></label>
+                <label class="choice-card"><input type="radio" name="uiComplexity" value="multimedia"><span class="choice-title">Vision / Media</span><span>Camera · video · AI</span></label>
               </div>
-              <div class="form-grid selector-form-grid selector-spacer">
-                <div class="field"><label for="gui">Preferred GUI framework</label><select id="gui" name="gui"><option>Not decided</option><option>LVGL</option><option>Qt / QML</option><option>Other</option></select></div>
-                <div class="field"><label for="os">Operating system</label><select id="os" name="os"><option>Not decided</option><option>RTOS</option><option>Embedded Linux</option><option>Android</option><option>Bare Metal</option></select></div>
-                <div class="field full"><label for="bootPriority">Boot / response priority</label><select id="bootPriority" name="bootPriority"><option>Balanced</option><option>Fast boot / deterministic response is important</option><option>Feature richness is more important</option><option>Not decided</option></select></div>
+              <div class="form-grid selector-form-grid selector-form-grid-3 selector-spacer">
+                <div class="field"><label for="gui">GUI</label><select id="gui" name="gui"><option>Not decided</option><option>LVGL</option><option>Qt / QML</option><option>Other</option></select></div>
+                <div class="field"><label for="os">OS</label><select id="os" name="os"><option>Not decided</option><option>RTOS</option><option>Embedded Linux</option><option>Android</option><option>Bare Metal</option></select></div>
+                <div class="field"><label for="bootPriority">Priority</label><select id="bootPriority" name="bootPriority"><option>Balanced</option><option>Fast boot / real-time</option><option>Feature richness</option><option>Not decided</option></select></div>
               </div>
             </section>
 
             <section class="selector-step" data-step="3">
               <div class="selector-step-kicker">Step 03</div>
-              <h2>What does the HMI need to connect to?</h2>
-              <p>Select all that matter. Connectivity can move the architecture as much as graphics performance.</p>
-              <div class="check-grid selector-check-grid">
-                <label class="check"><input type="checkbox" name="connectivity" value="UART / RS485">UART / RS485</label>
-                <label class="check"><input type="checkbox" name="connectivity" value="CAN">CAN</label>
-                <label class="check"><input type="checkbox" name="connectivity" value="Ethernet">Ethernet</label>
-                <label class="check"><input type="checkbox" name="connectivity" value="Wi-Fi / BLE">Wi-Fi / BLE</label>
-                <label class="check"><input type="checkbox" name="connectivity" value="Cellular">Cellular</label>
-                <label class="check"><input type="checkbox" name="connectivity" value="USB">USB</label>
-                <label class="check"><input type="checkbox" name="connectivity" value="Camera">Camera</label>
-                <label class="check"><input type="checkbox" name="connectivity" value="Audio / Video">Audio / Video</label>
-                <label class="check"><input type="checkbox" name="connectivity" value="Edge AI">Edge AI</label>
-                <label class="check"><input type="checkbox" name="connectivity" value="Not decided">Not decided</label>
+              <h2>What must it connect to?</h2>
+              <p>Select all that matter.</p>
+              <div class="io-groups">
+                <div class="io-group"><div class="mini-label">Control</div><div class="check-grid selector-check-grid"><label class="check"><input type="checkbox" name="connectivity" value="UART / RS485">UART / RS485</label><label class="check"><input type="checkbox" name="connectivity" value="CAN">CAN</label><label class="check"><input type="checkbox" name="connectivity" value="USB">USB</label></div></div>
+                <div class="io-group"><div class="mini-label">Network</div><div class="check-grid selector-check-grid"><label class="check"><input type="checkbox" name="connectivity" value="Ethernet">Ethernet</label><label class="check"><input type="checkbox" name="connectivity" value="Wi-Fi / BLE">Wi-Fi / BLE</label><label class="check"><input type="checkbox" name="connectivity" value="Cellular">Cellular</label></div></div>
+                <div class="io-group"><div class="mini-label">Media / AI</div><div class="check-grid selector-check-grid"><label class="check"><input type="checkbox" name="connectivity" value="Camera">Camera</label><label class="check"><input type="checkbox" name="connectivity" value="Audio / Video">Audio / Video</label><label class="check"><input type="checkbox" name="connectivity" value="Edge AI">Edge AI</label><label class="check"><input type="checkbox" name="connectivity" value="Not decided">Not decided</label></div></div>
               </div>
             </section>
 
             <section class="selector-step" data-step="4">
               <div class="selector-step-kicker">Step 04</div>
-              <h2>Where is the project today?</h2>
-              <p>Architecture recommendations should reflect commercial reality, not just technical possibility.</p>
+              <h2>Where is the project now?</h2>
+              <p>Stage, timing and volume.</p>
               <div class="form-grid selector-form-grid">
                 <div class="field"><label for="stage">Project stage</label><select id="stage" name="stage" required><option value="">Select stage</option><option>Exploring / Concept</option><option>Prototype</option><option>Design-in</option><option>Pre-production</option><option>Mass Production</option></select></div>
                 <div class="field"><label for="timeline">Prototype timeline</label><select id="timeline" name="timeline"><option>Not decided</option><option>Within 1 month</option><option>1–3 months</option><option>3–6 months</option><option>> 6 months</option></select></div>
                 <div class="field"><label for="volume">Estimated annual volume</label><select id="volume" name="volume"><option>Not sure yet</option><option>Prototype only</option><option>&lt; 1,000 units</option><option>1,000–5,000</option><option>5,000–20,000</option><option>20,000–100,000</option><option>> 100,000</option></select></div>
-                <div class="field"><label for="lifecycle">Lifecycle priority</label><select id="lifecycle" name="lifecycle"><option>Balanced</option><option>Long lifecycle / supply continuity is critical</option><option>Lowest BOM is the priority</option><option>Performance headroom is the priority</option><option>Not decided</option></select></div>
+                <div class="field"><label for="lifecycle">Main priority</label><select id="lifecycle" name="lifecycle"><option>Balanced</option><option>Long lifecycle</option><option>Lowest BOM</option><option>Performance headroom</option><option>Not decided</option></select></div>
               </div>
             </section>
 
             <section class="selector-step" data-step="5">
               <div class="selector-step-kicker">Step 05</div>
-              <h2>What should happen after the architecture is clear?</h2>
-              <p>This turns the selector into a useful project brief instead of a one-off calculator.</p>
+              <h2>What help do you need?</h2>
+              <p>Choose any.</p>
               <div class="check-grid selector-check-grid">
-                <label class="check"><input type="checkbox" name="support" value="Architecture recommendation">Architecture recommendation</label>
-                <label class="check"><input type="checkbox" name="support" value="Evaluation Board">Evaluation board</label>
-                <label class="check"><input type="checkbox" name="support" value="TFT Display / Touch">TFT display / touch</label>
-                <label class="check"><input type="checkbox" name="support" value="SDK / Software">SDK / software</label>
-                <label class="check"><input type="checkbox" name="support" value="GUI Development">GUI development</label>
-                <label class="check"><input type="checkbox" name="support" value="Embedded Linux / BSP">Embedded Linux / BSP</label>
-                <label class="check"><input type="checkbox" name="support" value="Firmware Development">Firmware development</label>
-                <label class="check"><input type="checkbox" name="support" value="Hardware Design">Hardware design</label>
-                <label class="check"><input type="checkbox" name="support" value="Complete Product Development">Complete product development</label>
+                <label class="check"><input type="checkbox" name="support" value="Architecture Review">Architecture review</label>
+                <label class="check"><input type="checkbox" name="support" value="Evaluation Hardware">Evaluation hardware</label>
+                <label class="check"><input type="checkbox" name="support" value="Display / Touch">Display / touch</label>
+                <label class="check"><input type="checkbox" name="support" value="Software / BSP">Software / BSP</label>
+                <label class="check"><input type="checkbox" name="support" value="Engineering">Engineering support</label>
                 <label class="check"><input type="checkbox" name="support" value="Production Supply">Production supply</label>
               </div>
             </section>
@@ -142,7 +131,7 @@
             <div class="selector-actions">
               <button class="btn btn-secondary" type="button" id="selectorBack" disabled>← Back</button>
               <button class="btn btn-primary" type="button" id="selectorNext">Continue →</button>
-              <button class="btn btn-primary" type="submit" id="selectorFinish" hidden>Show Architecture Direction →</button>
+              <button class="btn btn-primary" type="submit" id="selectorFinish" hidden>Show Architecture →</button>
             </div>
             <div class="selector-validation" id="selectorValidation" aria-live="polite"></div>
           </form>
@@ -153,24 +142,24 @@
     <section class="section selector-result-section" id="selectorResult" hidden>
       <div class="container">
         <div class="eyebrow">Architecture direction</div>
-        <div class="result-head"><div><h2 class="section-title" id="resultTitle">Recommended Architecture</h2><p class="section-copy" id="resultIntro"></p></div><span class="fit-badge" id="fitBadge">Strong fit</span></div>
+        <div class="result-head"><div><h2 class="section-title" id="resultTitle">Recommended Architecture</h2><p class="section-copy" id="resultIntro"></p></div><span class="fit-badge" id="fitBadge">Primary direction</span></div>
         <div class="architecture-result-grid">
           <article class="architecture-primary">
-            <div class="mini-label">Recommended direction</div>
+            <div class="mini-label">Start here</div>
             <h3 id="architectureName"></h3>
             <p id="architectureDescription"></p>
             <div class="architecture-stack" id="architectureStack"></div>
           </article>
           <article class="architecture-panel">
-            <div class="mini-label">Why this direction</div>
+            <div class="mini-label">Why</div>
             <ul class="reason-list" id="reasonList"></ul>
           </article>
           <article class="architecture-panel">
-            <div class="mini-label">Validate next</div>
+            <div class="mini-label">Validate</div>
             <ul class="reason-list" id="validateList"></ul>
           </article>
           <article class="architecture-panel alternative-panel">
-            <div class="mini-label">Alternative path</div>
+            <div class="mini-label">Alternative</div>
             <h4 id="alternativeName"></h4>
             <p id="alternativeText"></p>
           </article>
@@ -179,10 +168,10 @@
         <div class="selector-summary" id="selectorSummary"></div>
 
         <div class="next-stage-band">
-          <div><div class="eyebrow">02 Evaluate</div><h3>Turn the architecture into a real evaluation plan.</h3><p>Carry this brief forward. You do not need to enter the same requirements again.</p></div>
-          <div class="next-stage-actions"><a class="btn btn-primary" id="evaluateHardwareLink" href="hardware-application.html">Request Evaluation Hardware →</a><a class="btn btn-secondary" id="discussArchitectureLink" href="submit-project.html">Discuss This Architecture</a></div>
+          <div><div class="eyebrow">02 Evaluate</div><h3>Validate it with real hardware.</h3><p>Your brief carries forward automatically.</p></div>
+          <div class="next-stage-actions"><a class="btn btn-primary" id="evaluateHardwareLink" href="hardware-application.html">Request Evaluation Hardware →</a><a class="btn btn-secondary" id="discussArchitectureLink" href="submit-project.html">Discuss Project</a></div>
         </div>
-        <div class="selector-reset-row"><button class="btn btn-link" type="button" id="selectorRestart">← Start another architecture brief</button></div>
+        <div class="selector-reset-row"><button class="btn btn-link" type="button" id="selectorRestart">← Start again</button></div>
       </div>
     </section>
   </main>
