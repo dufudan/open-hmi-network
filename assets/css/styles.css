@@ -183,7 +183,7 @@ button, input, select, textarea { font: inherit; }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: .18s ease; }
-.card:hover { transform: translateY(-3px); border-color: #cfd8e6; }
+.card.click-card:hover, a.card:hover { transform: translateY(-3px); border-color: #cfd8e6; }
 .card-num { font-size: 12px; font-weight: 850; color: var(--blue); letter-spacing: .12em; }
 .card h3 { margin: 28px 0 10px; font-size: 22px; letter-spacing: -0.025em; }
 .card p { margin: 0 0 22px; color: var(--muted); }
@@ -569,6 +569,32 @@ button, input, select, textarea { font: inherit; }
 .demo-summary-overlay span { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #dbe4ff; font-weight: 800; }
 .demo-summary-overlay strong { margin-top: 5px; font-size: 22px; }
 
+.demo-summary-card {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+.demo-summary-card .card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+.demo-summary-card:hover .demo-summary-media img,
+.demo-summary-card:focus-visible .demo-summary-media img {
+  transform: scale(1.035);
+}
+.demo-summary-card:hover .card-link,
+.demo-summary-card:focus-visible .card-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.demo-summary-card:focus-visible {
+  outline: 3px solid rgba(66,99,235,.28);
+  outline-offset: 3px;
+}
+
 @media (max-width: 900px) {
   .demo-case { grid-template-columns: 1fr; gap: 22px; }
 }
@@ -818,7 +844,8 @@ button, input, select, textarea { font: inherit; }
 .guide-card-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; margin-top: 36px; }
 .guide-card,
 .guide-home-card,
-.guide-resource-grid article { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 24px; }
+.guide-resource-grid article,
+.guide-resource-card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 24px; }
 .guide-card { min-height: 310px; display: flex; flex-direction: column; }
 .guide-card.featured { background: linear-gradient(145deg,#fff,#f5f8ff); border-color: #ced9fb; }
 .guide-card-top { display: flex; justify-content: space-between; gap: 14px; color: var(--blue); font-size: 10px; font-weight: 850; letter-spacing: .11em; text-transform: uppercase; }
@@ -837,8 +864,8 @@ button, input, select, textarea { font: inherit; }
 
 .open-hmi-guides-section { background: linear-gradient(180deg,#ffffff,#f8faff); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .guide-resource-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; margin-top: 28px; }
-.guide-resource-grid article { min-height: 250px; display: flex; flex-direction: column; }
-.guide-resource-grid article > span { color: var(--blue); font-size: 10px; font-weight: 850; text-transform: uppercase; letter-spacing: .1em; }
+.guide-resource-grid article, .guide-resource-card { min-height: 250px; display: flex; flex-direction: column; }
+.guide-resource-grid article > span:first-child, .guide-resource-card > span:first-child { color: var(--blue); font-size: 10px; font-weight: 850; text-transform: uppercase; letter-spacing: .1em; }
 .guide-resource-grid h3 { margin: 20px 0 9px; font-size: 20px; line-height: 1.14; letter-spacing: -.025em; }
 .guide-resource-grid p { margin: 0; color: var(--muted); font-size: 13px; }
 .guide-resource-grid .card-link { margin-top: auto; padding-top: 18px; }
@@ -1047,3 +1074,59 @@ button, input, select, textarea { font: inherit; }
   .architecture-card-visual img,
   .architecture-card-cta span { transition: none; }
 }
+
+
+/* V0.3.4.3 — interaction consistency audit */
+.click-card {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+.click-card:hover,
+.click-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: #c7d2ea;
+  box-shadow: 0 14px 34px rgba(16,24,40,.075);
+  outline: none;
+}
+.click-card:focus-visible {
+  box-shadow: 0 0 0 4px rgba(66,99,235,.13), 0 14px 34px rgba(16,24,40,.075);
+}
+.card-link,
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 7px 4px;
+  margin-left: -4px;
+  transition: transform .18s ease, color .18s ease, text-decoration-color .18s ease;
+}
+.click-card:hover .card-link,
+.click-card:focus-visible .card-link,
+.click-card:hover .resource-link,
+.click-card:focus-visible .resource-link {
+  transform: translateX(3px);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.guide-home-card.click-card,
+.guide-card.click-card,
+.guide-resource-card,
+.hardware-layer-card.click-card,
+.vendor-card.click-card,
+.contributor-card.click-card {
+  display: flex;
+  flex-direction: column;
+}
+.access-card.click-card { display: block; }
+.access-card.click-card .btn { pointer-events: none; }
+.guide-side-action-card { display: block; }
+.guide-side-action-card .btn { pointer-events: none; }
+.community-actions .card-link {
+  min-height: 40px;
+  padding: 7px 6px;
+  margin-left: -6px;
+}
+/* Informational .card blocks should not look clickable just because they share the card style. */
+.card:not(.click-card):not(a):hover { transform: none; border-color: var(--border); }

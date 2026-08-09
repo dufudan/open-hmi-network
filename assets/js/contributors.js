@@ -29,13 +29,13 @@
 
   function contributorCard(c, contributions) {
     const mine = contributions.filter(item => item.contributor_id === c.id);
-    return `<article class="contributor-card">
+    return `<a class="contributor-card click-card" href="contributor.html?id=${encodeURIComponent(c.id)}">
       <div class="contributor-card-head"><div class="contributor-avatar">${R.esc((c.name || '?').slice(0,1).toUpperCase())}</div><div><h3>${R.esc(c.name)}</h3><p>${R.esc(c.region || '')}</p></div></div>
       <p class="contributor-headline">${R.esc(c.headline || c.bio || '')}</p>
       <div class="tag-row contributor-skills">${skillTags(c.skills)}</div>
       <div class="contributor-stats"><span><strong>${mine.length}</strong> contribution${mine.length === 1 ? '' : 's'}</span><span>${c.available_for_projects ? 'Available for projects' : 'Contribution only'}</span></div>
-      <a class="card-link" href="contributor.html?id=${encodeURIComponent(c.id)}">View Profile →</a>
-    </article>`;
+      <span class="card-link">View Profile →</span>
+    </a>`;
   }
 
   function renderProfile(c, contributions) {

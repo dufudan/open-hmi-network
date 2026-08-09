@@ -71,14 +71,14 @@
   function card(r) {
     const external = /^https?:\/\//i.test(r.url || '');
     const action = r.access === 'request' ? 'Request Access →' : r.access === 'restricted' ? 'Discuss Access →' : external ? (r.source === 'official' ? 'Open Official Resource ↗' : 'Open Resource ↗') : 'Open Resource →';
-    return `<article class="resource-card">
+    return `<a class="resource-card click-card" href="${esc(r.url)}" ${external ? 'target="_blank" rel="noopener"' : ''}>
       <div class="resource-card-meta"><span>${esc(r.vendor)}</span><span>${esc(r.type)}</span></div>
       <h3>${esc(r.title)}</h3>
       <p>${esc(r.description)}</p>
       <div class="resource-card-context">${r.architecture ? `<span>${esc(r.architecture)}</span>` : ''}<span>${esc(r.category)}</span></div>
       <div class="resource-badges">${badge('source', r.source)}${badge('access', r.access)}</div>
-      <a class="resource-link" href="${esc(r.url)}" ${external ? 'target="_blank" rel="noopener"' : ''}>${action}</a>
-    </article>`;
+      <span class="resource-link">${action}</span>
+    </a>`;
   }
 
   function render() {
@@ -100,15 +100,15 @@
     if (!vendorGrid) return;
     const cards = vendors.map(v => {
       const n = resources.filter(r => r.vendor === v.name).length;
-      return `<article class="vendor-card">
+      return `<a class="vendor-card click-card" href="resources.html?vendor=${encodeURIComponent(v.name)}">
         <div class="vendor-card-top"><span class="resource-badge resource-badge-public">Workspace live</span><span>${n} resources</span></div>
         <h3>${esc(v.name)}</h3>
         <p>${esc(v.summary)}</p>
         <div class="vendor-access-note">${esc(v.access_note)}</div>
-        <a class="card-link" href="resources.html?vendor=${encodeURIComponent(v.name)}">Open Workspace →</a>
-      </article>`;
+        <span class="card-link">Open Workspace →</span>
+      </a>`;
     });
-    cards.push(`<article class="vendor-card vendor-card-future"><div class="vendor-card-top"><span class="resource-badge">Multi-vendor ready</span></div><h3>Additional ecosystems</h3><p>New vendor workspaces can use public, open-source, registration, request-access or restricted/NDA delivery models.</p><a class="card-link" href="contribute.html#vendor">Add a vendor workspace →</a></article>`);
+    cards.push(`<a class="vendor-card vendor-card-future click-card" href="contribute.html#vendor"><div class="vendor-card-top"><span class="resource-badge">Multi-vendor ready</span></div><h3>Additional ecosystems</h3><p>New vendor workspaces can use public, open-source, registration, request-access or restricted/NDA delivery models.</p><span class="card-link">Add a vendor workspace →</span></a>`);
     vendorGrid.innerHTML = cards.join('');
   }
 
