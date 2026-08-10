@@ -1,6 +1,6 @@
-# Open HMI Registry
+# OpenHMI Network Registry
 
-The registry is an index, not a code mirror. Contributors keep their repositories and IP. Open HMI Network stores only the metadata needed to make useful HMI work discoverable and connect it to relevant projects.
+The registry is an index, not a code mirror. Contributors keep their repositories and IP. OpenHMI Network stores only the metadata needed to make useful HMI work discoverable and connect it to relevant projects.
 
 ## Add a contributor
 1. Copy `schema/contributor-template.json` to `contributors/<id>.json`.

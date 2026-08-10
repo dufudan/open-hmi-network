@@ -1,4 +1,4 @@
-# Open HMI Network V0.3.6
+# OpenHMI Network V0.3.6
 
 ## Dual entry
 

@@ -1,4 +1,4 @@
-# Open HMI Network — Google Search Console setup
+# OpenHMI Network — Google Search Console setup
 
 ## After uploading v0.3.4
 
@@ -22,7 +22,7 @@
 - self-referencing canonical URLs (important because UTM-tagged links create URL variants)
 - Open Graph and Twitter metadata
 - Organization + WebSite structured data on the home page
-- Article + Breadcrumb structured data on the four Open HMI Guides
+- Article + Breadcrumb structured data on the four OpenHMI Guides
 - `noindex,follow` on utility form/profile-shell pages that are not useful search landing pages
 
 ## Important

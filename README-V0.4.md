@@ -1,4 +1,4 @@
-# Open HMI Network V0.4 — Network Positioning Redesign
+# OpenHMI Network V0.4 — Network Positioning Redesign
 
 Core positioning: **Where HMI Ideas Meet Expertise.**
 

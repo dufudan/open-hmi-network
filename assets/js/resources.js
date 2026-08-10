@@ -17,7 +17,7 @@
   let vendors = [];
 
   const labels = {
-    source: { official: 'Official', 'open-hmi': 'Open HMI', community: 'Community' },
+    source: { official: 'Official', 'open-hmi': 'OpenHMI', community: 'Community' },
     access: { 'open-source': 'Open Source', public: 'Public', registration: 'Registration', request: 'Request Access', restricted: 'Restricted / NDA' }
   };
 

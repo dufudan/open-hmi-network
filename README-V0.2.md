@@ -1,6 +1,6 @@
-# Open HMI Network V0.2 — Architecture Funnel
+# OpenHMI Network V0.2 — Architecture Funnel
 
-This release integrates the former HMI product selector concept into Open HMI Network as an architecture-first funnel.
+This release integrates the former HMI product selector concept into OpenHMI Network as an architecture-first funnel.
 
 ## Main changes
 
@@ -41,3 +41,9 @@ Commit to `main`. GitHub Pages will redeploy automatically.
 4. Click `Request Evaluation Hardware` and verify the application form is prefilled.
 5. Return to the result and click `Discuss This Architecture`; verify the project form carries the selector brief.
 6. Submit both forms and confirm the generated email includes the selector context.
+
+
+## v0.2.8
+- Homepage featured demo cards now use real thumbnail images from the demo videos.
+- Projects page copy refined into more formal case-study style descriptions.
+- Existing compressed demo videos and poster frames retained.

@@ -118,7 +118,7 @@
 
   function issueBody(data) {
     return [
-      '## Open HMI contribution submission',
+      '## OpenHMI Network contribution submission',
       '',
       `**Contributor:** ${data.contributor.name}`,
       `**Region:** ${data.contributor.region || 'Not specified'}`,
@@ -134,7 +134,7 @@
       '### Review notes',
       '- [ ] I own or am authorized to share the linked material.',
       '- [ ] The repository license / access model is accurately described.',
-      '- [ ] I understand that Open HMI indexes the contribution and does not take ownership of my repository or IP.'
+      '- [ ] I understand that OpenHMI Network indexes the contribution and does not take ownership of my repository or IP.'
     ].join('\n');
   }
 
@@ -147,7 +147,7 @@
     const issueUrl = `${repoNewIssue}?title=${encodeURIComponent(`[Contribution] ${data.contribution.title}`)}&body=${encodeURIComponent(body)}`;
     if (submitButton) submitButton.href = issueUrl;
     if (emailLink) {
-      const subject = `Open HMI Contribution: ${data.contribution.title}`;
+      const subject = `OpenHMI Network Contribution: ${data.contribution.title}`;
       emailLink.href = `mailto:project@openhmi.network?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
     if (status) status.textContent = 'Registry entry prepared. Review it below, then submit through GitHub or email.';

@@ -1,4 +1,4 @@
-# Open HMI Network V0.3.1
+# OpenHMI Network V0.3.1
 
 V0.3.1 turns the contributor concept into a working static GitHub-based registry.
 
@@ -19,7 +19,7 @@ This is intentionally an index, not a source-code mirror. The contributor keeps 
 
 ## Contribution workflow
 1. Contributor keeps the demo / guide / integration in their own GitHub repository.
-2. The Open HMI contribution form generates a registry proposal.
+2. The OpenHMI Network contribution form generates a registry proposal.
 3. `Submit via GitHub` opens a review issue in `dufudan/open-hmi-network`.
 4. A maintainer checks ownership, license and publication model.
 5. Accepted metadata is added to `data/registry/`.
@@ -38,4 +38,4 @@ This is intentionally an index, not a source-code mirror. The contributor keeps 
 - `scripts/validate_registry.py` checks JSON references, required fields and allowed values.
 
 ## Seed data
-The three current Open HMI demo cases are registered under the `open-hmi-network` contributor profile so the workflow has a live example from day one.
+The three current OpenHMI Network demo cases are registered under the `open-hmi-network` contributor profile so the workflow has a live example from day one.

@@ -10,7 +10,7 @@
 
   // Campaign attribution --------------------------------------------------
   // Cloudflare Web Analytics intentionally does not store query strings,
-  // so Open HMI keeps lightweight UTM attribution locally and attaches it
+  // so OpenHMI Network keeps lightweight UTM attribution locally and attaches it
   // to inquiry emails. No personal data is stored here.
   const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
   const ATTRIBUTION_KEY = 'openhmi_campaign_attribution_v1';
@@ -326,7 +326,7 @@
       if (!validateMailForm(form)) return;
 
       const recipient = form.dataset.recipient || 'project@openhmi.network';
-      const subject = form.dataset.subject || 'Open HMI Network Project Inquiry';
+      const subject = form.dataset.subject || 'OpenHMI Network Project Inquiry';
       const fd = new FormData(form);
       const grouped = new Map();
       for (const [key, value] of fd.entries()) {
