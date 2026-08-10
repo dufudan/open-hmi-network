@@ -1822,3 +1822,114 @@ body { font-size: 16px; }
     margin: 0;
   }
 }
+
+/* V0.4.3 — focused first screen: less explanation, complete audience choices above the fold */
+.network-home-hero {
+  padding-top: 48px;
+  padding-bottom: 44px;
+  min-height: calc(100vh - 70px);
+}
+.network-home-hero .home-hero-intro {
+  max-width: 1040px;
+}
+.network-home-hero .home-hero-intro > .eyebrow {
+  font-size: clamp(18px, 1.35vw, 22px);
+  line-height: 1.2;
+  letter-spacing: .09em;
+  text-transform: none;
+  font-weight: 850;
+}
+.network-home-hero h1 {
+  max-width: 920px;
+  margin-top: 14px;
+  margin-bottom: 16px;
+  font-size: clamp(48px, 5.25vw, 68px);
+  line-height: .98;
+  letter-spacing: -.05em;
+}
+.network-home-hero .hero-copy {
+  max-width: 900px;
+  margin-top: 0;
+  font-size: clamp(16.5px, 1.3vw, 18px);
+  line-height: 1.55;
+}
+.network-entry-label {
+  margin: 28px 0 14px;
+}
+.network-entry-label strong {
+  font-size: 18px;
+  line-height: 1.25;
+}
+.network-audience-grid {
+  max-width: 1160px;
+  gap: 18px;
+}
+.network-audience-grid .home-audience-card {
+  min-height: 260px;
+  padding: 26px 28px;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+}
+.home-audience-head {
+  grid-template-columns: 38px 1fr;
+  gap: 12px;
+}
+.home-audience-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+}
+.home-audience-head h2 {
+  margin-top: 3px;
+  font-size: clamp(27px, 2.2vw, 31px);
+  line-height: 1.04;
+}
+.home-audience-card > p {
+  margin-top: 15px;
+  max-width: 520px;
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+.home-audience-privacy {
+  margin-top: 9px;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.home-audience-actions {
+  margin-top: auto;
+  padding-top: 18px;
+  gap: 9px;
+}
+.home-audience-actions .btn {
+  min-height: 42px;
+}
+
+@media (max-width: 820px) {
+  .network-home-hero {
+    min-height: auto;
+    padding-top: 38px;
+  }
+  .network-audience-grid .home-audience-card { min-height: auto; }
+}
+@media (max-width: 640px) {
+  .network-home-hero .home-hero-intro > .eyebrow {
+    font-size: 17px;
+    letter-spacing: .07em;
+  }
+  .network-home-hero h1 {
+    margin-top: 12px;
+    margin-bottom: 14px;
+    font-size: clamp(40px, 11vw, 50px);
+  }
+  .network-home-hero .hero-copy {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .network-entry-label { margin-top: 24px; }
+  .network-audience-grid .home-audience-card { padding: 22px; }
+  .home-audience-head { grid-template-columns: 36px 1fr; }
+  .home-audience-icon { width: 36px; height: 36px; }
+  .home-audience-head h2 { font-size: 27px; }
+}
