@@ -2446,3 +2446,53 @@ body { font-size: 16px; }
   .demand-application-grid { grid-template-columns: 1fr; gap: 16px; }
   .application-home-body { padding: 18px 18px 20px; }
 }
+
+
+/* V0.5.3 — simplified buyer-first homepage hero */
+.demand-home-hero {
+  padding: 78px 0 76px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(66,99,235,.09), transparent 34%),
+    linear-gradient(180deg,#fbfcff 0%,#f7f9fc 100%);
+}
+.demand-hero-grid {
+  display: block;
+}
+.demand-hero-copy {
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: center;
+}
+.demand-home-hero h1 {
+  max-width: 880px;
+  margin: 0 auto 22px;
+  font-size: clamp(52px,5.8vw,76px);
+  line-height: .99;
+  letter-spacing: -.052em;
+}
+.demand-home-hero .hero-copy {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 19px;
+  line-height: 1.62;
+}
+.demand-hero-actions {
+  justify-content: center;
+  margin-top: 30px;
+}
+@media (max-width: 640px) {
+  .demand-home-hero { padding: 54px 0 58px; }
+  .demand-hero-copy { text-align: left; }
+  .demand-home-hero h1 {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: clamp(42px,12vw,54px);
+  }
+  .demand-home-hero .hero-copy {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 16.5px;
+  }
+  .demand-hero-actions { justify-content: flex-start; }
+}
