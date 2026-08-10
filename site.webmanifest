@@ -1,0 +1,20 @@
+{
+  "name": "openhmi.network",
+  "short_name": "openhmi.network",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f9fc",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/assets/images/openhmi-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/openhmi-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

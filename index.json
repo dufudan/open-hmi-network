@@ -1,0 +1,12 @@
+{
+  "vendors": [
+    {
+      "id": "artinchip",
+      "name": "ArtInChip",
+      "status": "available",
+      "summary": "Official SDKs, documentation, hardware references, tools and tutorials for embedded HMI development.",
+      "access_note": "Resources are linked according to the access model of the official source. The site does not change vendor licensing or access terms.",
+      "resource_file": "data/resources/artinchip.json"
+    }
+  ]
+}

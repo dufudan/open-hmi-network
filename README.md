@@ -1,4 +1,4 @@
-# OpenHMI Network — Static V0.1
+# openhmi.network — Static V0.1
 
 A zero-monthly-cost static rebuild of the Framer prototype.
 

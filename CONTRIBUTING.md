@@ -1,6 +1,6 @@
-# Contributing to OpenHMI Network
+# Contributing to openhmi.network
 
-OpenHMI Network is a discovery, reputation and project-connection layer for embedded HMI work. Your repository, source code and IP stay yours. GitHub is optional.
+openhmi.network is a discovery, reputation and project-connection layer for embedded HMI work. Your repository, source code and IP stay yours. GitHub is optional.
 
 ## Easiest path: Share Your Work
 
@@ -8,9 +8,9 @@ OpenHMI Network is a discovery, reputation and project-connection layer for embe
 2. Choose how you want to appear publicly: **Full Name**, **Alias / Handle**, or **Anonymous**.
 3. Add one public link to useful work. This can be a GitHub repository, YouTube demo, LinkedIn post, personal site, documentation page or existing demo page.
 4. Add a short description and choose whether you are available for project inquiries.
-5. Send the submission to OpenHMI Network for review.
+5. Send the submission to Open HMI for review.
 
-OpenHMI Network can organize the metadata after review. A contributor does not need to understand the registry format or create a Pull Request to get started.
+openhmi.network can organize the metadata after review. A contributor does not need to understand the registry format or create a Pull Request to get started.
 
 Private contact details are used for review and are not published by default. Employment or company affiliation is not implied unless the contributor explicitly asks for it to be shown.
 
@@ -35,10 +35,10 @@ The registry validation workflow checks JSON syntax, required fields and referen
 
 Where applicable, contributors can receive attribution, featured placement, contributor-profile visibility, relevant project introductions and sponsored ecosystem opportunities. Publication does not guarantee project allocation or payment.
 
-Contributors may also choose **Via OpenHMI Network only** for project availability so personal contact details remain private.
+Contributors may also choose **Through the network only** for project availability so personal contact details remain private.
 
 ## Ownership and confidentiality
 
-Submitting metadata or links to OpenHMI Network does not transfer ownership of the linked repository, video, code, documentation, trademarks or other IP. Contributors must have the right to share the material and must accurately describe any license or vendor/project restrictions.
+Submitting metadata or links to Open HMI does not transfer ownership of the linked repository, video, code, documentation, trademarks or other IP. Contributors must have the right to share the material and must accurately describe any license or vendor/project restrictions.
 
 Do not submit confidential customer names, NDA material or employer-owned source code without permission.
