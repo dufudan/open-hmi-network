@@ -1747,3 +1747,78 @@ body { font-size: 16px; }
   .guide-hero h1 { font-size: clamp(36px, 10vw, 48px); }
   .btn { font-size: 14.5px; }
 }
+
+
+/* V0.4.2 — homepage brand hierarchy + non-interactive scope affordance */
+.network-home-hero .home-hero-intro > .eyebrow {
+  font-size: clamp(17px, 1.18vw, 20px);
+  line-height: 1.25;
+  letter-spacing: .125em;
+  font-weight: 850;
+}
+
+/* Scope is descriptive text, not a row of controls. */
+.home-hero-scope {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin-top: 25px;
+  color: #667085;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+.home-hero-scope span {
+  display: inline;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: inherit;
+  font-size: inherit;
+  font-weight: 650;
+  cursor: default;
+}
+.home-hero-scope span:not(:last-child)::after {
+  content: "·";
+  margin: 0 11px;
+  color: #b1bac8;
+  font-weight: 800;
+}
+.home-hero-scope .home-hero-scope-label {
+  color: #344054;
+  font-weight: 800;
+}
+.home-hero-scope .home-hero-scope-label::after {
+  content: ":";
+  margin-left: 2px;
+  margin-right: 12px;
+  color: #98a2b3;
+}
+
+@media (max-width: 640px) {
+  .network-home-hero .home-hero-intro > .eyebrow {
+    font-size: 15.5px;
+    letter-spacing: .11em;
+  }
+  .home-hero-scope {
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12.75px;
+    row-gap: 5px;
+  }
+  .home-hero-scope span:not(:last-child)::after { margin: 0 8px; }
+  .home-hero-scope .home-hero-scope-label {
+    flex-basis: 100%;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .home-hero-scope .home-hero-scope-label::after {
+    content: "";
+    margin: 0;
+  }
+}
