@@ -1641,3 +1641,109 @@ button, input, select, textarea { font: inherit; }
   .home-dual-panel { padding: 28px 24px; }
   .home-dual-actions .btn, .expertise-home-actions .btn { width: 100%; }
 }
+
+/* V0.4.1 — typography balance and hierarchy audit */
+/* Display sizes are intentionally restrained so labels, body copy and actions stay legible. */
+body { font-size: 16px; }
+
+/* Global hierarchy */
+.brand span:last-child { font-size: 16px; letter-spacing: -.01em; }
+.eyebrow { font-size: 13px; line-height: 1.35; letter-spacing: .13em; }
+.mini-label { font-size: 12px; line-height: 1.4; letter-spacing: .105em; }
+.section-title { font-size: clamp(32px, 3.5vw, 48px); line-height: 1.06; letter-spacing: -.032em; }
+.section-copy { font-size: 17px; line-height: 1.65; }
+.page-hero h1 { font-size: clamp(40px, 5.2vw, 60px); line-height: 1.02; letter-spacing: -.045em; }
+.page-hero .section-copy { font-size: 18px; line-height: 1.65; }
+.nav-links { font-size: 14px; }
+.btn { font-size: 15px; }
+
+/* Cards: keep titles clearly above metadata without over-scaling. */
+.card-num,
+.project-kicker,
+.project-id,
+.access-card .label,
+.hardware-layer-label { font-size: 12.5px; line-height: 1.35; }
+.card h3 { font-size: 21px; line-height: 1.18; }
+.card-link { font-size: 14px; }
+.spec { font-size: 14.5px; line-height: 1.55; }
+.tag { font-size: 12.5px; }
+
+/* Homepage brand statement: slogan remains dominant, but not overwhelmingly so. */
+.network-home-hero { padding-top: 66px; }
+.network-home-hero .home-hero-intro > .eyebrow {
+  font-size: 14px;
+  line-height: 1.3;
+  letter-spacing: .14em;
+}
+.network-home-hero h1 {
+  font-size: clamp(48px, 5.6vw, 72px);
+  line-height: .99;
+  letter-spacing: -.052em;
+  margin-top: 18px;
+  margin-bottom: 24px;
+  max-width: 900px;
+}
+.network-home-hero .hero-copy {
+  max-width: 820px;
+  font-size: clamp(17px, 1.45vw, 19px);
+  line-height: 1.65;
+}
+.home-hero-scope { margin-top: 24px; }
+.home-hero-scope span { min-height: 35px; padding-inline: 13px; font-size: 12.5px; }
+.network-entry-label { margin-top: 44px; gap: 12px; }
+.network-entry-label span { font-size: 12px; line-height: 1.35; letter-spacing: .12em; }
+.network-entry-label strong { font-size: 18px; line-height: 1.35; }
+.home-audience-head h2 {
+  font-size: clamp(25px, 2.35vw, 32px);
+  line-height: 1.08;
+  letter-spacing: -.034em;
+}
+.home-audience-card > p { font-size: 16px; line-height: 1.6; }
+.home-audience-points span { font-size: 12.5px; }
+
+/* Secondary hero / guide hierarchy */
+.hero h1 { font-size: clamp(44px, 5.3vw, 66px); line-height: 1; letter-spacing: -.048em; }
+.hero-copy { font-size: 18px; line-height: 1.65; }
+.guide-hero h1 { font-size: clamp(38px, 5.3vw, 64px); line-height: 1; letter-spacing: -.048em; }
+.guide-hero > .container > p,
+.guide-hero-inner > p { font-size: 18px; line-height: 1.65; }
+.guide-article p { font-size: 17px; line-height: 1.78; }
+.guide-article .guide-lead { font-size: 19px; line-height: 1.7; }
+.guide-article h2 { font-size: 30px; line-height: 1.15; }
+
+/* Resource / contributor / form areas: lift tiny functional text slightly. */
+.resource-card-meta,
+.resource-toolbar label > span,
+.community-card-top,
+.community-meta span,
+.guide-stack span,
+.contributor-flow span { font-size: 11.5px; }
+.resource-card h3 { font-size: 20px; line-height: 1.2; }
+.resource-card > p { font-size: 14.5px; line-height: 1.6; }
+.field label { font-size: 13.5px; }
+.form-note { font-size: 13.5px; line-height: 1.55; }
+.footer h4 { font-size: 13.5px; }
+.footer-links { font-size: 14px; }
+.footer-brand-note,
+.footer-bottom { font-size: 13px; line-height: 1.55; }
+
+/* Tablet / compact desktop navigation keeps readability before collapsing. */
+@media (max-width: 1120px) and (min-width: 981px) {
+  .nav-links { font-size: 13.5px; }
+}
+
+/* Mobile: reduce display contrast without shrinking supporting text too far. */
+@media (max-width: 640px) {
+  .brand span:last-child { font-size: 15px; }
+  .eyebrow { font-size: 12.5px; }
+  .section-title { font-size: clamp(30px, 9vw, 40px); }
+  .section-copy { font-size: 16px; }
+  .network-home-hero { padding-top: 48px; }
+  .network-home-hero .home-hero-intro > .eyebrow { font-size: 13px; }
+  .network-home-hero h1 { font-size: clamp(42px, 12vw, 54px); line-height: 1; }
+  .network-home-hero .hero-copy { font-size: 16.5px; line-height: 1.62; }
+  .home-audience-head h2 { font-size: clamp(25px, 8vw, 30px); }
+  .page-hero h1 { font-size: clamp(38px, 11vw, 50px); }
+  .guide-hero h1 { font-size: clamp(36px, 10vw, 48px); }
+  .btn { font-size: 14.5px; }
+}
