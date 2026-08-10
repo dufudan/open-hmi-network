@@ -10,7 +10,7 @@
 
   // Campaign attribution --------------------------------------------------
   // Cloudflare Web Analytics intentionally does not store query strings,
-  // so OpenHMI Network keeps lightweight UTM attribution locally and attaches it
+  // so openhmi.network keeps lightweight UTM attribution locally and attaches it
   // to inquiry emails. No personal data is stored here.
   const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
   const ATTRIBUTION_KEY = 'openhmi_campaign_attribution_v1';
@@ -195,6 +195,17 @@
   }
 
 
+  // Demand solution landing pages -----------------------------------------
+  if (params.get('source') === 'solution') {
+    const solution = (params.get('solution') || '').trim();
+    document.querySelectorAll('[data-mail-form][data-recipient="project@openhmi.network"]').forEach(form => {
+      addHidden(form, 'Inquiry Source', 'Solution landing page');
+      addHidden(form, 'Solution / Application', solution);
+      const summary = form.elements['Project Summary'];
+      if (summary && !summary.value && solution) summary.value = `Application: ${solution}\n`;
+    });
+  }
+
   // Hardware stack focus --------------------------------------------------
   const hardwareFocusMap = {
     'compute': 'Compute',
@@ -326,7 +337,7 @@
       if (!validateMailForm(form)) return;
 
       const recipient = form.dataset.recipient || 'project@openhmi.network';
-      const subject = form.dataset.subject || 'OpenHMI Network Project Inquiry';
+      const subject = form.dataset.subject || 'openhmi.network Project Inquiry';
       const fd = new FormData(form);
       const grouped = new Map();
       for (const [key, value] of fd.entries()) {
