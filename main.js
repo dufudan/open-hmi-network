@@ -195,6 +195,17 @@
   }
 
 
+  // Demand solution landing pages -----------------------------------------
+  if (params.get('source') === 'solution') {
+    const solution = (params.get('solution') || '').trim();
+    document.querySelectorAll('[data-mail-form][data-recipient="project@openhmi.network"]').forEach(form => {
+      addHidden(form, 'Inquiry Source', 'Solution landing page');
+      addHidden(form, 'Solution / Application', solution);
+      const summary = form.elements['Project Summary'];
+      if (summary && !summary.value && solution) summary.value = `Application: ${solution}\n`;
+    });
+  }
+
   // Hardware stack focus --------------------------------------------------
   const hardwareFocusMap = {
     'compute': 'Compute',
