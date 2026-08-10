@@ -45,3 +45,9 @@ The three homepage projects are labeled as **Reference Application Concepts** so
 
 ## V0.3
 Adds a multi-vendor Developer Resources hub and contributor ecosystem. See `README-V0.3.md` for the data model, vendor-workspace structure and contributor model.
+
+## V0.3.1
+Adds the GitHub-backed contributor registry, contributor directory/profile pages, contribution metadata generator, GitHub review flow and registry validation. See `README-V0.3.1.md`.
+
+## V0.4.5
+Adds multi-search-engine indexing support with IndexNow automation plus Bing, Yandex and Baidu setup guidance. See `README-V0.4.5.md` and `MULTI-SEARCH-ENGINE-SETUP.md`.
