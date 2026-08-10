@@ -15,8 +15,33 @@
   <link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-<link rel="stylesheet" href="assets/css/styles.css?v=047"></head><body>
-<header class="nav-wrap"><div class="container nav"><a class="brand" href="index.html"><span class="brand-mark"></span><span>openhmi.network</span></a><button class="menu-btn" data-menu aria-label="Toggle menu">Menu</button><nav class="nav-links" data-nav-links><a href="selector.html">Find HMI</a><a class="nav-active" href="hardware.html">Hardware</a><a href="resources.html">Developer Hub</a><a href="partners.html">Engineering</a><a href="projects.html">Demos</a><a href="contributors.html">Contributors</a><a class="btn btn-primary" href="submit-project.html">Discuss Your Project</a></nav></div></header>
+<link rel="stylesheet" href="assets/css/styles.css?v=050"></head><body>
+<header class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="openhmi.network home"><span class="brand-mark"></span><span>openhmi.network</span></a>
+      <button class="menu-btn" data-menu aria-label="Toggle menu" aria-expanded="false">Menu</button>
+      <nav class="nav-links" data-nav-links aria-label="Primary navigation">
+        <a class="nav-main-link" href="index.html#applications">Solutions</a>
+        <a class="nav-main-link" href="selector.html">HMI Selector</a>
+        <details class="nav-dropdown nav-active">
+          <summary>Build Resources <span class="nav-chevron" aria-hidden="true">⌄</span></summary>
+          <div class="nav-dropdown-menu">
+            <a href="hardware.html"><strong>Hardware</strong><span>Compute · display · touch · connectivity</span></a>
+            <a href="resources.html"><strong>Developer Resources</strong><span>SDKs · docs · tools · HMI guides</span></a>
+            <a href="partners.html"><strong>Engineering Support</strong><span>GUI · BSP · Linux · integration</span></a>
+          </div>
+        </details>
+        <details class="nav-dropdown">
+          <summary>Demos &amp; Experts <span class="nav-chevron" aria-hidden="true">⌄</span></summary>
+          <div class="nav-dropdown-menu nav-dropdown-menu-compact">
+            <a href="projects.html"><strong>HMI Demos</strong><span>Real interfaces and reference implementations</span></a>
+            <a href="contributors.html"><strong>HMI Expertise</strong><span>Developers, partners and proven capabilities</span></a>
+          </div>
+        </details>
+        <a class="btn btn-primary" href="submit-project.html">Discuss Your Project</a>
+      </nav>
+    </div>
+  </header>
 <main>
 <section class="page-hero"><div class="container"><div class="eyebrow">02 Evaluate · Hardware</div><h1>Evaluate the physical HMI platform.</h1><p class="section-copy">Start with the architecture, then match compute, display and touch, memory, and connectivity for evaluation and production.</p><div class="page-actions"><a class="btn btn-primary" href="hardware-application.html">Request Hardware →</a><a class="btn btn-secondary" href="selector.html">Not sure? Start Selector</a></div></div></section>
 
@@ -60,7 +85,17 @@
 </div></section>
 
 <section class="section--tight"><div class="container"><div class="cta"><div><div class="eyebrow">Matched configuration</div><h2>One project, one practical hardware stack.</h2><p>Share the application, display, software, interfaces and project stage. We’ll use that context to narrow the evaluation path instead of pushing a fixed component list.</p></div><a class="btn btn-dark" href="hardware-application.html">Request Configuration →</a></div></div></section>
-</main><script src="assets/js/main.js?v=036"></script><!-- Cloudflare Web Analytics -->
+</main><footer class="footer">
+    <div class="container">
+      <div class="footer-grid footer-grid-demand">
+        <div><a class="brand" href="index.html"><span class="brand-mark"></span><span>openhmi.network</span></a><p>Where HMI Ideas Meet Expertise.</p><p class="footer-brand-note">An open HMI network for embedded product development.</p></div>
+        <div><h4>Explore</h4><div class="footer-links"><a href="index.html#applications">Solutions</a><a href="selector.html">HMI Selector</a><a href="hardware.html">Hardware</a><a href="resources.html">Developer Resources</a></div></div>
+        <div><h4>Proof &amp; support</h4><div class="footer-links"><a href="projects.html">HMI Demos</a><a href="contributors.html">HMI Expertise</a><a href="partners.html">Engineering Support</a><a href="submit-project.html">Discuss Your Project</a></div></div>
+      </div>
+      <div class="footer-access-row"><span>Developer or engineering partner?</span><a href="contribute.html">Contributor Access →</a></div>
+      <div class="footer-bottom"><span>© 2026 openhmi.network</span><span>Find → Evaluate → Build → Scale</span></div>
+    </div>
+  </footer><script src="assets/js/main.js?v=050"></script><!-- Cloudflare Web Analytics -->
 <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2225a1474800498ebd3f45242de300e6"}'></script>
 <!-- End Cloudflare Web Analytics -->
 </body></html>

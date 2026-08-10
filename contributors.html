@@ -21,19 +21,44 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?v=047" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=050" />
 </head>
 <body>
-<header class="nav-wrap"><div class="container nav"><a class="brand" href="index.html"><span class="brand-mark"></span><span>openhmi.network</span></a><button class="menu-btn" data-menu aria-label="Toggle menu">Menu</button><nav class="nav-links" data-nav-links><a href="selector.html">Find HMI</a><a href="hardware.html">Hardware</a><a href="resources.html">Developer Hub</a><a href="partners.html">Engineering</a><a href="projects.html">Demos</a><a class="nav-active" href="contributors.html">Contributors</a><a class="btn btn-primary" href="submit-project.html">Discuss Your Project</a></nav></div></header>
+<header class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="openhmi.network home"><span class="brand-mark"></span><span>openhmi.network</span></a>
+      <button class="menu-btn" data-menu aria-label="Toggle menu" aria-expanded="false">Menu</button>
+      <nav class="nav-links" data-nav-links aria-label="Primary navigation">
+        <a class="nav-main-link" href="index.html#applications">Solutions</a>
+        <a class="nav-main-link" href="selector.html">HMI Selector</a>
+        <details class="nav-dropdown">
+          <summary>Build Resources <span class="nav-chevron" aria-hidden="true">⌄</span></summary>
+          <div class="nav-dropdown-menu">
+            <a href="hardware.html"><strong>Hardware</strong><span>Compute · display · touch · connectivity</span></a>
+            <a href="resources.html"><strong>Developer Resources</strong><span>SDKs · docs · tools · HMI guides</span></a>
+            <a href="partners.html"><strong>Engineering Support</strong><span>GUI · BSP · Linux · integration</span></a>
+          </div>
+        </details>
+        <details class="nav-dropdown nav-active">
+          <summary>Demos &amp; Experts <span class="nav-chevron" aria-hidden="true">⌄</span></summary>
+          <div class="nav-dropdown-menu nav-dropdown-menu-compact">
+            <a href="projects.html"><strong>HMI Demos</strong><span>Real interfaces and reference implementations</span></a>
+            <a href="contributors.html"><strong>HMI Expertise</strong><span>Developers, partners and proven capabilities</span></a>
+          </div>
+        </details>
+        <a class="btn btn-primary" href="submit-project.html">Discuss Your Project</a>
+      </nav>
+    </div>
+  </header>
 <main>
   <section class="page-hero contributor-directory-hero">
     <div class="container contributor-hero-grid">
-      <div><div class="eyebrow">HMI Expertise Network</div><h1>Find HMI expertise. Or make yours discoverable.</h1><p class="section-copy">OpenHMI connects product teams with developers and technical partners through published work: demos, guides, integrations and reference solutions that show what someone can actually build.</p><div class="page-actions"><a class="btn btn-primary" href="#directory">Explore HMI Expertise →</a><a class="btn btn-secondary" href="contribute.html">Share Your Work</a></div></div>
+      <div><div class="eyebrow">HMI Expertise Network</div><h1>Find HMI expertise through real work.</h1><p class="section-copy">Evaluate developers and technical partners through published work: demos, guides, integrations and reference solutions that show what someone can actually build.</p><div class="page-actions"><a class="btn btn-primary" href="#directory">Explore HMI Expertise →</a><a class="btn btn-secondary" href="submit-project.html">Discuss Your Project</a></div></div>
       <aside class="contributor-principle"><div class="mini-label">How capability is shown</div><strong>Published work is the proof.</strong><p>Product teams can evaluate practical HMI experience; contributors keep ownership and choose whether to appear by name, alias or anonymously.</p></aside>
     </div>
   </section>
 
-  <section class="section--tight contributor-directory-benefits"><div class="container"><div class="eyebrow">Where ideas meet expertise</div><h2 class="section-title">A directory built around useful work.</h2><div class="grid-3"><article class="card"><div class="card-num">FOR PRODUCT TEAMS</div><h3>Evaluate real capability</h3><p>Use demos, integrations and guides to understand practical HMI experience before starting a conversation.</p></article><article class="card"><div class="card-num">FOR CONTRIBUTORS</div><h3>Build visible proof</h3><p>One useful contribution can become a profile; repeated work can grow into verified contributor or maintainer status.</p></article><article class="card"><div class="card-num">FOR PROJECTS</div><h3>Connect when relevant</h3><p>Contributors can opt into inquiries through the network without publishing private contact information.</p></article></div></div></section>
+  <section class="section--tight contributor-directory-benefits"><div class="container"><div class="eyebrow">Where ideas meet expertise</div><h2 class="section-title">A directory built around useful work.</h2><div class="grid-3"><article class="card"><div class="card-num">PUBLISHED WORK</div><h3>Evaluate real capability</h3><p>Use demos, integrations and guides to understand practical HMI experience before starting a conversation.</p></article><article class="card"><div class="card-num">TECHNICAL FIT</div><h3>Match the capability</h3><p>Look across GUI, firmware, Linux, BSP and product integration experience instead of relying on generic profile claims.</p></article><article class="card"><div class="card-num">PROJECT CONNECTION</div><h3>Bring in expertise when relevant</h3><p>Use a short project brief to connect the requirement with suitable engineering capability while keeping private contact details controlled.</p></article></div></div></section>
 
   <section class="section--tight" id="directory">
     <div class="container">
@@ -43,11 +68,21 @@
   </section>
 
   <section class="section--tight">
-    <div class="container"><div class="cta"><div><div class="eyebrow">Want to be listed?</div><h2>One useful link is enough to start.</h2><p>Share a GitHub project, video, article, demo page or integration. GitHub is optional, and you choose how you are identified publicly.</p></div><a class="btn btn-dark" href="contribute.html">Share Your Work →</a></div></div>
+    <div class="container"><div class="cta"><div><div class="eyebrow">Need HMI engineering support?</div><h2>Start with the capability you need.</h2><p>Share a short project brief and use the expertise network, reference demos and platform resources to identify the right next step.</p></div><a class="btn btn-dark" href="submit-project.html">Discuss Your Project →</a></div></div>
   </section>
 </main>
-<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark"></span><span>openhmi.network</span></a><p>Where HMI Ideas Meet Expertise.</p></div><div><h4>Community</h4><div class="footer-links"><a href="contributors.html">Contributors</a><a href="contribute.html">Share Your Work</a><a href="resources.html">Developer Hub</a></div></div><div><h4>Start</h4><div class="footer-links"><a href="selector.html">HMI Selector</a><a href="submit-project.html">Discuss Your Project</a></div></div></div><div class="footer-bottom"><span>© 2026 openhmi.network</span><span>Contribute → Get discovered → Win projects</span></div></div></footer>
-<script src="assets/js/main.js?v=036"></script>
+<footer class="footer">
+    <div class="container">
+      <div class="footer-grid footer-grid-demand">
+        <div><a class="brand" href="index.html"><span class="brand-mark"></span><span>openhmi.network</span></a><p>Where HMI Ideas Meet Expertise.</p><p class="footer-brand-note">An open HMI network for embedded product development.</p></div>
+        <div><h4>Explore</h4><div class="footer-links"><a href="index.html#applications">Solutions</a><a href="selector.html">HMI Selector</a><a href="hardware.html">Hardware</a><a href="resources.html">Developer Resources</a></div></div>
+        <div><h4>Proof &amp; support</h4><div class="footer-links"><a href="projects.html">HMI Demos</a><a href="contributors.html">HMI Expertise</a><a href="partners.html">Engineering Support</a><a href="submit-project.html">Discuss Your Project</a></div></div>
+      </div>
+      <div class="footer-access-row"><span>Developer or engineering partner?</span><a href="contribute.html">Contributor Access →</a></div>
+      <div class="footer-bottom"><span>© 2026 openhmi.network</span><span>Find → Evaluate → Build → Scale</span></div>
+    </div>
+  </footer>
+<script src="assets/js/main.js?v=050"></script>
 <script src="assets/js/registry.js?v=031"></script>
 <script src="assets/js/contributors.js?v=0343"></script>
 <!-- Cloudflare Web Analytics -->
