@@ -1,0 +1,68 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*.html'
+      - 'guides/**/*.html'
+      - 'data/registry/**/*.json'
+      - 'data/resources/**/*.json'
+      - 'data/vendors/**/*.json'
+      - 'sitemap.xml'
+      - 'robots.txt'
+      - '.github/workflows/indexnow.yml'
+      - 'scripts/indexnow_submit.py'
+      - '076a019de67eb38a409c5f44faf20761.txt'
+  workflow_dispatch:
+    inputs:
+      submit_all:
+        description: 'Submit all URLs currently listed in sitemap.xml'
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Wait briefly for GitHub Pages deployment
+        shell: bash
+        run: |
+          sleep 60
+
+      - name: Confirm IndexNow key is public
+        shell: bash
+        run: |
+          set -e
+          URL="https://openhmi.network/076a019de67eb38a409c5f44faf20761.txt"
+          echo "Checking $URL"
+          for i in {1..18}; do
+            if curl -fsS "$URL" | grep -qx '076a019de67eb38a409c5f44faf20761'; then
+              echo "IndexNow key is public."
+              exit 0
+            fi
+            echo "Waiting for GitHub Pages deployment... ($i/18)"
+            sleep 10
+          done
+          echo "IndexNow key file is not publicly readable yet."
+          exit 1
+
+      - name: Submit changed URLs
+        if: github.event_name == 'push'
+        run: python scripts/indexnow_submit.py --base "${{ github.event.before }}" --head "${{ github.sha }}"
+
+      - name: Submit all sitemap URLs
+        if: github.event_name == 'workflow_dispatch' && inputs.submit_all
+        run: python scripts/indexnow_submit.py --all
