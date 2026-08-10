@@ -4,8 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - '*.html'
-      - 'guides/**/*.html'
+      - '**/*.html'
       - 'data/registry/**/*.json'
       - 'data/resources/**/*.json'
       - 'data/vendors/**/*.json'
@@ -29,17 +28,18 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 2
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.x'
 
       - name: Wait briefly for GitHub Pages deployment
         shell: bash
         run: |
+          # GitHub Pages deploys asynchronously from the same push.
           sleep 60
 
       - name: Confirm IndexNow key is public
