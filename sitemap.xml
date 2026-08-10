@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://openhmi.network/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-11</lastmod>
   </url>
   <url>
     <loc>https://openhmi.network/selector.html</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-11</lastmod>
   </url>
   <url>
     <loc>https://openhmi.network/hardware.html</loc>
@@ -57,19 +57,27 @@
     <lastmod>2026-08-10</lastmod>
   </url>
   <url>
-    <loc>https://openhmi.network/solutions/industrial-hmi.html</loc>
-    <lastmod>2026-08-10</lastmod>
+    <loc>https://openhmi.network/solutions/off-highway-mobile-machinery-hmi.html</loc>
+    <lastmod>2026-08-11</lastmod>
   </url>
   <url>
-    <loc>https://openhmi.network/solutions/smart-appliance-hmi.html</loc>
-    <lastmod>2026-08-10</lastmod>
+    <loc>https://openhmi.network/solutions/two-wheeler-light-ev-hmi.html</loc>
+    <lastmod>2026-08-11</lastmod>
   </url>
   <url>
-    <loc>https://openhmi.network/solutions/instrumentation-hmi.html</loc>
-    <lastmod>2026-08-10</lastmod>
+    <loc>https://openhmi.network/solutions/industrial-equipment-instrumentation-hmi.html</loc>
+    <lastmod>2026-08-11</lastmod>
   </url>
   <url>
-    <loc>https://openhmi.network/solutions/agricultural-equipment-hmi.html</loc>
-    <lastmod>2026-08-10</lastmod>
+    <loc>https://openhmi.network/solutions/medical-healthcare-devices-hmi.html</loc>
+    <lastmod>2026-08-11</lastmod>
+  </url>
+  <url>
+    <loc>https://openhmi.network/solutions/smart-appliances-consumer-electronics-hmi.html</loc>
+    <lastmod>2026-08-11</lastmod>
+  </url>
+  <url>
+    <loc>https://openhmi.network/solutions/energy-charging-equipment-hmi.html</loc>
+    <lastmod>2026-08-11</lastmod>
   </url>
 </urlset>

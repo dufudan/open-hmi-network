@@ -53,11 +53,22 @@
       item.classList.toggle('active', n === step);
       item.classList.toggle('done', n < step);
     });
-    backBtn.disabled = step === 1;
-    backBtn.hidden = step === 1;
-    nextBtn.hidden = step === steps.length;
-    finishBtn.hidden = step !== steps.length;
-    finishBtn.disabled = false;
+    const isFirst = step === 1;
+    const isFinal = step === steps.length;
+
+    backBtn.disabled = isFirst;
+    backBtn.hidden = isFirst;
+    backBtn.style.display = isFirst ? 'none' : 'inline-flex';
+
+    // Do not rely on the hidden attribute alone here. Shared button styles and
+    // stale browser caches can otherwise leave Continue visible on the last step.
+    nextBtn.hidden = isFinal;
+    nextBtn.disabled = isFinal;
+    nextBtn.style.display = isFinal ? 'none' : 'inline-flex';
+
+    finishBtn.hidden = !isFinal;
+    finishBtn.disabled = !isFinal;
+    finishBtn.style.display = isFinal ? 'inline-flex' : 'none';
 
     progressItems.forEach(item => {
       const n = Number(item.dataset.progressStep);
@@ -165,9 +176,13 @@
     if (conn.has('Wi-Fi / BLE')) { s.compact += 5; s.performance += 7; s.linux += 8; }
     if (conn.has('CAN') || conn.has('UART / RS485')) { s.compact += 8; s.performance += 6; }
 
-    if (d.application === 'AI / Vision') s.edge += 32;
-    if (d.application === 'Smart appliance') { s.serial += 7; s.compact += 10; }
-    if (d.application === 'Industrial equipment' || d.application === 'EV / Energy' || d.application === 'Medical / Instrumentation') { s.compact += 8; s.performance += 8; s.linux += 5; }
+    // Application is a light prior only. UI, OS, display and I/O remain the stronger signals.
+    if (d.application === 'Off-Highway & Mobile Machinery') { s.compact += 10; s.performance += 10; s.linux += 4; }
+    if (d.application === 'Two-Wheeler & Light EV') { s.compact += 10; s.performance += 12; s.linux += 3; }
+    if (d.application === 'Industrial Equipment & Instrumentation') { s.compact += 8; s.performance += 10; s.linux += 6; }
+    if (d.application === 'Medical & Healthcare Devices') { s.compact += 6; s.performance += 8; s.linux += 8; }
+    if (d.application === 'Smart Appliances & Consumer Electronics') { s.serial += 7; s.compact += 10; s.performance += 4; }
+    if (d.application === 'Energy & Charging Equipment') { s.compact += 8; s.performance += 10; s.linux += 6; }
 
     if (d.lifecycle.startsWith('Lowest BOM')) { s.serial += 10; s.compact += 10; }
     if (d.lifecycle.startsWith('Performance headroom')) { s.performance += 12; s.linux += 12; s.edge += 10; }
