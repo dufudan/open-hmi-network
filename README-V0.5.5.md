@@ -1,14 +1,15 @@
-# V0.5.5 — AI-assisted Prototype Path
+# V0.5.5 — Buyer Path Homepage Upgrade
 
-A minimal buyer-facing update that introduces AI-assisted prototyping without changing the website information architecture or implying a fully automated AI assistant is already available.
+This release keeps the existing navigation and refines the homepage around buyer intent.
 
 ## Changes
+- Hero value proposition broadened beyond architecture discovery to idea-to-validated-product support.
+- Primary hero CTA now jumps to a new buyer-intent path selector.
+- Added three clear paths:
+  1. Build My HMI — for early concepts that need engineering expertise.
+  2. Explore & Build — for teams that want to evaluate and develop themselves.
+  3. Optimize My HMI — for existing HMIs that need improvement.
+- Each path uses UTM attribution so project inquiries can be distinguished in lead emails.
+- Existing navigation dropdowns and six application solution cards remain unchanged.
 
-- Homepage hero: adds a compact message that AI-assisted prototyping can validate UI/workflow before custom hardware.
-- Homepage project path: updates **Evaluate** to include AI-assisted PC prototype validation.
-- HMI Selector result: adds a lightweight **Validate before custom hardware** path:
-  `UI concept → AI-assisted prototype → PC validation → Reference hardware`
-- Prototype CTA reuses the existing project discussion form; no new workflow, backend, navigation item or AI product page is introduced.
-- Shared CSS cache query updated to `v=055` on the two modified pages.
-
-This version intentionally keeps AI as an enabling workflow, not a standalone site product.
+Homepage stylesheet cache key: `v=055`.
