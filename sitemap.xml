@@ -80,4 +80,7 @@
     <loc>https://openhmi.network/solutions/energy-charging-equipment-hmi.html</loc>
     <lastmod>2026-08-11</lastmod>
   </url>
+  <url><loc>https://openhmi.network/modules.html</loc></url>
+  <url><loc>https://openhmi.network/modules/a733-android-hmi-module.html</loc></url>
+  <url><loc>https://openhmi.network/modules/unisoc-sl8541e-4g-android-hmi-module.html</loc></url>
 </urlset>

@@ -215,6 +215,20 @@
   }
 
 
+  // HMI module request context --------------------------------------------
+  const moduleRequestMap = {
+    'a733': 'A733 Android / Linux HMI SOM',
+    'sl8541e': 'UNISOC 8541E 4G Android HMI Platform',
+    'custom': 'Need a different module'
+  };
+  const requestedModule = moduleRequestMap[params.get('module') || ''];
+  if (requestedModule) {
+    document.querySelectorAll('[data-mail-form][data-recipient="hardware@openhmi.network"]').forEach(form => {
+      setField(form, 'Reference Module', requestedModule);
+      addHidden(form, 'Module Inquiry Source', 'HMI Modules');
+    });
+  }
+
   // Demand solution landing pages -----------------------------------------
   if (params.get('source') === 'solution') {
     const solution = (params.get('solution') || '').trim();
