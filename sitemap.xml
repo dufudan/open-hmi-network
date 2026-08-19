@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://openhmi.network/projects.html</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-20</lastmod>
   </url>
   <url>
     <loc>https://openhmi.network/software.html</loc>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://openhmi.network/contributors.html</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-20</lastmod>
   </url>
   <url>
     <loc>https://openhmi.network/contribute.html</loc>
@@ -83,4 +83,8 @@
   <url><loc>https://openhmi.network/modules.html</loc></url>
   <url><loc>https://openhmi.network/modules/a733-android-hmi-module.html</loc></url>
   <url><loc>https://openhmi.network/modules/unisoc-sl8541e-4g-android-hmi-module.html</loc></url>
+  <url>
+    <loc>https://openhmi.network/demos/janos-touch-ui-demo.html</loc>
+    <lastmod>2026-08-20</lastmod>
+  </url>
 </urlset>

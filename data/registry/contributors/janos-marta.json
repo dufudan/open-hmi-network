@@ -1,0 +1,19 @@
+{
+  "id": "janos-marta",
+  "name": "János Márta",
+  "headline": "Embedded UI / LVGL contributor · OrbitMenu",
+  "bio": "Contributor behind OrbitMenu, a reusable LVGL touch-selection control validated on ArtInChip hardware.",
+  "skills": [
+    "Reusable UI Controls",
+    "OrbitMenu",
+    "ArtInChip D133CBS",
+    "LVGL 9",
+    "Embedded UI",
+    "Touch Interaction",
+    "UI Prototyping",
+    "Hardware Validation"
+  ],
+  "linkedin_url": "https://www.linkedin.com/in/thejohnnymarta/",
+  "available_for_projects": false,
+  "profile_status": "contributor"
+}

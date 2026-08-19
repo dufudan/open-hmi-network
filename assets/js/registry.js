@@ -22,7 +22,8 @@
     return ({
       'open-source': 'Open Source',
       'open-reference': 'Open Reference',
-      'partner-solution': 'Partner Solution'
+      'partner-solution': 'Partner Solution',
+      'contributor-demo': 'Contributor Demo'
     })[value] || value || 'Contribution';
   }
 

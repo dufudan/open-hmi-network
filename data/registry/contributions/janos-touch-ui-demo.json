@@ -1,0 +1,37 @@
+{
+  "id": "janos-touch-ui-demo",
+  "title": "OrbitMenu — Reusable LVGL 9 Touch Control",
+  "type": "demo",
+  "contributor_id": "janos-marta",
+  "summary": "OrbitMenu by János Márta is a reusable LVGL 9 touch-selection control demonstrated on ArtInChip D133CBS hardware.",
+  "architecture": "Reusable embedded UI control",
+  "application": [
+    "Embedded HMI",
+    "Reusable UI Control"
+  ],
+  "gui": [
+    "LVGL 9"
+  ],
+  "os": [],
+  "hardware": [
+    "ArtInChip D133CBS",
+    "Embedded touch display"
+  ],
+  "publication_model": "contributor-demo",
+  "access": "public",
+  "source": "community",
+  "repository_url": "",
+  "resource_url": "demos/janos-touch-ui-demo.html",
+  "license": "Contributor demo; source and redistribution rights remain with the contributor.",
+  "maintained": false,
+  "available_for_projects": false,
+  "tags": [
+    "orbitmenu",
+    "reusable-control",
+    "artinchip-d133cbs",
+    "lvgl9",
+    "touch-ui",
+    "interaction",
+    "embedded-display"
+  ]
+}

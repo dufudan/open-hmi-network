@@ -2,12 +2,19 @@
   "id": "your-github-name",
   "name": "Your display name",
   "headline": "What you are strongest at",
-  "region": "Country / Region",
+  "region": "Optional country / region",
   "bio": "Short contributor bio.",
-  "skills": ["LVGL", "Firmware"],
+  "skills": [
+    "LVGL",
+    "Firmware"
+  ],
   "github_url": "https://github.com/your-name",
   "website_url": "",
   "available_for_projects": true,
-  "project_types": ["GUI Development", "Firmware"],
-  "profile_status": "community"
+  "project_types": [
+    "GUI Development",
+    "Firmware"
+  ],
+  "profile_status": "community",
+  "linkedin_url": ""
 }

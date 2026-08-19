@@ -6,9 +6,9 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 REG = ROOT / "data" / "registry"
 
-REQUIRED_CONTRIBUTOR = {"id", "name", "headline", "region", "skills", "available_for_projects"}
+REQUIRED_CONTRIBUTOR = {"id", "name", "headline", "skills", "available_for_projects"}
 REQUIRED_CONTRIBUTION = {"id", "title", "type", "contributor_id", "summary", "publication_model", "access", "source", "available_for_projects"}
-ALLOWED_MODELS = {"open-source", "open-reference", "partner-solution"}
+ALLOWED_MODELS = {"open-source", "open-reference", "partner-solution", "contributor-demo"}
 ALLOWED_ACCESS = {"open-source", "public", "registration", "request", "restricted"}
 ALLOWED_SOURCE = {"official", "open-hmi", "community"}
 
