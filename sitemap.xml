@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://openhmi.network/</loc>
-    <lastmod>2026-08-11</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://openhmi.network/selector.html</loc>
@@ -10,11 +10,11 @@
   </url>
   <url>
     <loc>https://openhmi.network/hardware.html</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://openhmi.network/resources.html</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://openhmi.network/guides.html</loc>
@@ -22,19 +22,19 @@
   </url>
   <url>
     <loc>https://openhmi.network/projects.html</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://openhmi.network/software.html</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://openhmi.network/partners.html</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://openhmi.network/contributors.html</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://openhmi.network/contribute.html</loc>
@@ -80,11 +80,13 @@
     <loc>https://openhmi.network/solutions/energy-charging-equipment-hmi.html</loc>
     <lastmod>2026-08-11</lastmod>
   </url>
-  <url><loc>https://openhmi.network/modules.html</loc></url>
+  <url><loc>https://openhmi.network/modules.html</loc>
+    <lastmod>2026-08-22</lastmod>
+  </url>
   <url><loc>https://openhmi.network/modules/a733-android-hmi-module.html</loc></url>
   <url><loc>https://openhmi.network/modules/unisoc-sl8541e-4g-android-hmi-module.html</loc></url>
   <url>
     <loc>https://openhmi.network/demos/janos-touch-ui-demo.html</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </url>
 </urlset>

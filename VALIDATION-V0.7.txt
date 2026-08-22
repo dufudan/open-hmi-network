@@ -1,0 +1,13 @@
+openhmi.network V0.7 — Curated Project Matching
+Validation date: 2026-08-22
+
+Checks completed:
+- Sitemap URLs: 24; missing pages: 0
+- Local references across sitemap-listed pages: 835 checked; missing: 0
+- JavaScript syntax: main.js, registry.js, contributors.js — OK
+- CSS brace structure: OK
+- sitemap.xml XML parse: OK
+
+Notes:
+- V0.7 does not add contributor tiering, membership, a new partner directory, or a new global partner map.
+- Existing navigation, six application cards, HMI Modules, OrbitMenu contributor demo and LinkedIn follow paths are retained.
