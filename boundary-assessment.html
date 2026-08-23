@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="robots" content="index,follow" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A rule-based preliminary assessment of embedded HMI architecture boundaries across display, memory, rendering, connectivity, boot and lifecycle risks." />
+  <title>HMI Boundary Assessment | openhmi.network</title>
+  <link rel="canonical" href="https://openhmi.network/boundary-assessment.html" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=080" />
+</head>
+<body class="assessment-page">
+  <header class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand-mark"></span><span>openhmi.network</span></a>
+      <button class="menu-btn" data-menu aria-label="Toggle menu" aria-expanded="false">Menu</button>
+      <nav class="nav-links" data-nav-links aria-label="Primary navigation">
+        <a class="nav-main-link" href="index.html#architecture-ladder">Architecture Ladder</a>
+        <a class="nav-main-link nav-active" href="boundary-assessment.html">Boundary Assessment</a>
+        <a class="nav-main-link" href="index.html#verified-stacks">Verified Stacks</a>
+        <a class="nav-main-link" href="guides.html">HMI Problems</a>
+        <a class="btn btn-primary" href="submit-project.html?utm_source=assessment&amp;utm_medium=nav&amp;utm_campaign=architecture_review">Request Architecture Review</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="assessment-hero">
+      <div class="container assessment-hero-grid">
+        <div><div class="eyebrow">Preliminary architecture screening</div><h1>HMI Boundary Assessment</h1><p>Check whether the current architecture still has practical headroom—and which requirement is most likely to cross the line first.</p></div>
+        <aside><strong>Rule-based V1</strong><span>Visible inputs</span><span>Explainable risk dimensions</span><span>Neutral “stay” result available</span></aside>
+      </div>
+    </section>
+
+    <section class="assessment-workspace">
+      <div class="container assessment-layout">
+        <form id="boundary-form" class="assessment-form" novalidate>
+          <div class="assessment-start-card">
+            <label for="current-architecture"><span>Current architecture</span><select id="current-architecture" name="architecture">
+              <option value="serial">Serial HMI</option>
+              <option value="mcu" selected>MCU HMI</option>
+              <option value="soc">HMI SoC / High-end MCU + RTOS</option>
+              <option value="linux">Linux / Android MPU</option>
+            </select></label>
+            <p>Select the architecture used by the product being assessed—not the architecture you are considering next.</p>
+          </div>
+
+          <fieldset class="assessment-group"><legend><span>01</span>Display</legend><p class="group-intro">Pixel load, display count and color depth affect memory size and bandwidth.</p><div class="assessment-fields">
+            <label>Resolution<select name="resolution"><option value="small">Up to 480×272</option><option value="wvga" selected>800×480</option><option value="wsvga">1024×600</option><option value="hd">1280×800 or higher</option></select></label>
+            <label>Display count<select name="displayCount"><option value="one" selected>One display</option><option value="two">Two displays / mirrored outputs</option><option value="three">Three or more / independent content</option></select></label>
+            <label>Pixel format<select name="colorDepth"><option value="low">Indexed / RGB565</option><option value="mid" selected>RGB888 or mixed assets</option><option value="high">ARGB8888 / alpha-heavy composition</option></select></label>
+          </div></fieldset>
+
+          <fieldset class="assessment-group"><legend><span>02</span>UI</legend><p class="group-intro">Screen structure and visual behavior determine how much of the system becomes a graphics workload.</p><div class="assessment-fields">
+            <label>UI complexity<select name="uiComplexity"><option value="basic">Static pages and basic controls</option><option value="standard" selected>Multiple screens and standard transitions</option><option value="rich">Rich animation, layers and custom widgets</option><option value="media">Camera, video or multimedia UI</option></select></label>
+            <label>Project scale<select name="pageCount"><option value="small">Up to 10 screens</option><option value="medium" selected>11–30 screens</option><option value="large">31–80 screens</option><option value="veryLarge">More than 80 screens / app-like flows</option></select></label>
+            <label>Asset load<select name="assetLoad"><option value="light">Small local assets</option><option value="medium" selected>Multiple fonts, icons and images</option><option value="heavy">Large image sets, themes or localization</option></select></label>
+          </div></fieldset>
+
+          <fieldset class="assessment-group"><legend><span>03</span>Performance</legend><p class="group-intro">Use the worst screen and peak data condition, not the average demo.</p><div class="assessment-fields">
+            <label>Target frame rate<select name="fps"><option value="low">Below 10 FPS / event-driven</option><option value="medium" selected>10–20 FPS</option><option value="high">25–30 FPS</option><option value="veryHigh">50–60 FPS</option></select></label>
+            <label>Real-time visual data<select name="realtime"><option value="low">Occasional updates</option><option value="medium" selected>5–10 Hz values and indicators</option><option value="high">Waveforms / charts at 20 Hz+</option><option value="veryHigh">Multiple high-rate streams</option></select></label>
+            <label>Frame buffering<select name="buffers"><option value="partial">Partial / tiled buffer</option><option value="single" selected>Single full framebuffer</option><option value="double">Double framebuffer</option><option value="composed">Multiple layers / composed surfaces</option></select></label>
+          </div></fieldset>
+
+          <fieldset class="assessment-group"><legend><span>04</span>System</legend><p class="group-intro">Connectivity and platform services can move complexity outside the GUI itself.</p><div class="assessment-fields">
+            <label>Device interfaces<select name="protocols"><option value="basic">UART / GPIO / simple device link</option><option value="field" selected>CAN / Modbus / industrial bus</option><option value="multi">Several buses and peripherals</option><option value="gateway">Gateway role / many concurrent interfaces</option></select></label>
+            <label>Network services<select name="network"><option value="none">None / isolated product</option><option value="basic" selected>Wi-Fi or Ethernet, basic telemetry</option><option value="connected">Cloud, remote UI or 4G</option><option value="platform">Apps, browser, containers or rich services</option></select></label>
+            <label>Multimedia / sensors<select name="multimedia"><option value="none" selected>No camera or audio</option><option value="one">One camera or audio path</option><option value="multi">Multiple cameras / codecs / vision input</option></select></label>
+          </div></fieldset>
+
+          <fieldset class="assessment-group"><legend><span>05</span>Product</legend><p class="group-intro">Boot, maintenance and lifetime can make an apparently powerful architecture a poor product fit.</p><div class="assessment-fields">
+            <label>Boot target<select name="boot"><option value="instant">Under 1 second</option><option value="fast" selected>1–3 seconds</option><option value="normal">3–10 seconds</option><option value="relaxed">More than 10 seconds acceptable</option></select></label>
+            <label>Product lifetime<select name="lifecycle"><option value="short">1–3 years</option><option value="medium" selected>3–5 years</option><option value="long">5–10 years</option><option value="veryLong">10+ years / strict continuity</option></select></label>
+            <label>Update &amp; ownership<select name="maintenance"><option value="fixed">Fixed firmware, limited field updates</option><option value="maintained" selected>Owned source and planned updates</option><option value="secure">OTA, security maintenance and rollback</option><option value="legacy">Existing product lacks maintainable source / BSP</option></select></label>
+          </div></fieldset>
+
+          <div class="assessment-actions"><button class="btn btn-primary" type="submit">Evaluate My HMI →</button><button class="btn btn-secondary" type="reset">Restore defaults</button><span>No project data is submitted by this V1 prototype.</span></div>
+        </form>
+
+        <aside class="assessment-side" aria-label="Assessment guidance"><div class="assessment-side-card"><span class="mini-label">How to answer</span><h2>Use the real worst case.</h2><ul><li>Highest-load screen, not the splash screen</li><li>Peak update rate, not the idle state</li><li>Production interfaces, not only the demo link</li><li>Required product lifetime and update ownership</li></ul></div><div class="assessment-side-card neutral-card"><strong>Neutral by design</strong><p>If the current architecture has headroom, the correct answer is to stay. Moving up adds cost and new lifecycle work.</p></div></aside>
+      </div>
+    </section>
+
+    <section id="assessment-result" class="assessment-result" hidden aria-live="polite" tabindex="-1">
+      <div class="container">
+        <div class="result-header"><div><div class="eyebrow">Preliminary result</div><p class="result-current">Current architecture <strong id="result-architecture">MCU HMI</strong></p><h2 id="result-status">Near boundary</h2><p id="result-summary"></p></div><div id="result-badge" class="result-badge status-watch">Watch</div></div>
+        <div id="risk-grid" class="result-risk-grid"></div>
+        <div class="result-detail-grid">
+          <article><span class="mini-label">Most important boundary points</span><h3>What is driving the result</h3><ul id="boundary-points"></ul></article>
+          <article class="result-recommendation"><span class="mini-label">Architecture recommendation</span><h3 id="recommendation-title">Stay with current architecture</h3><p id="recommendation-copy"></p><div id="recommendation-next" class="recommendation-next"></div></article>
+        </div>
+        <div class="result-cta-grid">
+          <a href="guides.html"><span>Learn</span><strong>Read the relevant HMI guides</strong><small>Understand the pressure points and trade-offs.</small></a>
+          <a href="index.html#verified-stacks"><span>Compare</span><strong>Explore Verified HMI Stacks</strong><small>See evidence, limits and what still needs validation.</small></a>
+          <a id="review-cta" href="submit-project.html?utm_source=assessment_result&amp;utm_medium=validate&amp;utm_campaign=architecture_review"><span>Validate</span><strong>Request Architecture Review</strong><small>Review the boundary against the real product requirement.</small></a>
+        </div>
+        <div class="result-disclaimer"><strong>Preliminary screening only.</strong> This result does not replace hardware measurement, BSP review, display timing checks, worst-case performance testing, EMC, safety or lifecycle validation.</div>
+      </div>
+    </section>
+
+    <section class="assessment-method"><div class="container"><details><summary>How the V1 rule-based assessment works</summary><div><p>Each answer adds load to one or more risk dimensions: Display, Memory, Rendering, Connectivity and Boot-Lifecycle. The selected architecture has a practical capacity profile for those dimensions. The result compares requirement load with that profile.</p><ul><li><strong>Comfortable:</strong> the inputs remain below the architecture watch zone.</li><li><strong>Near boundary:</strong> one or more dimensions need focused validation, but an upgrade is not assumed.</li><li><strong>Boundary crossed:</strong> multiple dimensions exceed the current tier, or one dimension substantially exceeds it.</li></ul><p>Rules are intentionally conservative and will be versioned as verified stack data and real project outcomes are added.</p></div></details></div></section>
+  </main>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark"></span><span>openhmi.network</span></a><p>Choose → Verify → Build → Deliver</p></div><div><h4>Assessment</h4><div class="footer-links"><a href="index.html#architecture-ladder">Architecture Ladder</a><a href="index.html#verified-stacks">Verified Stacks</a><a href="guides.html">Problem Guides</a></div></div><div><h4>Next step</h4><div class="footer-links"><a href="submit-project.html">Architecture Review</a><a href="partners.html">Capability Network</a></div></div></div><div class="footer-bottom"><span>© 2026 openhmi.network</span><span>Rule-based Assessment V1</span></div></div></footer>
+  <script src="assets/js/main.js?v=080"></script>
+  <script src="assets/js/boundary-assessment.js?v=080"></script>
+</body>
+</html>
