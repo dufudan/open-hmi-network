@@ -1,0 +1,32 @@
+openhmi.network V0.8 — HMI Decision & Delivery Entry
+Validation date: 2026-08-23
+
+Static checks
+- Sitemap URLs: 25; missing pages: 0
+- Local references across sitemap-listed pages: 833; missing: 0
+- JavaScript syntax: 7 files OK
+- CSS brace structure: 1476 open / 1476 close
+- sitemap.xml parse: OK
+
+Browser checks
+- Homepage desktop render and section order: OK
+- Assessment desktop render: OK
+- Mobile homepage at 390 × 844: OK
+- Mobile Assessment at 390 × 844: OK
+- Horizontal overflow at mobile width: none
+- Console warnings/errors during tested flows: none
+
+Assessment regression cases
+1. MCU / low-load configuration
+   Result: Comfortable
+   Recommendation: Stay with current architecture
+2. MCU / default moderate configuration
+   Result: Near boundary
+   Recommendation: Stay for now—validate the pressure point
+3. MCU / high-load graphics, connectivity and lifecycle configuration
+   Result: Boundary crossed
+   Recommendation: Compare HMI SoC / High-end MCU + RTOS
+
+Scope note
+- “Demo-validated” and “Reference available” are used instead of implying production qualification.
+- Product-level thermal, EMC, safety, lifecycle and production validation remain outside this V1 screening.
