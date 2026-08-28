@@ -1,0 +1,20 @@
+# Files added only by the rejected V0.9 redesign.
+# Remove these ONLY if they still exist after restoring V0.8 P0.
+
+CHANGELOG-V0.9.md
+DEPLOYMENT.md
+FULL-PACKAGE-FILE-MANIFEST.txt
+OpenHMI_v0.9_升级说明.md
+README-V0.9.md
+UPGRADE-0.8-to-0.9.md
+UPGRADE-MANIFEST.txt
+about.html
+assets/js/assessment.js
+data/demos.json
+data/platforms.json
+modules/tc3568m.html
+modules/tcw-507m.html
+modules/tcw40.html
+network.html
+prototype.html
+reference-platforms.html

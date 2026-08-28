@@ -1,0 +1,24 @@
+OpenHMI v0.8.1 Repair Patch
+============================
+
+BASELINE (must restore first)
+GitHub commit: 9e23730118c16488cdc8541683137da41495d388
+
+PATCH SCOPE
+- Preserve V0.8 P0 site architecture
+- Add 3 new HMI modules
+- Add 3 Technical Reference Manuals
+- No other site redesign
+
+PATCH FILES
+- modules.html
+- modules/tcw40-a40i-hmi-module.html
+- modules/tcw-507m-t507-hmi-module.html
+- modules/tc3568m-rk3568-hmi-module.html
+- assets/docs/tcw40-a40i-module-manual-en.pdf
+- assets/docs/tcw-507m-t507-module-manual-en.pdf
+- assets/docs/tc3568m-rk3568-module-manual-en.pdf
+- RESTORE-FIRST.md
+- REMOVE-V09-ONLY.txt
+- EXPECTED-ONLINE-CHECKLIST.md
+- README-MINIMAL-UPDATE.md
