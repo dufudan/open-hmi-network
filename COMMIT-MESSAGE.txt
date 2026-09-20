@@ -1,0 +1,5 @@
+Commit title:
+Add LinkedIn sketch-to-prototype landing page
+
+Commit description:
+Add a focused OpenHMI landing page for LinkedIn traffic from the sketch-to-prototype post. The page collects customer HMI requirements, preserves source attribution, and guides rough sketches, old HMI screens or notes toward a working prototype and reference hardware path. No changes to the V0.8 homepage architecture, CSS or JavaScript.

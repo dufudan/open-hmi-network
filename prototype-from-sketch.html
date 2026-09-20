@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Have an HMI idea, sketch, old screen or rough requirements? Send what you have and start a practical HMI prototype path toward real embedded hardware." />
+  <title>Turn an HMI Sketch Into a Working Prototype | openhmi.network</title>
+  <link rel="canonical" href="https://openhmi.network/prototype-from-sketch.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="openhmi.network" />
+  <meta property="og:title" content="Have a Sketch? Turn It Into a Working HMI Prototype." />
+  <meta property="og:description" content="A hand-drawn sketch, old HMI screen or rough notes may already be enough to start a practical HMI prototype." />
+  <meta property="og:url" content="https://openhmi.network/prototype-from-sketch.html" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=080" />
+</head>
+<body>
+<header class="nav-wrap">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="openhmi.network home"><span class="brand-mark"></span><span>openhmi.network</span></a>
+    <button class="menu-btn" data-menu aria-label="Toggle menu" aria-expanded="false">Menu</button>
+    <nav class="nav-links" data-nav-links aria-label="Primary navigation">
+      <a class="nav-main-link" href="index.html#problems">HMI Problems</a>
+      <a class="nav-main-link" href="boundary-assessment.html">Boundary Assessment</a>
+      <details class="nav-dropdown"><summary>Build Resources <span class="nav-chevron" aria-hidden="true">⌄</span></summary><div class="nav-dropdown-menu">
+        <a href="index.html#verified-stacks"><strong>Verified HMI Stacks</strong><span>Evidence · limits · validation scope</span></a>
+        <a href="hardware.html"><strong>Hardware</strong><span>Compute · display · touch · connectivity</span></a>
+        <a href="modules.html"><strong>HMI Modules</strong><span>Integrated platforms · DevKits</span></a>
+        <a href="resources.html"><strong>Developer Resources</strong><span>SDKs · docs · tools · guides</span></a>
+      </div></details>
+      <details class="nav-dropdown"><summary>Demos &amp; Expertise <span class="nav-chevron" aria-hidden="true">⌄</span></summary><div class="nav-dropdown-menu nav-dropdown-menu-compact">
+        <a href="projects.html"><strong>HMI Demos</strong><span>Reference implementations</span></a>
+        <a href="partners.html"><strong>Capability Network</strong><span>GUI · BSP · Linux · hardware · testing</span></a>
+      </div></details>
+      <a class="btn btn-primary" href="#prototype-brief">Send Your HMI Idea</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero decision-hero">
+  <div class="container decision-hero-grid">
+    <div>
+      <div class="eyebrow">From sketch to embedded HMI</div>
+      <h1>Have an HMI idea, but only a sketch?</h1>
+      <p class="hero-copy">That may already be enough to start a prototype. A hand-drawn screen, an old HMI screenshot, a rough UI concept or a few notes can give us enough context to begin.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="#prototype-brief">Send What You Have →</a><a class="btn btn-secondary" href="#how-it-works">See the Prototype Path</a></div>
+      <p class="decision-trust-note">You do not need a complete specification before the first discussion. Start with the product idea and the information you already have.</p>
+    </div>
+    <aside class="decision-journey" aria-label="Sketch to prototype path">
+      <span>01</span><strong>Sketch</strong><p>Hand drawing, old screen, screenshot or rough notes.</p>
+      <span>02</span><strong>Structure</strong><p>Screen flow, interaction and key states.</p>
+      <span>03</span><strong>Prototype</strong><p>A working UI concept on the chosen GUI path.</p>
+      <span>04</span><strong>Hardware</strong><p>Move toward a practical reference platform.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section architecture-ladder-section" id="how-it-works">
+  <div class="container">
+    <div class="decision-section-head"><div><div class="eyebrow">What we can start from</div><h2 class="section-title">Give us what you have. We help turn it into something real.</h2><p class="section-copy">The goal is not to sell you another design tool. The goal is to understand the product, make the HMI behavior concrete, and get to a prototype that can be discussed on real embedded hardware.</p></div></div>
+    <div class="architecture-ladder" role="list">
+      <article class="ladder-card" role="listitem"><div class="ladder-step"><span>01</span><small>Input</small></div><h3>Your starting point</h3><p class="ladder-sweet"><strong>Enough to begin:</strong> a sketch, old HMI screen, reference image, requirement notes or an existing product.</p><div class="ladder-signal"><span>Useful context</span>Application · users · key functions · display target · important I/O or data.</div></article>
+      <article class="ladder-card" role="listitem"><div class="ladder-step"><span>02</span><small>UX</small></div><h3>Screen &amp; interaction</h3><p class="ladder-sweet"><strong>We clarify:</strong> screens, navigation, controls, feedback, operating states and important exception paths.</p><div class="ladder-signal"><span>Output</span>A clearer HMI definition instead of disconnected screen drawings.</div></article>
+      <article class="ladder-card" role="listitem"><div class="ladder-step"><span>03</span><small>UI</small></div><h3>Working prototype</h3><p class="ladder-sweet"><strong>We prototype:</strong> the visual direction and key interactions using a practical embedded GUI workflow.</p><div class="ladder-signal"><span>Validate</span>Usability · screen flow · behavior · graphics complexity · performance assumptions.</div></article>
+      <article class="ladder-card" role="listitem"><div class="ladder-step"><span>04</span><small>HW</small></div><h3>Reference hardware</h3><p class="ladder-sweet"><strong>Then:</strong> map the prototype to a suitable MCU, HMI SoC or Linux/Android platform when hardware validation is needed.</p><div class="ladder-signal"><span>Next step</span>Display · touch · compute · memory · connectivity · BSP · production path.</div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section boundary-home-section">
+  <div class="container boundary-home-grid">
+    <div><div class="eyebrow">A practical first review</div><h2 class="section-title">We do not need everything decided on day one.</h2><p class="section-copy">The first pass is simply to understand what the HMI should do, what information you already have, and which unknowns matter most. We can then decide whether the right next step is a UI prototype, an architecture review, reference hardware, or a combination.</p><div class="boundary-risk-row"><span>Sketch</span><span>Screen Flow</span><span>States</span><span>Display</span><span>Hardware</span></div></div>
+    <aside class="boundary-preview"><div class="boundary-preview-head"><span>Example starting brief</span><strong>Enough to start</strong></div><div class="preview-architecture">7-inch machine HMI <span>→ prototype first</span></div><div class="preview-risk"><span>Sketch</span><i style="--risk:88%"></i><b>Ready</b></div><div class="preview-risk"><span>Functions</span><i style="--risk:72%"></i><b>Useful</b></div><div class="preview-risk"><span>Display</span><i style="--risk:60%"></i><b>Known</b></div><div class="preview-risk"><span>Hardware</span><i style="--risk:28%"></i><b>Open</b></div><p>Hardware does not have to be decided before the first prototype discussion.</p></aside>
+  </div>
+</section>
+
+<section class="section--tight" id="prototype-brief">
+  <div class="container">
+    <div class="decision-section-head"><div><div class="eyebrow">HMI Prototype Brief</div><h2 class="section-title">Send your sketch, idea or current HMI requirement.</h2><p class="section-copy">Fill in only what you know. When you submit, your email app will open with the brief prepared. You can attach your sketch, screenshots or requirement files before sending.</p></div></div>
+    <form class="form-shell" data-mail-form novalidate data-recipient="project@openhmi.network" data-subject="OpenHMI — Sketch to Prototype Request">
+      <input type="hidden" name="Inquiry Source" value="LinkedIn Sketch-to-Prototype Landing Page">
+      <input type="hidden" name="LinkedIn Activity" value="7507395671751028736">
+      <div class="form-section"><h2>Contact</h2><div class="form-grid"><div class="field"><label>Name *</label><input name="Name" required></div><div class="field"><label>Work Email *</label><input type="email" name="Email" required></div><div class="field"><label>Company *</label><input name="Company" required></div><div class="field"><label>Country / Region</label><input name="Country / Region"></div></div></div>
+      <div class="form-section"><h2>What do you have now?</h2><div class="check-grid"><label class="check"><input type="checkbox" name="Starting Material" value="Hand-drawn sketch">Hand-drawn sketch</label><label class="check"><input type="checkbox" name="Starting Material" value="Old HMI screen / screenshot">Old HMI screen / screenshot</label><label class="check"><input type="checkbox" name="Starting Material" value="UI concept / reference">UI concept / reference</label><label class="check"><input type="checkbox" name="Starting Material" value="Requirement notes">Requirement notes</label><label class="check"><input type="checkbox" name="Starting Material" value="Existing hardware">Existing hardware</label><label class="check"><input type="checkbox" name="Starting Material" value="Only an idea">Only an idea</label></div></div>
+      <div class="form-section"><h2>What should the HMI do?</h2><div class="form-grid"><div class="field full"><label>Product / HMI Summary *</label><textarea name="Project Summary" placeholder="What is the product? Who uses the HMI? What are the main screens, controls, information or actions?" required></textarea></div><div class="field"><label>Display / Touch</label><input name="Display / Touch" placeholder='e.g. 7&quot;, 1024×600, capacitive touch'></div><div class="field"><label>Current / Preferred Platform</label><input name="Architecture" placeholder="Not decided / MCU / RTOS / Linux / Android"></div><div class="field"><label>GUI / Software</label><input name="GUI / Software" placeholder="Not decided / LVGL / Qt / other"></div><div class="field"><label>Data / I/O / Connectivity</label><input name="Data / I/O / Connectivity" placeholder="CAN / Modbus / UART / Ethernet / sensors / cloud..."></div><div class="field"><label>Project Stage / Volume</label><input name="Target Volume" placeholder="Concept / prototype / design-in / annual volume"></div><div class="field"><label>Target Timing</label><input name="Target Schedule" placeholder="Prototype timing / target MP"></div><div class="field full"><label>Sketch / Reference Link</label><input name="Reference File Link" placeholder="Optional: paste a share link. Or attach files after your email opens."></div></div></div>
+      <div class="form-section"><h2>What would you like to validate?</h2><div class="check-grid"><label class="check"><input type="checkbox" name="Need" value="Screen structure / UX">Screen structure / UX</label><label class="check"><input type="checkbox" name="Need" value="Working UI prototype">Working UI prototype</label><label class="check"><input type="checkbox" name="Need" value="Architecture review">Architecture review</label><label class="check"><input type="checkbox" name="Need" value="Reference hardware">Reference hardware</label><label class="check"><input type="checkbox" name="Need" value="Display / touch">Display / touch</label><label class="check"><input type="checkbox" name="Need" value="Engineering / production path">Engineering / production path</label></div></div>
+      <button class="btn btn-primary" type="submit">Prepare My Prototype Brief →</button><div class="form-note">No complete specification is required. After your email opens, attach any sketches, screenshots or files you want us to review.</div><div class="form-status"></div>
+    </form>
+  </div>
+</section>
+
+<section class="section--tight"><div class="container"><div class="cta"><div><div class="eyebrow">Not sure what architecture you need?</div><h2>Start with the HMI requirement, not the processor.</h2><p>The right hardware path can be selected after the UI, system workload and product constraints are clearer.</p></div><a class="btn btn-dark" href="boundary-assessment.html">Assess the HMI Boundary →</a></div></div></section>
+</main>
+
+<footer class="footer"><div class="container"><div class="footer-grid footer-grid-demand"><div><a class="brand" href="index.html"><span class="brand-mark"></span><span>openhmi.network</span></a><p>Where HMI Ideas Meet Expertise.</p><p class="footer-brand-note">An open HMI network for embedded product development.</p><a class="footer-linkedin-link" href="https://www.linkedin.com/in/david-du-18877b70/" target="_blank" rel="noopener noreferrer"><span class="linkedin-mark" aria-hidden="true">in</span><span>Follow David Du on LinkedIn</span><span class="external-arrow" aria-hidden="true">↗</span></a></div><div><h4>Explore</h4><div class="footer-links"><a href="index.html#problems">HMI Problems</a><a href="boundary-assessment.html">Boundary Assessment</a><a href="hardware.html">Hardware</a><a href="modules.html">HMI Modules</a><a href="resources.html">Developer Resources</a></div></div><div><h4>Proof &amp; support</h4><div class="footer-links"><a href="projects.html">HMI Demos</a><a href="partners.html">Capability Network</a><a href="submit-project.html">Request Architecture Review</a></div></div></div><div class="footer-access-row"><span>Developer or engineering partner?</span><a href="contribute.html">Contributor Access →</a></div><div class="footer-bottom"><span>© 2026 openhmi.network</span><span>Choose → Verify → Build → Deliver</span></div></div></footer>
+<script src="assets/js/main.js?v=080"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"2225a1474800498ebd3f45242de300e6"}'></script>
+</body>
+</html>
