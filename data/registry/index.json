@@ -1,5 +1,5 @@
 {
-  "version": "0.6.3",
+  "version": "0.6.4",
   "contributors": [
     "contributors/open-hmi-network.json",
     "contributors/janos-marta.json"
@@ -8,6 +8,7 @@
     "contributions/2w-cluster-hmi.json",
     "contributions/agricultural-monitoring-hmi.json",
     "contributions/smart-home-appliance-hmi.json",
-    "contributions/janos-touch-ui-demo.json"
+    "contributions/janos-touch-ui-demo.json",
+    "contributions/janos-ai-robot-gesture-demo.json"
   ]
 }
