@@ -1,0 +1,40 @@
+{
+  "id": "janos-ai-robot-gesture-demo",
+  "title": "AI Robot Gesture System — State-driven Embedded HMI Experiment",
+  "type": "demo",
+  "contributor_id": "janos-marta",
+  "summary": "An embedded HMI experiment by János Márta where listening, thinking and speaking states each have their own robot gesture, with transitions controlled through draggable nodes on the touch display.",
+  "architecture": "State-driven embedded HMI interaction",
+  "application": [
+    "Embedded HMI",
+    "Robotics",
+    "AI Interaction"
+  ],
+  "gui": [
+    "Touch UI"
+  ],
+  "os": [],
+  "hardware": [
+    "ArtInChip D133CBS reference setup",
+    "Embedded touch display"
+  ],
+  "publication_model": "contributor-demo",
+  "access": "public",
+  "source": "community",
+  "repository_url": "",
+  "resource_url": "demos/janos-ai-robot-gesture-demo.html",
+  "license": "Contributor demo; source and redistribution rights remain with the contributor.",
+  "maintained": false,
+  "available_for_projects": false,
+  "tags": [
+    "robot-hmi",
+    "ai-state",
+    "listening",
+    "thinking",
+    "speaking",
+    "gesture",
+    "draggable-nodes",
+    "touch-ui",
+    "artinchip-d133cbs"
+  ]
+}

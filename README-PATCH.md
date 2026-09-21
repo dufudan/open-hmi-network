@@ -2,7 +2,7 @@
 
 Version: **v0.8.1-DEMO2-v2**
 
-This corrected package includes the actual video file.
+This corrected package includes the actual compressed video file.
 
 ## Included media
 - `assets/videos/janos-ai-robot-gesture-demo.mp4` — 29.2 MB
@@ -39,3 +39,16 @@ git push origin main
 - `data/registry/contributors/janos-marta.json`
 - `data/registry/index.json`
 - `sitemap.xml`
+
+
+## GitHub web upload size
+
+The demo MP4 has been recompressed specifically for GitHub web upload.
+
+- Original: 29.2 MB
+- Compressed: 6.4 MB
+- Resolution preserved: 1080×1920
+- Duration: 23.8 sec
+- Codec: H.264 + AAC
+
+This is below GitHub's 25 MB browser upload limit with safe headroom.
