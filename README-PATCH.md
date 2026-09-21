@@ -1,25 +1,41 @@
-# OpenHMI v0.8.1-LP1 — LinkedIn Sketch-to-Prototype Landing Page
+# Corrected patch — János AI Robot Gesture System
 
-Purpose: add a dedicated landing page for traffic from LinkedIn activity `7507395671751028736`.
+Version: **v0.8.1-DEMO2-v2**
 
-## Add
-- `prototype-from-sketch.html`
+This corrected package includes the actual video file.
 
-No CSS, JavaScript, homepage, Boundary Assessment, Hardware, Resources or Modules files are changed.
+## Included media
+- `assets/videos/janos-ai-robot-gesture-demo.mp4` — 29.2 MB
+- `assets/images/janos-ai-robot-gesture-demo-poster.jpg` — poster extracted from the demo
 
-## Recommended LinkedIn destination
-`https://openhmi.network/prototype-from-sketch.html?utm_source=linkedin&utm_medium=social&utm_campaign=sketch_to_prototype`
+The website now plays the MP4 from the OpenHMI repository. It no longer depends on the Google Drive iframe.
 
-## Form behavior
-The page reuses the current OpenHMI `data-mail-form` flow. The customer fills in the requirement brief, then the email app opens with the content prepared for `project@openhmi.network`. They can attach sketches/screenshots/files before sending.
+## Apply
+```powershell
+Set-ExecutionPolicy -Scope Process Bypass
+.\apply_patch.ps1 -RepoPath "C:\Users\DavidDuFuDan-SH\open-hmi-network"
+cd "C:\Users\DavidDuFuDan-SH\open-hmi-network"
+git diff
+git status
+git add -A
+git commit -m "Add János AI robot gesture HMI demo with video"
+git push origin main
+```
 
-Hidden attribution included:
-- Inquiry Source: LinkedIn Sketch-to-Prototype Landing Page
-- LinkedIn Activity: 7507395671751028736
+## Commit title
+`Add János AI robot gesture HMI demo with video`
 
-## Verify after upload
-1. Open `/prototype-from-sketch.html`.
-2. Hero reads `Have an HMI idea, but only a sketch?`.
-3. Four-step path reads `Sketch → Structure → Prototype → Hardware`.
-4. Submit a test brief and confirm the mail draft opens to `project@openhmi.network`.
-5. Confirm the site layout matches the existing v0.8 P0 style.
+## Commit description
+`Add János Márta's AI Robot Gesture System as a second contributor demo, including the original MP4 and a local poster image. The demo shows listening, thinking and speaking states, gesture-based state feedback, and draggable on-screen transition nodes. Update the HMI demos page, contributor registry/profile and sitemap while keeping the existing OrbitMenu demo.`
+
+## Expected new files
+- `assets/videos/janos-ai-robot-gesture-demo.mp4`
+- `assets/images/janos-ai-robot-gesture-demo-poster.jpg`
+- `demos/janos-ai-robot-gesture-demo.html`
+- `data/registry/contributions/janos-ai-robot-gesture-demo.json`
+
+## Expected modified files
+- `projects.html`
+- `data/registry/contributors/janos-marta.json`
+- `data/registry/index.json`
+- `sitemap.xml`

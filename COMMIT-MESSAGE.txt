@@ -1,5 +1,5 @@
 Commit title:
-Add LinkedIn sketch-to-prototype landing page
+Add János AI robot gesture HMI demo with video
 
 Commit description:
-Add a focused OpenHMI landing page for LinkedIn traffic from the sketch-to-prototype post. The page collects customer HMI requirements, preserves source attribution, and guides rough sketches, old HMI screens or notes toward a working prototype and reference hardware path. No changes to the V0.8 homepage architecture, CSS or JavaScript.
+Add János Márta's AI Robot Gesture System as a second contributor demo, including the original MP4 and a local poster image. The demo shows listening, thinking and speaking states, gesture-based state feedback, and draggable on-screen transition nodes. Update the HMI demos page, contributor registry/profile and sitemap while keeping the existing OrbitMenu demo.
