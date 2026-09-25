@@ -276,6 +276,9 @@
     if (el.type === 'email' && el.value.trim() && el.validity.typeMismatch) {
       return 'Please enter a valid work email.';
     }
+    if (el.type === 'url' && el.value.trim() && el.validity.typeMismatch) {
+      return 'Please enter a valid company website URL.';
+    }
     return emptyMessages[name] || 'Please complete this field.';
   }
 
@@ -306,7 +309,9 @@
         invalid = !group.some(item => item.checked);
       } else {
         invalid = !String(el.value || '').trim();
-        if (!invalid && el.type === 'email') invalid = el.validity.typeMismatch;
+        if (!invalid && (el.type === 'email' || el.type === 'url')) {
+          invalid = el.validity.typeMismatch;
+        }
       }
 
       if (invalid) {
