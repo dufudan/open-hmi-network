@@ -1,0 +1,14 @@
+/* Project intake uses the existing design system. */
+.project-entry-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:28px}
+.project-entry-grid>a{display:block;color:inherit;text-decoration:none}
+.project-entry-grid>a:focus-visible{outline:3px solid currentColor;outline-offset:4px}
+.project-next{padding:24px;border:1px solid #ccd8e3;border-radius:16px;margin-bottom:28px}
+.project-next p{max-width:75ch;line-height:1.65}
+.project-next .btn{margin-top:12px}
+.project-details summary{cursor:pointer;font-weight:600;padding:12px 0}
+.project-details .form-grid{margin-top:16px}
+.project-email-preview{margin-top:24px;padding:24px;border:1px solid #ccd8e3;border-radius:16px}
+.project-email-preview textarea{display:block;width:100%;max-width:100%;box-sizing:border-box;margin:12px 0;padding:14px;font:inherit;line-height:1.5;resize:vertical}
+.form-section h2 small{font-size:.65em;font-weight:400}
+@media(max-width:720px){.project-entry-grid{grid-template-columns:1fr}.project-next,.project-email-preview{padding:18px}}
+

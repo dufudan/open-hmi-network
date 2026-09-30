@@ -34,9 +34,10 @@
 <main>
 <section class="page-hero"><div class="container"><div class="eyebrow">Your HMI project</div><h1>Bring us the requirement.</h1><p class="section-copy">A short, non-confidential brief is enough to start. The architecture, hardware and software can still be undecided.</p><p>OpenHMI connects platforms, hardware vendors, developers and engineering partners around what your project needs.</p></div></section>
 <section class="section--tight"><div class="container">
-<div class="project-next"><h2>What happens next?</h2><p>Send your brief to <a href="mailto:project@openhmi.network">project@openhmi.network</a>. The discussion starts by clarifying the requirements and the next practical architecture, hardware or engineering step.</p><p>Resource availability, delivery scope, fees and the contracting party are confirmed separately before any project work is agreed. Share only information suitable for an initial email discussion.</p></div>
+<div class="project-next"><h2>What happens next?</h2><p>Submit your brief here. Web3Forms processes the submission and sends a notification to <a href="mailto:project@openhmi.network">project@openhmi.network</a>. The discussion starts by clarifying the requirements and the next practical architecture, hardware or engineering step.</p><p>Resource availability, delivery scope, fees and the contracting party are confirmed separately before any project work is agreed. Share only information suitable for an initial email discussion.</p></div>
 <div class="selector-context" data-selector-context hidden></div>
-<form class="form-shell" data-mail-form data-project-brief novalidate data-recipient="project@openhmi.network" data-subject="openhmi.network HMI Project Brief">
+<form class="form-shell" data-mail-form data-project-brief data-web3-form data-access-key="e3c2fa5c-eb06-4607-903a-e2604db7c529" novalidate data-recipient="project@openhmi.network" data-subject="openhmi.network HMI Project Brief">
+<input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" style="display:none">
 <input type="hidden" name="Inquiry Type" value="Customer project requirement">
 <div class="form-section"><h2>A short brief</h2><div class="form-grid">
 <div class="field"><label for="project-email">Email *</label><input id="project-email" type="email" name="Email" autocomplete="email" maxlength="254" required></div>
@@ -56,10 +57,10 @@
 <div class="field"><label for="project-volume">Estimated volume</label><input id="project-volume" name="Target Volume" maxlength="120" placeholder="Optional — an estimate is enough"></div>
 <div class="field"><label for="project-timing">Target timing</label><input id="project-timing" name="Target Schedule" maxlength="200" placeholder="Prototype / production timing"></div>
 </div></details>
-<p class="form-note" id="email-handoff-note">This form prepares an email. You must click Send in your email app to deliver it. If no email app opens, copy the brief below and send it to project@openhmi.network.</p>
-<button class="btn btn-primary" type="submit" aria-describedby="email-handoff-note">Open Email to Send Brief →</button>
+<p class="form-note" id="email-handoff-note">Submit directly from this page. Your contact and project details are processed by Web3Forms to deliver your inquiry. If submission fails, you can copy your brief and email project@openhmi.network.</p>
+<button class="btn btn-primary" type="submit" aria-describedby="email-handoff-note">Submit Project Brief →</button>
 <div class="form-status" role="status" aria-live="polite"></div>
-<section class="project-email-preview" data-email-preview hidden aria-labelledby="brief-preview-title"><h2 id="brief-preview-title">Your email brief</h2><p>To: <a href="mailto:project@openhmi.network">project@openhmi.network</a><br>Subject: openhmi.network HMI Project Brief</p><label for="prepared-brief">Copy or select the text below</label><textarea id="prepared-brief" data-prepared-brief rows="12" readonly></textarea><button class="btn btn-secondary" type="button" data-copy-brief>Copy Brief</button><p data-copy-status role="status" aria-live="polite"></p></section>
+<section class="project-email-preview" data-email-preview hidden aria-labelledby="brief-preview-title"><h2 id="brief-preview-title">Your email brief</h2><p>To: <a href="mailto:project@openhmi.network">project@openhmi.network</a><br>Subject: openhmi.network HMI Project Brief</p><label for="prepared-brief">Copy or select the text below</label><textarea id="prepared-brief" data-prepared-brief rows="12" readonly></textarea><a class="btn btn-secondary" data-email-fallback href="mailto:project@openhmi.network">Open Email App</a> <button class="btn btn-secondary" type="button" data-copy-brief>Copy Brief</button><p data-copy-status role="status" aria-live="polite"></p></section>
 <noscript><p>Email <a href="mailto:project@openhmi.network">project@openhmi.network</a> with your project summary, stage and the help you need. This form needs JavaScript to prepare the email.</p></noscript>
 </form></div></section></main><footer class="footer">
     <div class="container">
@@ -71,7 +72,7 @@
       <div class="footer-access-row"><span>Developer or engineering partner?</span><a href="contribute.html">Contributor Access →</a></div>
       <div class="footer-bottom"><span>© 2026 openhmi.network</span><span>Find → Evaluate → Build → Scale</span></div>
     </div>
-  </footer><script src="assets/js/main.js?v=090"></script><!-- Cloudflare Web Analytics -->
+  </footer><script src="assets/js/main.js?v=091"></script><script src="assets/js/project-submit.js?v=091"></script><!-- Cloudflare Web Analytics -->
 <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2225a1474800498ebd3f45242de300e6"}'></script>
 <!-- End Cloudflare Web Analytics -->
 </body></html>

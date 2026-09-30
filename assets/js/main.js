@@ -170,6 +170,7 @@
     renderSelectorContext(ctx);
   document.querySelectorAll('[data-mail-form]').forEach(form => {
       addHidden(form, 'Selector Architecture', ctx.architecture);
+      addHidden(form, 'Selector Project Stage', ctx.stage);
       addHidden(form, 'Selector UI', ctx.ui);
       addHidden(form, 'Selector Connectivity', ctx.connectivity);
       addHidden(form, 'Selector Environment', ctx.environment);
@@ -186,7 +187,8 @@
         setField(form, 'Display / Touch', ctx.display);
         setField(form, 'Architecture', ctx.architecture);
         setField(form, 'GUI / Software', [ctx.gui, ctx.os].filter(Boolean).join(' / '));
-        setField(form, 'Target Volume', [ctx.stage, ctx.volume].filter(Boolean).join(' · '));
+        setField(form, 'Project Stage', ctx.stage);
+        setField(form, 'Target Volume', ctx.volume);
         setField(form, 'Target Schedule', ctx.timeline);
         const summary = form.elements['Project Summary'];
         if (summary && !summary.value) {
@@ -266,7 +268,7 @@
     const name = el.name || '';
     const emptyMessages = {
       'Name': 'Please enter your name.',
-      'Email': 'Please enter your work email.',
+      'Email': 'Please enter your email.',
       'Company': 'Please enter your company.',
       'Country / Region': 'Please enter your region.',
       'Project Description': 'Please describe what you are building.',
@@ -274,7 +276,7 @@
       'Project Stage': 'Please select a project stage.'
     };
     if (el.type === 'email' && el.value.trim() && el.validity.typeMismatch) {
-      return 'Please enter a valid work email.';
+      return 'Please enter a valid email.';
     }
     if (el.type === 'url' && el.value.trim() && el.validity.typeMismatch) {
       return 'Please enter a valid company website URL.';
@@ -361,6 +363,20 @@
 
   document.querySelectorAll('[data-mail-form]').forEach(form => {
     attachCampaignAttribution(form);
+    const copyButton = form.querySelector('[data-copy-brief]');
+    if (copyButton) copyButton.addEventListener('click', async () => {
+      const brief = form.querySelector('[data-prepared-brief]');
+      const note = form.querySelector('[data-copy-status]');
+      if (!brief || !note) return;
+      try {
+        await navigator.clipboard.writeText(brief.value);
+        note.textContent = 'Brief copied. Paste it into an email to project@openhmi.network and click Send.';
+      } catch (_) {
+        brief.focus();
+        brief.select();
+        note.textContent = 'Select and copy the brief, then paste it into your email and click Send.';
+      }
+    });
 
     // Native browser validation messages follow the browser UI language.
     // Use our own English inline validation instead for a consistent experience.
@@ -373,6 +389,7 @@
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (form.hasAttribute('data-web3-form')) return;
       if (!validateMailForm(form)) return;
 
       const recipient = form.dataset.recipient || 'project@openhmi.network';
@@ -385,12 +402,20 @@
       }
       const lines = [];
       grouped.forEach((vals, key) => lines.push(`${key}: ${vals.join(', ')}`));
+      if (form.hasAttribute('data-project-brief')) {
+        const preview = form.querySelector('[data-email-preview]');
+        const brief = form.querySelector('[data-prepared-brief]');
+        if (preview && brief) {
+          brief.value = lines.join('\n');
+          preview.hidden = false;
+        }
+      }
       const mailto = `mailto:${encodeURIComponent(recipient)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
       const status = form.querySelector('.form-status');
       if (status) {
         status.classList.remove('form-status-error');
         status.style.display = 'block';
-        status.textContent = `Opening email. If nothing happens, send the brief to ${recipient}.`;
+        status.textContent = `Your brief is prepared, but has not been sent by this website. Click Send in your email app, or copy the brief and email it to ${recipient}.`;
       }
       window.location.href = mailto;
     });
