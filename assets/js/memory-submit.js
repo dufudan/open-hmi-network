@@ -16,6 +16,7 @@
   form.addEventListener('submit', async function (event) {
     event.preventDefault();
     if (pending) return;
+    if (window.OpenHMIWebsiteFields) window.OpenHMIWebsiteFields.sync(form);
     if (!form.reportValidity()) return;
     const data = new FormData(form);
     if (data.get('botcheck')) return;
@@ -76,3 +77,4 @@
     }
   });
 })();
+
