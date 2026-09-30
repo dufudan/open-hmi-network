@@ -63,7 +63,7 @@
       const result = await response.json();
       if (!response.ok || result.success !== true) throw new Error('Submission not accepted');
       accepted = lines;
-      say('Your project brief was accepted by the form service for delivery to OpenHMI. This confirms submission, not that the notification email has reached the inbox.', false);
+      say('Thank you! Your project brief has been submitted.', false);
     } catch (_) {
       preview.hidden = false;
       say('We could not confirm submission. Your details are preserved. You can retry, or copy the brief below and email project@openhmi.network. A delayed request may still arrive; mention this if you also send an email.', true);
