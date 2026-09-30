@@ -1,0 +1,9 @@
+/* Fixed website prefix uses the existing quote form styling. */
+.quote-form .website-input{display:flex;align-items:center;width:100%;min-width:0;box-sizing:border-box;border:1px solid #d9e1ed;border-radius:12px;background:#fff;overflow:hidden}
+.quote-form .website-prefix{flex:none;padding-left:16px;color:#64748b;font:inherit;user-select:none}
+.quote-form .website-input input{flex:1;min-width:0;width:0;border:0;border-radius:0;background:transparent;padding-left:4px;box-shadow:none}
+.quote-form .website-input:focus-within{border-color:#4967eb;box-shadow:0 0 0 3px rgba(73,103,235,.12)}
+.quote-form .website-input input:focus{outline:none;box-shadow:none}
+.quote-form .field-note{margin:8px 0 0;font-size:13px;line-height:1.5;color:#64748b;overflow-wrap:anywhere}
+@media(max-width:480px){.quote-form .website-prefix{padding-left:12px}}
+
