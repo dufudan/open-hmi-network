@@ -1,0 +1,6 @@
+.review-contact{margin:0 0 26px;padding-bottom:25px;border-bottom:1px solid var(--line)}
+.review-contact .review-label{display:block;margin-bottom:9px;font-size:15px;font-weight:600}
+.review-contact input[type=email]{width:100%;padding:12px 14px;border:1px solid #bcc8d5;border-radius:4px;font-size:16px;background:#fff;color:var(--ink)}
+.review-contact .dialog-note{margin:12px 0 0}
+dialog[aria-busy=true] .close-dialog{opacity:.45;cursor:wait}
+.submission-error{margin:22px 0 0;line-height:1.6}

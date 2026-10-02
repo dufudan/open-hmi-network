@@ -1,0 +1,46 @@
+/* Original identity from https://openhmi.network/index.html and
+   assets/css/styles.css?v=080. Brand colors, geometry and wordmark preserved. */
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#101828;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px;
+  font-weight:800;
+  letter-spacing:0;
+  white-space:nowrap;
+}
+.brand .brand-mark {
+  width:34px;
+  height:34px;
+  flex-shrink:0;
+  margin:0;
+  border:1px solid #e3e8ef;
+  border-radius:10px;
+  background:#fff;
+  display:grid;
+  place-items:center;
+  position:relative;
+}
+.brand .brand-mark::before {
+  content:"";
+  position:absolute;
+  background:#4263eb;
+  border-radius:50%;
+  width:7px;
+  height:7px;
+  left:7px;
+  top:7px;
+  box-shadow:13px 0 0 #16b8c4,0 13px 0 #ff8a65,13px 13px 0 #30a46c;
+}
+.brand .brand-mark::after {content:none}
+.brand>span:last-child {
+  color:#101828;
+  font-size:16px;
+  text-transform:lowercase;
+  font-weight:760;
+  letter-spacing:0;
+}
+.site-footer .brand {font-size:16px}
+@media(max-width:640px){.brand>span:last-child{font-size:15px}}

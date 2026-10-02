@@ -18,42 +18,21 @@
   <link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=070" />
-</head>
-<body>
-<header class="nav-wrap">
-    <div class="container nav">
-      <a class="brand" href="index.html" aria-label="openhmi.network home"><span class="brand-mark"></span><span>openhmi.network</span></a>
-      <button class="menu-btn" data-menu aria-label="Toggle menu" aria-expanded="false">Menu</button>
-      <nav class="nav-links" data-nav-links aria-label="Primary navigation">
-        <a class="nav-main-link" href="index.html#applications">Solutions</a>
-        <a class="nav-main-link" href="selector.html">HMI Selector</a>
-        <details class="nav-dropdown nav-active">
-          <summary>Build Resources <span class="nav-chevron" aria-hidden="true">⌄</span></summary>
-          <div class="nav-dropdown-menu">
-            <a href="hardware.html"><strong>Hardware</strong><span>Compute · display · touch · connectivity</span></a>
-            <a href="modules.html"><strong>HMI Modules</strong><span>Integrated compute platforms · DevKits · module requests</span></a>
-            <a href="resources.html"><strong>Developer Resources</strong><span>SDKs · docs · tools · HMI guides</span></a>
-            <a href="partners.html"><strong>Engineering Support</strong><span>GUI · BSP · Linux · integration</span></a>
-          </div>
-        </details>
-        <details class="nav-dropdown">
-          <summary>Demos &amp; Experts <span class="nav-chevron" aria-hidden="true">⌄</span></summary>
-          <div class="nav-dropdown-menu nav-dropdown-menu-compact">
-            <a href="projects.html"><strong>HMI Demos</strong><span>Real interfaces and reference implementations</span></a>
-            <a href="contributors.html"><strong>HMI Expertise</strong><span>Developers, partners and proven capabilities</span></a>
-          </div>
-        </details>
-        <a class="btn btn-primary" href="submit-project.html">Discuss Your Project</a>
-      </nav>
-    </div>
-  </header>
+  <link rel="stylesheet" href="assets/css/styles.css?v=1.0.0" />
+<link rel="stylesheet" href="navigation.css?v=1.0.0"><link rel="stylesheet" href="site-theme.css?v=1.0.0"></head>
+<body class="legacy-page">
+<header class="oh-header"><div class="oh-header-inner">
+      <a class="brand" href="index.html" aria-label="OpenHMI home"><span class="brand-mark" aria-hidden="true"></span><span>openhmi.network</span></a>
+      <a class="oh-mobile-engineering" href="engineering.html">Engineering</a>
+      <button class="oh-menu-toggle" type="button" aria-expanded="false" aria-controls="oh-navigation">Menu <span aria-hidden="true">＋</span></button>
+      <nav class="oh-navigation" id="oh-navigation" aria-label="Main navigation"><a href="solutions.html">Solutions</a><a href="engineering.html">Engineering</a><a href="production.html">Production</a><a href="projects.html">Demos</a><a href="resources.html">Resources</a><a class="oh-get-started" href="index.html#intake">Get started <span aria-hidden="true">↗</span></a></nav>
+    </div></header>
 <main>
-<section class="module-hero"><div class="container module-hero-grid"><div><div class="eyebrow">HMI Modules</div><h1>Start from an integrated compute platform.</h1><p>Use a module path when it can reduce platform integration work. Match the operating system, display, connectivity and interfaces to the product — then validate on real hardware.</p><div class="hero-actions"><a class="btn btn-primary" href="#module-platforms">Explore Module Paths →</a><a class="btn btn-secondary" href="module-request.html">Tell Us What Module You Need</a></div></div><aside class="module-hero-aside"><span class="mini-label">Demand-driven module resources</span><h2>Existing platform + market feedback.</h2><p>We publish real module resources as they become ready, and use recurring non-confidential requirements to prioritize future module concepts and evaluation platforms.</p></aside></div></section>
+<section class="module-hero"><div class="container module-hero-grid"><div><div class="eyebrow">HMI Modules</div><h1>A starting platform for your HMI.</h1><p>Compare platforms, operating systems and evaluation resources.</p><details class="module-selection-note"><summary>Module or custom board?</summary><p>A module can reduce integration and bring-up time. A custom board gives more control over cost, form factor and interfaces.</p></details><div class="hero-actions"><a class="btn btn-primary" href="#module-platforms">Explore Module Paths →</a><a class="btn btn-secondary" href="module-request.html">Tell Us What Module You Need</a></div></div></div></section>
 
-<section class="section--tight selection-logic-section"><div class="container"><div class="selection-logic-grid"><div><div class="eyebrow">When a module makes sense</div><h2>Choose integration speed or board-level control deliberately.</h2></div><div class="selection-choice"><strong>Start with a module when…</strong><p>Reducing hardware integration and software bring-up time matters more than maximum board-level customization.</p></div><div class="selection-choice"><strong>Start from the chip when…</strong><p>BOM, form factor, interfaces, scale or product-specific hardware justify deeper control of the design.</p></div></div></div></section>
 
-<section class="section" id="module-platforms"><div class="container"><div class="module-section-head"><div class="eyebrow">Current module resources</div><h2 class="section-title">Start with what is real today.</h2><p class="section-copy">Development status is shown clearly. Detailed configuration, availability and project fit are confirmed before evaluation.</p></div><div class="module-platform-grid">
+
+<section class="section" id="module-platforms"><div class="container"><div class="module-section-head"><div class="eyebrow">Current module resources</div><h2 class="section-title">Module platforms.</h2><p class="section-copy">Review each platform’s status and confirm its fit before evaluation.</p></div><div class="module-platform-grid">
 
 <a class="module-platform-card click-card" href="modules/tcw40-a40i-hmi-module.html"><div class="module-card-top"><span class="module-status module-status-evaluation">Project Evaluation</span><span class="module-family">Allwinner A40i</span></div><div class="module-visual" aria-hidden="true"><span>TCW40</span><i>Linux / Android 7.1</i></div><h3>TCW40 Cost-focused Linux HMI Module</h3><p>A mature, cost-focused module path for industrial HMI and instrumentation that need broad display and legacy I/O support.</p><div class="module-card-meta"><span>A40i</span><span>DDR3</span><span>LVDS / RGB / MIPI DSI / HDMI</span></div><span class="card-link">View Module Path →</span></a>
 
@@ -71,21 +50,11 @@
 
 <section class="section module-demand-section"><div class="container"><div class="module-demand-grid"><div><div class="eyebrow">Need something different?</div><h2 class="section-title">Tell us what your product needs.</h2><p class="section-copy">Do not force the product around an existing module. Share the non-confidential requirements that matter — application, OS, display, interfaces, connectivity, performance and expected volume.</p><div class="page-actions"><a class="btn btn-primary" href="module-request.html">Submit Module Requirement →</a></div></div><div class="module-demand-points"><div><span>01</span><strong>Recurring demand</strong><p>We group similar requirements instead of treating every request as a one-off custom board.</p></div><div><span>02</span><strong>Engineering evaluation</strong><p>Promising directions are checked for platform fit, development effort and practical integration.</p></div><div><span>03</span><strong>Transparent status</strong><p>A concept is not presented as available until the corresponding development and evaluation resources actually exist.</p></div></div></div></div></section>
 
-<section class="section--tight"><div class="container"><div class="module-status-guide"><div><div class="eyebrow">Status language</div><h2>Know what each status means.</h2></div><div class="module-status-list"><div><span class="module-status module-status-exploring">Exploring</span><p>Requirements are being collected; no development commitment is implied.</p></div><div><span class="module-status module-status-development">In Development</span><p>The module or platform resource is actively being developed.</p></div><div><span class="module-status module-status-evaluation">Project Evaluation</span><p>A real platform can be discussed for suitable projects; exact configuration is confirmed case by case.</p></div><div><span class="module-status module-status-ready">Production Ready</span><p>Used only after the specific module configuration, software and supply path are validated for production.</p></div></div></div></div></section>
+<section class="section--tight"><div class="container"><details class="module-status-guide"><summary>What do the platform statuses mean?</summary><div class="module-status-list"><div><span class="module-status module-status-exploring">Exploring</span><p>Requirements are being collected; no development commitment is implied.</p></div><div><span class="module-status module-status-development">In Development</span><p>The module or platform resource is actively being developed.</p></div><div><span class="module-status module-status-evaluation">Project Evaluation</span><p>A real platform can be discussed for suitable projects; exact configuration is confirmed case by case.</p></div><div><span class="module-status module-status-ready">Production Ready</span><p>Used only after the specific module configuration, software and supply path are validated for production.</p></div></div></details></div></section>
 
 <section class="section--tight"><div class="container"><div class="cta"><div><div class="eyebrow">Start with requirements</div><h2>Need a module that does not exist here yet?</h2><p>Describe the non-confidential product requirements. Repeated needs can help shape the next HMI module or reference platform.</p></div><a class="btn btn-dark" href="module-request.html">Tell Us What You Need →</a></div></div></section>
 </main>
-<footer class="footer">
-    <div class="container">
-      <div class="footer-grid footer-grid-demand">
-        <div><a class="brand" href="index.html"><span class="brand-mark"></span><span>openhmi.network</span></a><p>Where HMI Ideas Meet Expertise.</p><p class="footer-brand-note">An open HMI network for embedded product development.</p><a class="footer-linkedin-link" href="https://www.linkedin.com/in/david-du-18877b70/" target="_blank" rel="noopener noreferrer" aria-label="Follow David Du on LinkedIn (opens in a new tab)"><span class="linkedin-mark" aria-hidden="true">in</span><span>Follow David Du on LinkedIn</span><span class="external-arrow" aria-hidden="true">↗</span></a></div>
-        <div><h4>Explore</h4><div class="footer-links"><a href="index.html#applications">Solutions</a><a href="selector.html">HMI Selector</a><a href="hardware.html">Hardware</a><a href="modules.html">HMI Modules</a><a href="resources.html">Developer Resources</a></div></div>
-        <div><h4>Proof &amp; support</h4><div class="footer-links"><a href="projects.html">HMI Demos</a><a href="contributors.html">HMI Expertise</a><a href="partners.html">Engineering Support</a><a href="submit-project.html">Discuss Your Project</a></div></div>
-      </div>
-      <div class="footer-access-row"><span>Developer or engineering partner?</span><a href="contribute.html">Contributor Access →</a></div>
-      <div class="footer-bottom"><span>© 2026 openhmi.network</span><span>Find → Evaluate → Build → Scale</span></div>
-    </div>
-  </footer>
+<footer class="oh-footer"><div class="oh-footer-inner"><div class="oh-footer-grid"><div class="oh-footer-brand"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>openhmi.network</span></a><p>From idea to production.</p><a class="oh-footer-social" href="https://www.linkedin.com/in/david-du-18877b70/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><section class="oh-footer-group"><h2>Project</h2><div class="oh-footer-links"><a href="solutions.html">Solutions</a><a href="engineering.html">Engineering</a><a href="production.html">Production</a><a href="projects.html">Demos</a></div></section><section class="oh-footer-group"><h2>Engineering</h2><div class="oh-footer-links"><a href="hardware.html">Hardware</a><a href="software.html">Software</a><a href="modules.html">Modules</a><a href="partners.html">Engineering Network</a></div></section><section class="oh-footer-group"><h2>Resources</h2><div class="oh-footer-links"><a href="guides.html">Guides</a><a href="developer-resources.html">SDK & Resources</a><a href="engineering-tools.html">Engineering Tools</a><a href="contributors.html">Contributors</a></div></section></div><div class="oh-footer-bottom"><span>© 2026 openhmi.network</span><a href="contribute.html">Contributor Access →</a></div></div></footer>
 <script src="assets/js/main.js?v=070"></script>
 <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2225a1474800498ebd3f45242de300e6"}'></script>
-</body></html>
+<script src="navigation.js?v=1.0.0" defer></script></body></html>

@@ -100,7 +100,7 @@
     if (!vendorGrid) return;
     const cards = vendors.map(v => {
       const n = resources.filter(r => r.vendor === v.name).length;
-      return `<a class="vendor-card click-card" href="resources.html?vendor=${encodeURIComponent(v.name)}">
+      return `<a class="vendor-card click-card" href="developer-resources.html?vendor=${encodeURIComponent(v.name)}">
         <div class="vendor-card-top"><span class="resource-badge resource-badge-public">Workspace live</span><span>${n} resources</span></div>
         <h3>${esc(v.name)}</h3>
         <p>${esc(v.summary)}</p>
