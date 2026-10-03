@@ -1,0 +1,24 @@
+.hero-with-animation { padding-top: 48px; }
+.hero-main { display:grid; grid-template-columns:minmax(0, 0.9fr) minmax(0, 1.15fr); gap:40px; align-items:center; }
+.hero-intake-column { text-align:left; min-width:0; }
+.hero-intake-column h1 { font-size:clamp(36px,3.5vw,49px); letter-spacing:-1.8px; }
+.hero-intake-column .eyebrow { font-size:10px; letter-spacing:1px; margin-bottom:18px; }
+.hero-intake-column .hero-description { font-size:17px; margin-bottom:24px; }
+.hero-intake-column .intake-card { width:100%; padding:20px; }
+.hero-animation { min-width:0; position:relative; padding-bottom:34px; }
+.hero-animation video { display:block; width:100%; aspect-ratio:16/9; height:auto; background:#f6f8fa; border:1px solid #e3e8ef; border-radius:12px; }
+.hero-video-toggle { position:absolute; right:0; bottom:0; font-size:12px; color:#647687; padding:6px 0; background:transparent; }
+.hero-video-toggle:hover { color:#1769aa; }
+.hero-with-animation .hero-baseline { margin-top:36px; }
+@media(max-width:900px) {
+ .hero-main { grid-template-columns:1fr; gap:28px; }
+ .hero-intake-column { text-align:center; }
+ .hero-intake-column .intake-card { max-width:710px; }
+ .hero-animation { max-width:710px; width:100%; margin:auto; }
+}
+@media(max-width:540px) {
+ .hero-with-animation { padding-top:32px; }
+ .hero-intake-column h1 { font-size:36px; }
+ .hero-main { gap:24px; }
+ .hero-animation video { border-radius:8px; }
+}
