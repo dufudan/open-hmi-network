@@ -14,4 +14,6 @@ jobs:
         with:
           python-version: '3.x'
       - run: python scripts/render_discovery.py --check
+      - run: python scripts/test_publication.py
+      - run: node scripts/test_canonical_navigation.cjs
       - run: python scripts/validate_seo.py

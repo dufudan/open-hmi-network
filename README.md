@@ -1,5 +1,22 @@
 # OpenHMI V1 prototype
 
+## Crawl foundations and deployment
+
+Public pages use canonical URLs in navigation, sitemap and JSON-LD. Run
+`python scripts/render_discovery.py` after changing resource or contributor data,
+then commit the generated directory HTML. SEO validation runs in CI.
+
+`canonical-navigation.js` redirects browser visits to `/index.html` to `/`,
+preserving query parameters and fragments. GitHub Pages still returns HTTP 200
+for both paths; this is a browser redirect, not an HTTP 301. A permanent HTTP
+redirect requires a hosting or edge configuration that supports it.
+
+Before notifying IndexNow, the workflow compares every sitemap page, canonical
+alias and crawl-control file against the checked-out revision on the public
+site. Stale or failed deployments stop the notification. Full commit history
+is fetched so changed-page detection also handles pushes containing multiple
+commits. The public IndexNow key remains a separate check.
+
 Open `index.html` in a browser. No installation or build step is required.
 
 - Homepage: concise project intake with descriptions and sharing links, one-click Engineering Path, three starting points, SoM production options, process, concept demos and engineering capabilities.
