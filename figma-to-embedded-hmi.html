@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Figma to Embedded HMI | LVGL, Qt &amp; Real Hardware Workflow</title>
+  <meta name="description" content="Turn Figma screens into an embedded HMI through interaction design, LVGL or Qt/QML implementation, hardware mapping and real display validation.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="https://openhmi.network/figma-to-embedded-hmi.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="OpenHMI Network">
+  <meta property="og:title" content="Figma to Embedded HMI | LVGL, Qt &amp; Real Hardware Workflow">
+  <meta property="og:description" content="Turn Figma screens into an embedded HMI through interaction design, LVGL or Qt/QML implementation, hardware mapping and real display validation.">
+  <meta property="og:url" content="https://openhmi.network/figma-to-embedded-hmi.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css?v=1.0.0">
+  <link rel="stylesheet" href="navigation.css?v=1.0.0">
+  <link rel="stylesheet" href="site-theme.css?v=1.0.0">
+  <link rel="stylesheet" href="assets/css/geo-workflows.css?v=2">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://openhmi.network/figma-to-embedded-hmi.html#article","headline":"How to Turn a Figma Design Into an Embedded HMI","description":"Turn Figma screens into an embedded HMI through interaction design, LVGL or Qt/QML implementation, hardware mapping and real display validation.","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://openhmi.network/figma-to-embedded-hmi.html"},"author":{"@type":"Organization","@id":"https://openhmi.network/#organization","name":"OpenHMI Network","url":"https://openhmi.network/"},"publisher":{"@type":"Organization","@id":"https://openhmi.network/#organization","name":"OpenHMI Network","url":"https://openhmi.network/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"OpenHMI Network","item":"https://openhmi.network/"},{"@type":"ListItem","position":2,"name":"HMI Guides","item":"https://openhmi.network/guides.html"},{"@type":"ListItem","position":3,"name":"Figma → Embedded HMI","item":"https://openhmi.network/figma-to-embedded-hmi.html"}]}]}</script>
+</head>
+<body class="legacy-page">
+<header class="oh-header"><div class="oh-header-inner">
+      <a class="brand" href="/" aria-label="OpenHMI home"><span class="brand-mark" aria-hidden="true"></span><span>openhmi.network</span></a>
+      <a class="oh-mobile-engineering" href="engineering.html">Engineering</a>
+      <button class="oh-menu-toggle" type="button" aria-expanded="false" aria-controls="oh-navigation">Menu <span aria-hidden="true">＋</span></button>
+      <nav class="oh-navigation" id="oh-navigation" aria-label="Main navigation"><a href="solutions.html">Solutions</a><a href="engineering.html">Engineering</a><a href="production.html">Production</a><a href="projects.html">Demos</a><a href="resources.html" aria-current="page">Resources</a><a class="oh-get-started" href="/#intake">Get started <span aria-hidden="true">↗</span></a></nav>
+    </div></header>
+<main>
+  <section class="guide-hero"><div class="container guide-hero-inner">
+    <div class="guide-breadcrumb"><a href="/">Home</a><span>→</span><a href="guides.html">HMI Guides</a><span>→</span><span>Figma → Embedded HMI</span></div>
+    <div class="guide-meta"><span>Core workflow</span><span>OpenHMI Network</span></div>
+    <h1>How to Turn a Figma Design Into an Embedded HMI</h1><p>Design handoff to working hardware.</p>
+  </div></section>
+  <section class="guide-body-section"><div class="container guide-layout">
+    <article class="guide-article">
+<h2 id="short-answer">Short answer</h2>
+<p class="guide-lead">A Figma screen is a design input, not an embedded application. A practical workflow converts the visual structure into an embedded UI, defines interaction and state, implements it in LVGL or Qt/QML, maps the design to hardware constraints, and validates the result on the target display and processor.</p>
+<p>The useful deliverable is a working screen flow with documented hardware assumptions. Start by choosing one important product workflow and defining how it should behave.</p>
+
+<h2 id="workflow">The practical workflow</h2>
+<ol class="geo-workflow-list">
+  <li><h3>Figma screens</h3><p>Identify the screens, reusable components, typography, colors and assets. Record the intended display resolution and orientation. Include loading, disabled and error states where they affect the operator.</p></li>
+  <li><h3>Interaction and state</h3><p>Define what a tap, drag or long press does; which data changes a screen; and how the interface handles connection loss or invalid input. Turn screen transitions into an explicit state model with expected feedback.</p></li>
+  <li><h3>LVGL or Qt/QML implementation</h3><p>Map the interface to framework widgets, layouts, events and application data. Supported design import or code-generation tools can accelerate part of the handoff. Application behavior, device integration and unsupported effects still need implementation and review.</p></li>
+  <li><h3>Assets and layout adaptation</h3><p>Prepare fonts, images and icons for the target. Check licensing, glyph coverage, touch target sizes, scaling and orientation. Simplify expensive visual effects where the hardware budget requires it.</p></li>
+  <li><h3>Hardware mapping</h3><p>Connect the UI workload to the processor, RAM, storage, display interface, touch controller and operating system. Check the BSP, graphics support and required product interfaces before committing to a platform. Use the <a href="guides/mcu-mpu-soc-for-hmi.html">MCU, MPU and SoC architecture guide</a> to frame the choice.</p></li>
+  <li><h3>Real hardware validation</h3><p>Run the important flow on the target display and representative processor. Measure touch response, frame rate, memory use and boot behavior. Record the hardware, software version, workload and acceptance criteria so the result can be repeated.</p></li>
+</ol>
+
+<h2 id="handoff">What transfers, and what needs engineering?</h2>
+<div class="geo-table-wrap" role="region" aria-label="Design handoff responsibilities" tabindex="0"><table class="geo-table">
+  <caption>Use the design as a specification for implementation and validation.</caption>
+  <thead><tr><th scope="col">What transfers from Figma</th><th scope="col">What still needs engineering</th><th scope="col">What needs validation</th></tr></thead>
+  <tbody>
+    <tr><td>Screen hierarchy, layout intent and component states</td><td>Framework layouts, navigation and state transitions</td><td>Resolution, orientation, clipping and readable text</td></tr>
+    <tr><td>Colors, fonts, icons and image assets</td><td>Target formats, font coverage, asset loading and caching</td><td>RAM, storage, rendering cost and visual fidelity</td></tr>
+    <tr><td>Interaction examples and prototype links</td><td>Event handling, data bindings, device I/O and failure behavior</td><td>Touch response, important flows and recovery paths</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="framework">LVGL or Qt/QML?</h2>
+<p>LVGL is a useful starting point for focused embedded interfaces with constrained resources, including RTOS-oriented products. It can also run on Linux. Qt Quick/QML is worth evaluating when the product needs a richer application structure and the platform supports its software and graphics requirements. Neither choice can be settled from the appearance of a Figma file alone.</p>
+<p>Qt for MCUs uses Qt Quick Ultralite, with a different feature and integration model from full Qt Quick. Check the supported target and required UI features before assuming a QML implementation will transfer unchanged. See <a href="https://doc.qt.io/QtForMCUs/qtul-qtquick-differences.html">Qt's framework comparison</a> and the <a href="guides/choosing-embedded-gui-tool.html">embedded GUI workflow guide</a>.</p>
+
+<h2 id="hardware">What hardware information is required?</h2>
+<ul>
+  <li><strong>Display:</strong> resolution, orientation, interface, brightness needs and required refresh behavior.</li>
+  <li><strong>Touch:</strong> controller, interface, number of touch points and the operating environment.</li>
+  <li><strong>Compute and memory:</strong> current processor or candidate class, RAM, storage, graphics capability and boot requirements.</li>
+  <li><strong>Software:</strong> OS, BSP maturity, GUI framework and version, toolchain and update strategy.</li>
+  <li><strong>Product interfaces:</strong> required I/O, sensors, control links, networking and data sources.</li>
+  <li><strong>Constraints:</strong> cost, power, size, lifecycle and any hardware that must remain unchanged.</li>
+</ul>
+<p>You can begin before every part is selected. Mark unknowns as assumptions and identify which are mandatory. Budget display buffers and assets early: LVGL's <a href="https://lvgl.io/docs/open/9.2/porting/display">display documentation</a> explains how resolution, color format and rendering strategy affect the buffer design.</p>
+
+<h2 id="checklist">Useful handoff checklist</h2>
+<ul>
+  <li>Share the Figma link with inspectable screens and access to the intended design version.</li>
+  <li>Name the first workflow to implement, its entry conditions and its acceptance criteria.</li>
+  <li>Include component states, navigation rules, data examples and exception paths.</li>
+  <li>Identify fonts and assets, their licenses, and required language coverage.</li>
+  <li>Provide display and touch details, available hardware and the preferred software stack.</li>
+  <li>Separate fixed requirements from preferences and untested assumptions.</li>
+  <li>Agree what will be measured on hardware and what remains outside the prototype scope.</li>
+</ul>
+
+<h2 id="openhmi">How OpenHMI uses this workflow</h2>
+<p>OpenHMI treats Figma as one input to a larger embedded engineering workflow. OpenHMI Station currently supports a complete prototype path from sketches or Figma designs with uncomplicated logic to ArtInChip hardware. Complex business logic requires explicit interaction and state definitions, integration work and engineering review.</p>
+<p>For an implementation path beyond the visual handoff, follow the <a href="embedded-hmi-prototype.html">embedded HMI prototype workflow</a>. If your starting point is a rough drawing or requirement, use <a href="prototype-from-sketch.html">Sketch → Prototype</a>.</p>
+<p>Inspect <a href="demos/janos-touch-ui-demo.html">János Márta's OrbitMenu LVGL 9 touch control</a> for press, drag and release behavior, and the <a href="demos/janos-ai-robot-gesture-demo.html">AI Robot Gesture System</a> for state-driven interaction. The <a href="projects.html">hardware demo collection</a> provides further examples to discuss when defining a prototype.</p>
+
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Can Figma be converted directly to LVGL?</h3>
+<p>Supported layouts and assets can be mapped into an LVGL project using an appropriate tool or implementation workflow. A working product still needs event handling, state, data bindings, drivers and validation. Review the generated output against the target LVGL version and hardware before relying on it.</p>
+<h3>Can the same Figma design target both LVGL and Qt?</h3>
+<p>Yes, the design can be a shared visual and interaction specification. Each framework needs its own implementation, asset preparation and target validation. Check feature support instead of assuming identical code or effects across frameworks.</p>
+<h3>Do I need to select the processor before starting the UI?</h3>
+<p>You can define screens and interactions first, provided you establish a plausible display, OS and memory budget. Before finalizing expensive animation, video or integration requirements, validate them on representative hardware.</p>
+<h3>What if I only have a sketch?</h3>
+<p>Start by clarifying users, key functions, screen flow and the first workflow to test. The <a href="prototype-from-sketch.html">sketch-to-prototype page</a> explains what information is enough to begin.</p>
+
+<h2 id="references">Technical references</h2>
+<p>The <a href="https://doc.qt.io/qtdesignstudio/studio-designer-developer-workflow.html">Qt designer–developer workflow</a> distinguishes UI design files from application logic and production integration. Use these official framework references alongside the hardware and software versions selected for your project.</p>
+
+    </article>
+    <aside class="guide-side"><nav class="guide-side-card" aria-label="On this page"><div class="mini-label">On this page</div><ul class="geo-toc"><li><a href="#short-answer">Short answer</a></li><li><a href="#workflow">The practical workflow</a></li><li><a href="#handoff">What transfers, and what needs engineering?</a></li><li><a href="#framework">LVGL or Qt/QML?</a></li><li><a href="#hardware">What hardware information is required?</a></li><li><a href="#checklist">Useful handoff checklist</a></li><li><a href="#openhmi">How OpenHMI uses this workflow</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#references">Technical references</a></li></ul></nav>
+      <a class="guide-side-card guide-side-action-card click-card" href="engineering.html"><div class="mini-label">Your project</div><strong>Bring your design and constraints.</strong><p>Share the workflow you need to test and the hardware you have.</p><span class="btn btn-primary btn-small">Start Engineering Path →</span></a>
+    </aside>
+  </div></section>
+</main>
+<footer class="oh-footer"><div class="oh-footer-inner"><div class="oh-footer-grid"><div class="oh-footer-brand"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span>openhmi.network</span></a><p>From idea to production.</p><a class="oh-footer-social" href="https://www.linkedin.com/in/david-du-18877b70/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><section class="oh-footer-group"><h2>Project</h2><div class="oh-footer-links"><a href="solutions.html">Solutions</a><a href="engineering.html">Engineering</a><a href="production.html">Production</a><a href="projects.html">Demos</a></div></section><section class="oh-footer-group"><h2>Engineering</h2><div class="oh-footer-links"><a href="hardware.html">Hardware</a><a href="software.html">Software</a><a href="modules.html">Modules</a><a href="partners.html">Engineering Network</a></div></section><section class="oh-footer-group"><h2>Resources</h2><div class="oh-footer-links"><a href="guides.html">Guides</a><a href="developer-resources.html">SDK & Resources</a><a href="engineering-tools.html">Engineering Tools</a><a href="contributors.html">Contributors</a></div></section></div><div class="oh-footer-bottom"><span>© 2026 openhmi.network</span><a href="contribute.html">Contributor Access →</a></div></div></footer>
+<script src="navigation.js?v=1.0.0" defer></script>
+</body>
+</html>

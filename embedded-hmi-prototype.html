@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Embedded HMI Prototype | From Requirement to Working Hardware</title>
+  <meta name="description" content="Build an embedded HMI prototype from a sketch, Figma, requirements or existing UI. Define interaction, integrate LVGL or Qt, and validate on hardware.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="https://openhmi.network/embedded-hmi-prototype.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="OpenHMI Network">
+  <meta property="og:title" content="Embedded HMI Prototype | From Requirement to Working Hardware">
+  <meta property="og:description" content="Build an embedded HMI prototype from a sketch, Figma, requirements or existing UI. Define interaction, integrate LVGL or Qt, and validate on hardware.">
+  <meta property="og:url" content="https://openhmi.network/embedded-hmi-prototype.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css?v=1.0.0">
+  <link rel="stylesheet" href="navigation.css?v=1.0.0">
+  <link rel="stylesheet" href="site-theme.css?v=1.0.0">
+  <link rel="stylesheet" href="assets/css/geo-workflows.css?v=2">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://openhmi.network/embedded-hmi-prototype.html#article","headline":"How to Build an Embedded HMI Prototype","description":"Build an embedded HMI prototype from a sketch, Figma, requirements or existing UI. Define interaction, integrate LVGL or Qt, and validate on hardware.","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://openhmi.network/embedded-hmi-prototype.html"},"author":{"@type":"Organization","@id":"https://openhmi.network/#organization","name":"OpenHMI Network","url":"https://openhmi.network/"},"publisher":{"@type":"Organization","@id":"https://openhmi.network/#organization","name":"OpenHMI Network","url":"https://openhmi.network/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"OpenHMI Network","item":"https://openhmi.network/"},{"@type":"ListItem","position":2,"name":"HMI Guides","item":"https://openhmi.network/guides.html"},{"@type":"ListItem","position":3,"name":"Embedded HMI Prototype","item":"https://openhmi.network/embedded-hmi-prototype.html"}]}]}</script>
+</head>
+<body class="legacy-page">
+<header class="oh-header"><div class="oh-header-inner">
+      <a class="brand" href="/" aria-label="OpenHMI home"><span class="brand-mark" aria-hidden="true"></span><span>openhmi.network</span></a>
+      <a class="oh-mobile-engineering" href="engineering.html">Engineering</a>
+      <button class="oh-menu-toggle" type="button" aria-expanded="false" aria-controls="oh-navigation">Menu <span aria-hidden="true">＋</span></button>
+      <nav class="oh-navigation" id="oh-navigation" aria-label="Main navigation"><a href="solutions.html">Solutions</a><a href="engineering.html">Engineering</a><a href="production.html">Production</a><a href="projects.html">Demos</a><a href="resources.html" aria-current="page">Resources</a><a class="oh-get-started" href="/#intake">Get started <span aria-hidden="true">↗</span></a></nav>
+    </div></header>
+<main>
+  <section class="guide-hero"><div class="container guide-hero-inner">
+    <div class="guide-breadcrumb"><a href="/">Home</a><span>→</span><a href="guides.html">HMI Guides</a><span>→</span><span>Embedded HMI Prototype</span></div>
+    <div class="guide-meta"><span>Core workflow</span><span>OpenHMI Network</span></div>
+    <h1>How to Build an Embedded HMI Prototype</h1><p>Define the workflow. Build it. Measure it on hardware.</p>
+  </div></section>
+  <section class="guide-body-section"><div class="container guide-layout">
+    <article class="guide-article">
+<h2 id="short-answer">Short answer</h2>
+<p class="guide-lead">An embedded HMI prototype should validate more than the screen design. A useful prototype connects UI and interaction logic to the target GUI framework, display, touch, processor, memory and key product interfaces, then runs the important workflow on representative hardware.</p>
+<p>Choose the product question the prototype must answer: whether the operator can complete a task, whether the UI fits the platform, or whether a device interface works end to end. That question determines what to implement and measure.</p>
+
+<h2 id="inputs">What you provide</h2>
+<ul>
+  <li><strong>Sketch:</strong> a rough screen, reference image or description of the operator's task. Use <a href="prototype-from-sketch.html">Sketch → Prototype</a> if the interface is still taking shape.</li>
+  <li><strong>Figma:</strong> screens, components, assets and interaction examples. The <a href="figma-to-embedded-hmi.html">Figma-to-embedded-HMI workflow</a> explains the engineering handoff.</li>
+  <li><strong>Requirements:</strong> users, key functions, operating environment and mandatory constraints.</li>
+  <li><strong>Existing UI:</strong> screen captures, current behavior and the problems to solve.</li>
+  <li><strong>Existing prototype:</strong> hardware, source availability, software versions and known integration or performance issues.</li>
+</ul>
+<p>Also share the target display, important I/O or data sources, and any processor, module or OS that must stay. Unknowns can be recorded as assumptions rather than silently treated as requirements.</p>
+
+<h2 id="definition">What gets defined</h2>
+<div class="geo-table-wrap" role="region" aria-label="Prototype definition" tabindex="0"><table class="geo-table">
+  <caption>Define behavior and assumptions before committing to implementation.</caption>
+  <thead><tr><th scope="col">Area</th><th scope="col">Useful output</th></tr></thead>
+  <tbody>
+    <tr><td>Screens</td><td>A screen inventory and the first user journey to build.</td></tr>
+    <tr><td>Interaction</td><td>Touch actions, navigation, feedback and exception paths.</td></tr>
+    <tr><td>State</td><td>Operating states, transition conditions, loading behavior and failures.</td></tr>
+    <tr><td>Architecture</td><td>GUI framework, OS, application boundaries and product interfaces.</td></tr>
+    <tr><td>Hardware assumptions</td><td>Display, touch, processor, memory, storage and any unverified drivers.</td></tr>
+  </tbody>
+</table></div>
+<p>Use the <a href="guides/mcu-mpu-soc-for-hmi.html">MCU/MPU/SoC guide</a> to select a starting architecture. Define acceptance criteria for the important workflow before writing the UI.</p>
+
+<h2 id="implementation">Implementation</h2>
+<ol class="geo-workflow-list">
+  <li><h3>Implement the UI and interaction</h3><p>Build screens, reusable controls, state transitions and data bindings in LVGL or Qt/QML. An LVGL prototype starts with a working display port, input handling and a representative workflow. Qt Quick/QML needs a supported runtime and graphics path; Qt for MCUs requires its own supported target and feature review.</p></li>
+  <li><h3>Bring up the BSP, display and touch</h3><p>Confirm boot, display timings, orientation, pixel format and touch coordinates. Reuse a supported evaluation board where it reduces uncertainty, while documenting how it differs from the intended product.</p></li>
+  <li><h3>Connect important I/O and data</h3><p>Integrate the interfaces needed to answer the prototype question: for example, a sensor feed, control link or network service. Identify simulated data explicitly so reviewers can distinguish UI behavior from completed device integration.</p></li>
+  <li><h3>Make the result reproducible</h3><p>Record the board, display, BSP, GUI version, build instructions and configuration. Keep a list of assumptions, known limits and open issues alongside the prototype.</p></li>
+</ol>
+<p>The <a href="hardware.html">hardware overview</a>, <a href="modules.html">module options</a> and <a href="developer-resources.html">SDK and developer resources</a> help identify a platform to evaluate.</p>
+
+<h2 id="validation">Validation on working hardware</h2>
+<ul>
+  <li><strong>Important workflows:</strong> test normal operation, invalid inputs, connection loss and recovery.</li>
+  <li><strong>Frame rate:</strong> measure the demanding screens and transitions against the project's acceptance target.</li>
+  <li><strong>Touch response:</strong> check feedback latency, touch accuracy and gesture behavior on the actual panel.</li>
+  <li><strong>Memory:</strong> measure peak usage with representative assets, data and animation; include driver and system overhead.</li>
+  <li><strong>Boot:</strong> measure time to useful interaction and the behavior of unavailable dependencies.</li>
+  <li><strong>Working hardware:</strong> record the processor, display, OS and interface configuration used for each result.</li>
+</ul>
+<p>There is no universal RAM requirement or frame-rate target for an HMI. Resolution, color depth, buffering, asset caching and the application workload affect the budget. Use the <a href="tools/lvgl-memory-estimator/">LVGL Memory Estimator</a> for an initial estimate, then measure the implementation. LVGL's <a href="https://lvgl.io/docs/open/9.2/porting/display">display-port documentation</a> describes its buffering choices.</p>
+
+<h2 id="production">From prototype to production</h2>
+<p>A prototype proves selected behavior and reduces uncertainty. Production planning adds the requirements needed for repeatable manufacture and long-term support:</p>
+<ul>
+  <li><strong>BOM:</strong> review the complete product cost, including compute, memory, display, touch and supporting components.</li>
+  <li><strong>Lifecycle:</strong> check component availability, software maintenance, updates and product variants.</li>
+  <li><strong>Supply:</strong> identify procurement constraints, second-source needs and qualification work.</li>
+  <li><strong>Board decision:</strong> evaluate keeping a SoM, using an optimized module or moving to a custom board based on volume, cost, integration and engineering risk.</li>
+  <li><strong>Qualification:</strong> plan the product-specific environmental, reliability and compliance work beyond the prototype.</li>
+</ul>
+<p>Continue with the <a href="production.html">prototype-to-production path</a> and the <a href="guides/chip-to-production-hmi.html">chip-to-production guide</a>.</p>
+
+<h2 id="evidence">Real evidence to inspect</h2>
+<p>The <a href="projects.html">OpenHMI hardware demo collection</a> includes embedded UI examples across mobility, monitoring and appliances. <a href="demos/janos-touch-ui-demo.html">OrbitMenu by János Márta</a> demonstrates a reusable LVGL 9 touch-selection control on ArtInChip D133CBS hardware. His <a href="demos/janos-ai-robot-gesture-demo.html">AI Robot Gesture System</a> demonstrates state transitions and draggable-node interaction.</p>
+<p>Use these examples to discuss the interaction you want to validate. Inspect each detail page for its demonstrated scope; your project's performance and integration results must be measured on its own representative setup.</p>
+
+<h2 id="partner">Who can help build an embedded HMI prototype?</h2>
+<p>For a small OEM, look for an engineering partner who can connect UI implementation, BSP, display and touch bring-up, product I/O and hardware validation. Ask for a scoped workflow, documented assumptions, source and build handoff expectations, and measurable acceptance criteria.</p>
+<p>OpenHMI Network accepts sketches, Figma designs, requirements and existing prototypes as project inputs. OpenHMI Station supports a prototype path from sketches or uncomplicated Figma logic to ArtInChip hardware. Complex behavior and product integration are defined and engineered as part of the project scope. Share what you have through the <a href="engineering.html">Engineering Path</a> to frame that scope.</p>
+
+<h2 id="faq">Frequently asked questions</h2>
+<h3>What is an embedded HMI prototype?</h3>
+<p>It is a runnable implementation of selected user interactions on representative embedded hardware, with enough display, touch, software and device integration to test a specific product question.</p>
+<h3>Do I need final hardware first?</h3>
+<p>No. A supported evaluation board or module can validate the main workflow. Document differences from the intended product and identify what must be tested again on the final hardware.</p>
+<h3>Can I start from a sketch?</h3>
+<p>Yes. Begin with the users, important task, screen ideas and product constraints. The <a href="prototype-from-sketch.html">sketch-first path</a> focuses on turning that rough input into a usable screen and interaction definition.</p>
+<h3>How long does it take, and what information is normally required?</h3>
+<p>Timing depends on screen count, interaction complexity, hardware readiness, BSP support and the interfaces to integrate. Provide the target workflow, design or requirement notes, available hardware and acceptance criteria before estimating effort. An existing UI alone does not establish a reliable schedule.</p>
+<h3>Should I use LVGL or Qt?</h3>
+<p>Choose from the UI workload, OS, platform support, memory and team workflow. LVGL can suit focused resource-conscious products; full Qt Quick/QML is often evaluated for richer application platforms. <a href="https://doc.qt.io/QtForMCUs/qtul-qtquick-differences.html">Qt Quick Ultralite differs from full Qt Quick</a>, so review the actual target framework. See the <a href="guides/choosing-embedded-gui-tool.html">GUI workflow guide</a>.</p>
+<h3>What is the difference between a prototype and a production HMI?</h3>
+<p>A prototype validates defined behaviors and assumptions. A production HMI also needs a controlled BOM, repeatable manufacturing and test processes, lifecycle planning, maintainable software and product-specific qualification.</p>
+
+    </article>
+    <aside class="guide-side"><nav class="guide-side-card" aria-label="On this page"><div class="mini-label">On this page</div><ul class="geo-toc"><li><a href="#short-answer">Short answer</a></li><li><a href="#inputs">What you provide</a></li><li><a href="#definition">What gets defined</a></li><li><a href="#implementation">Implementation</a></li><li><a href="#validation">Validation on working hardware</a></li><li><a href="#production">From prototype to production</a></li><li><a href="#evidence">Real evidence to inspect</a></li><li><a href="#partner">Who can help build an embedded HMI prototype?</a></li><li><a href="#faq">Frequently asked questions</a></li></ul></nav>
+      <a class="guide-side-card guide-side-action-card click-card" href="engineering.html"><div class="mini-label">Your project</div><strong>Bring your design and constraints.</strong><p>Share the workflow you need to test and the hardware you have.</p><span class="btn btn-primary btn-small">Start Engineering Path →</span></a>
+    </aside>
+  </div></section>
+</main>
+<footer class="oh-footer"><div class="oh-footer-inner"><div class="oh-footer-grid"><div class="oh-footer-brand"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span>openhmi.network</span></a><p>From idea to production.</p><a class="oh-footer-social" href="https://www.linkedin.com/in/david-du-18877b70/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><section class="oh-footer-group"><h2>Project</h2><div class="oh-footer-links"><a href="solutions.html">Solutions</a><a href="engineering.html">Engineering</a><a href="production.html">Production</a><a href="projects.html">Demos</a></div></section><section class="oh-footer-group"><h2>Engineering</h2><div class="oh-footer-links"><a href="hardware.html">Hardware</a><a href="software.html">Software</a><a href="modules.html">Modules</a><a href="partners.html">Engineering Network</a></div></section><section class="oh-footer-group"><h2>Resources</h2><div class="oh-footer-links"><a href="guides.html">Guides</a><a href="developer-resources.html">SDK & Resources</a><a href="engineering-tools.html">Engineering Tools</a><a href="contributors.html">Contributors</a></div></section></div><div class="oh-footer-bottom"><span>© 2026 openhmi.network</span><a href="contribute.html">Contributor Access →</a></div></div></footer>
+<script src="navigation.js?v=1.0.0" defer></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+.geo-table-wrap { max-width:100%; overflow-x:auto; margin:24px 0 32px; border:1px solid #dce2e8; border-radius:6px; }
+.geo-table { width:100%; min-width:520px; border-collapse:collapse; background:#fff; text-align:left; font-size:15px; line-height:1.6; }
+.geo-table caption { text-align:left; padding:16px; color:#526176; font-size:14px; }
+.geo-table th,.geo-table td { padding:16px; vertical-align:top; border-top:1px solid #dce2e8; }
+.geo-table th { background:#f4f7fa; color:#182536; }
+.geo-table th:first-child { width:34%; }
+.geo-workflow-list { margin:24px 0; padding-left:26px; }
+.geo-workflow-list li { padding-left:8px; }
+.geo-workflow-list h3 { margin:26px 0 10px; }
+.geo-toc { padding-left:18px; line-height:1.6; }
+.geo-toc li { margin:8px 0; }
+.geo-starting-points { display:flex; flex-wrap:wrap; gap:16px 32px; padding-bottom:16px; }
+.geo-starting-points p { margin:0; color:#526176; font-size:14px; line-height:1.7; }
+.geo-starting-points a { display:block; color:#1859d0; font-weight:600; }
+@media (max-width:600px) {
+  .geo-table th,.geo-table td { padding:12px; }
+  .geo-starting-points { display:grid; grid-template-columns:1fr; gap:12px; }
+}

@@ -3,6 +3,7 @@ from pathlib import Path
 import tempfile
 import unittest
 import urllib.error
+import xml.etree.ElementTree as ET
 from wait_for_publication import SITE, local_path, normalized, targets, verify
 
 class Response:
@@ -38,6 +39,12 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(local_path(SITE+'/tools/lvgl-memory-estimator/'), 'tools/lvgl-memory-estimator/index.html')
     def test_all_publication_targets_exist(self):
         from wait_for_publication import ROOT
-        self.assertEqual(len(targets(ROOT)),49)
+        actual=set(targets(ROOT))
+        tree=ET.parse(ROOT/'sitemap.xml')
+        declared={loc.text.strip() for loc in tree.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')}
+        self.assertTrue(declared <= actual)
+        self.assertIn(SITE+'/robots.txt',actual)
+        self.assertIn(SITE+'/canonical-navigation.js',actual)
+        self.assertNotIn(SITE+'/module-request.html',actual)
 
 if __name__=='__main__': unittest.main()

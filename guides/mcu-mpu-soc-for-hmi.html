@@ -24,7 +24,8 @@
   <link rel="stylesheet" href="../assets/css/styles.css?v=1.0.0" />
 
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://openhmi.network/guides/mcu-mpu-soc-for-hmi.html#article","headline":"MCU, MPU or SoC for Embedded HMI?","description":"Choose between MCU, performance RTOS, MPU and SoC approaches for embedded HMI based on UI complexity, display needs, multimedia and system integration.","mainEntityOfPage":{"@type":"WebPage","@id":"https://openhmi.network/guides/mcu-mpu-soc-for-hmi.html"},"author":{"@type":"Organization","name":"openhmi.network","url":"https://openhmi.network/"},"publisher":{"@type":"Organization","name":"openhmi.network","url":"https://openhmi.network/"},"inLanguage":"en"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"openhmi.network","item":"https://openhmi.network/"},{"@type":"ListItem","position":2,"name":"HMI Guides","item":"https://openhmi.network/guides.html"},{"@type":"ListItem","position":3,"name":"MCU, MPU or SoC for Embedded HMI?"}]}]}</script>
-<link rel="stylesheet" href="../navigation.css?v=1.0.0"><link rel="stylesheet" href="../site-theme.css?v=1.0.0"></head>
+<link rel="stylesheet" href="../navigation.css?v=1.0.0"><link rel="stylesheet" href="../site-theme.css?v=1.0.0"><link rel="stylesheet" href="../assets/css/geo-workflows.css?v=2">
+</head>
 <body class="legacy-page">
 <header class="oh-header"><div class="oh-header-inner">
       <a class="brand" href="/" aria-label="OpenHMI home"><span class="brand-mark" aria-hidden="true"></span><span>openhmi.network</span></a>
@@ -43,6 +44,19 @@
   </section>
   <section class="guide-body-section"><div class="container guide-layout"><article class="guide-article">
 <p class="guide-lead">The first architecture decision in an HMI project is often described as MCU versus MPU versus SoC. In practice, product labels overlap. A display-focused SoC may run RTOS, an MCU may integrate substantial graphics capability, and an MPU-based module may hide much of the hardware complexity. The useful question is simpler: <strong>how much system complexity does the HMI need to own?</strong></p>
+<h2 id="quick-answer">Quick answer</h2>
+<p>For a focused, cost-sensitive HMI with fast boot and modest graphics, start with an MCU or RTOS-oriented platform. For larger displays, richer graphics, networking, video or complex applications, an MPU or Linux-capable SoC is usually more appropriate. Select the architecture from UI workload, display, OS, connectivity and lifecycle—not the processor label alone.</p>
+<div class="geo-table-wrap" role="region" aria-label="HMI architecture starting points" tabindex="0"><table class="geo-table">
+<caption>Starting points to validate against the actual workload.</caption>
+<thead><tr><th scope="col">Requirement</th><th scope="col">Usually start with</th></tr></thead>
+<tbody>
+<tr><td>Simple UI, low cost and fast boot</td><td>MCU</td></tr>
+<tr><td>Richer graphics without a full Linux stack</td><td>Performance RTOS SoC</td></tr>
+<tr><td>Full Qt Quick/QML, networking and multimedia</td><td>Linux MPU / SoC</td></tr>
+<tr><td>Video, camera and complex connectivity</td><td>Multimedia SoC</td></tr>
+</tbody></table></div>
+<p>These are workload classes, not strict chip categories. LVGL can also run on Linux, and Qt for MCUs uses a different framework from full Qt Quick. Verify the platform's drivers, memory and graphics path with the intended application.</p>
+
 <h2>Think in architecture classes, not labels</h2>
 <div class="guide-compare three"><div><span>COMPACT MCU HMI</span><h3>Control-first</h3><p>Best when the UI is tightly coupled to real-time control, boot time and cost matter, and memory requirements are modest.</p></div><div><span>PERFORMANCE RTOS HMI</span><h3>UI-first RTOS</h3><p>Useful when richer graphics, larger displays or connectivity are needed without moving the whole product to Linux.</p></div><div><span>LINUX / MULTIMEDIA HMI</span><h3>System-first</h3><p>Best when the HMI needs complex applications, rich networking, multimedia, browser-like software stacks or multi-process services.</p></div></div>
 <h2>Six questions usually decide the class</h2>
@@ -52,6 +66,17 @@
 <h2>Do not over-specify too early</h2>
 <p>It is easy to start with a powerful processor “for headroom.” That can add memory, PCB, boot, thermal and software complexity that the product never uses. The opposite mistake is equally common: choosing a very small MCU and then spending months working around memory and graphics limits.</p>
 <p>Start from the display, UI, OS, connectivity and lifecycle. Then map those requirements to a platform class. Exact silicon should come later.</p>
+<h2 id="architecture-faq">Architecture questions</h2>
+<h3>MCU vs MPU for industrial HMI?</h3>
+<p>Start with the functions the HMI must own. A focused status-and-control interface with modest graphics can fit an MCU or RTOS platform. More complex applications, services, networking or multimedia may justify an MPU and Linux. Verify the display, memory, BSP and interface workload before choosing a specific processor.</p>
+<h3>Is Linux necessary for a 7-inch HMI?</h3>
+<p>No. Physical size alone does not decide the OS. Resolution, refresh rate, animation, video, connectivity and application complexity matter more. A performance RTOS platform may support a focused 7-inch LVGL interface; a richer workload may call for Linux. Test a representative screen and data flow on candidate hardware.</p>
+<h3>When is LVGL + RTOS enough?</h3>
+<p>It is a useful starting point when the UI and product services can fit the platform's resource budget, the required drivers and interfaces are supported, and the important workflows meet their response and reliability targets. A need for substantial multimedia or a broader application ecosystem is a reason to evaluate another architecture.</p>
+<h3>How much memory does a high-resolution HMI need?</h3>
+<p>There is no fixed RAM value that follows from display size. Budget resolution, color depth, framebuffer and draw-buffer strategy, GUI framework, asset caching, animation and video, then add application, driver and OS memory. A basic full-frame pixel buffer is width × height × bytes per pixel; the number of buffers, stride and additional surfaces change the allocation. Partial rendering can use smaller draw buffers where the display and port support it. Measure peak usage with the real workflow.</p>
+<p>Use the <a href="../tools/lvgl-memory-estimator/">LVGL Memory Estimator</a> for initial budgeting and <a href="https://lvgl.io/docs/open/9.2/porting/display">LVGL's display documentation</a> for buffer strategy. Connect the architecture decision to the <a href="../figma-to-embedded-hmi.html">Figma handoff workflow</a> and the <a href="../embedded-hmi-prototype.html">hardware prototype workflow</a>.</p>
+
 </article><aside class="guide-side"><div class="guide-side-card"><div class="mini-label">Use this guide when</div><ul class="guide-side-list"><li>You are choosing the first compute platform.</li><li>You are deciding between RTOS and Linux.</li><li>The UI roadmap may grow over several product generations.</li><li>You want to avoid both over- and under-specification.</li></ul></div><a class="guide-side-card guide-side-action-card click-card" href="../selector.html"><div class="mini-label">Next step</div><strong>Turn requirements into an architecture.</strong><p>Use the HMI Selector before choosing a specific chip or board.</p><span class="btn btn-primary btn-small">Start Selector →</span></a></aside></div></section>
   <section class="section--tight"><div class="container"><div class="guide-next"><div><div class="eyebrow">Continue exploring</div><h2>Architecture is only the first decision.</h2><p>Connect the choice to official resources, evaluation hardware and engineering support.</p></div><div class="hero-actions"><a class="btn btn-primary" href="../resources.html">Developer Hub →</a><a class="btn btn-secondary" href="../hardware.html">Evaluation Hardware</a><a class="btn btn-secondary" href="../submit-project.html">Discuss a Project</a></div></div></div></section>
 </main>
