@@ -16,6 +16,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.parse import urlparse
+import urllib.parse
 
 SITE = "https://openhmi.network"
 HOST = "openhmi.network"
@@ -43,7 +44,8 @@ def url_to_local_path(url: str) -> str:
     path = urlparse(url).path
     if path in ("", "/"):
         return "index.html"
-    return path.lstrip("/")
+    local = path.lstrip("/")
+    return local + "index.html" if local.endswith("/") else local
 
 
 def changed_files(base: str, head: str) -> set[str]:
@@ -57,6 +59,8 @@ def changed_urls(base: str, head: str) -> list[str]:
     allow = {url_to_local_path(url): url for url in urls}
     changed = changed_files(base, head)
     selected: set[str] = set()
+    if "sitemap.xml" in changed:
+        return sorted(set(urls))
 
     for path in changed:
         if path in allow:
@@ -64,14 +68,23 @@ def changed_urls(base: str, head: str) -> list[str]:
 
         # Data-driven pages: registry/resource edits change rendered content.
         if path.startswith("data/registry/"):
-            for target in ("contributors.html",):
+            for target in ("contributors.html", "developer-resources.html", "projects.html"):
                 if target in allow:
                     selected.add(allow[target])
         if path.startswith("data/resources/") or path.startswith("data/vendors/"):
-            for target in ("resources.html",):
+            for target in ("developer-resources.html",):
                 if target in allow:
                     selected.add(allow[target])
 
+    # Changed demo metadata should notify its indexable detail page too.
+    for path in changed:
+        if path.startswith("data/registry/contributions/") and path.endswith(".json"):
+            source = ROOT / path
+            if source.is_file():
+                item = json.loads(source.read_text(encoding="utf-8"))
+                target = url_to_local_path(urllib.parse.urljoin(SITE + "/", item.get("resource_url", "")))
+                if target in allow:
+                    selected.add(allow[target])
     return sorted(selected)
 
 

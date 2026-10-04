@@ -25,10 +25,10 @@
 <link rel="stylesheet" href="assets/css/project-path.css?v=090" /><link rel="stylesheet" href="navigation.css?v=1.0.0"><link rel="stylesheet" href="site-theme.css?v=1.0.0"></head>
 <body class="legacy-page">
 <header class="oh-header"><div class="oh-header-inner">
-      <a class="brand" href="index.html" aria-label="OpenHMI home"><span class="brand-mark" aria-hidden="true"></span><span>openhmi.network</span></a>
+      <a class="brand" href="/" aria-label="OpenHMI home"><span class="brand-mark" aria-hidden="true"></span><span>openhmi.network</span></a>
       <a class="oh-mobile-engineering" href="engineering.html">Engineering</a>
       <button class="oh-menu-toggle" type="button" aria-expanded="false" aria-controls="oh-navigation">Menu <span aria-hidden="true">＋</span></button>
-      <nav class="oh-navigation" id="oh-navigation" aria-label="Main navigation"><a href="solutions.html">Solutions</a><a href="engineering.html">Engineering</a><a href="production.html">Production</a><a href="projects.html">Demos</a><a href="resources.html" aria-current="page">Resources</a><a class="oh-get-started" href="index.html#intake">Get started <span aria-hidden="true">↗</span></a></nav>
+      <nav class="oh-navigation" id="oh-navigation" aria-label="Main navigation"><a href="solutions.html">Solutions</a><a href="engineering.html">Engineering</a><a href="production.html">Production</a><a href="projects.html">Demos</a><a href="resources.html" aria-current="page">Resources</a><a class="oh-get-started" href="/#intake">Get started <span aria-hidden="true">↗</span></a></nav>
     </div></header>
 <main>
   <section class="page-hero resource-hero">
@@ -104,7 +104,13 @@
   <section class="section--tight community-registry-section">
     <div class="container">
       <div class="resource-browse-head"><div><div class="eyebrow">Community Registry</div><h2 class="section-title">Published contributions</h2><p class="section-copy">The registry indexes useful work without taking ownership of linked repositories, then connects published capability to relevant project paths.</p></div><a class="btn btn-secondary" href="contributors.html">Contributor Directory →</a></div>
-      <div class="community-contribution-grid" data-community-contributions><div class="resource-loading">Loading contributions…</div></div>
+      <div class="community-contribution-grid" data-community-contributions><!-- static-discovery:data-community-contributions -->
+<article class="community-contribution-card"><h3><a href="projects.html#cluster">2W Cluster HMI</a></h3><p>Compact digital cluster concept for 2-wheel mobility with gauges, status pages and settings in a responsive embedded UI.</p><p>By Open HMI Network</p></article>
+<article class="community-contribution-card"><h3><a href="projects.html#agriculture">Agricultural Monitoring HMI</a></h3><p>7-inch touch HMI concept for machine monitoring, mode selection, operator guidance and field equipment workflows.</p><p>By Open HMI Network</p></article>
+<article class="community-contribution-card"><h3><a href="projects.html#appliance">Smart Home Appliance HMI</a></h3><p>Consumer appliance HMI concept with mode selection, timing control and polished touch interaction on an embedded platform.</p><p>By Open HMI Network</p></article>
+<article class="community-contribution-card"><h3><a href="demos/janos-touch-ui-demo.html">OrbitMenu — Reusable LVGL 9 Touch Control</a></h3><p>OrbitMenu by János Márta is a reusable LVGL 9 touch-selection control demonstrated on ArtInChip D133CBS hardware.</p><p>By János Márta</p></article>
+<article class="community-contribution-card"><h3><a href="demos/janos-ai-robot-gesture-demo.html">AI Robot Gesture System — State-driven Embedded HMI Experiment</a></h3><p>An embedded HMI experiment by János Márta where listening, thinking and speaking states each have their own robot gesture, with transitions controlled through draggable nodes on the touch display.</p><p>By János Márta</p></article>
+<!-- /static-discovery:data-community-contributions --></div>
     </div>
   </section>
 
@@ -133,7 +139,7 @@
 
   <section class="section" id="browse">
     <div class="container">
-      <div class="resource-browse-head"><div><div class="eyebrow">Browse</div><h2 class="section-title">Technical Resources</h2></div><span class="resource-count" data-resource-count>Loading…</span></div>
+      <div class="resource-browse-head"><div><div class="eyebrow">Browse</div><h2 class="section-title">Technical Resources</h2></div><span class="resource-count" data-resource-count>87 resources</span></div>
       <div class="resource-toolbar">
         <label class="resource-search"><span>Search</span><input type="search" data-resource-search placeholder="SDK, LVGL, D13x, display, Wi-Fi…" /></label>
         <label><span>Vendor</span><select data-resource-vendor><option>All vendors</option></select></label>
@@ -141,7 +147,95 @@
         <label><span>Access</span><select data-resource-access><option value="">All access</option><option value="open-source">Open Source</option><option value="public">Public</option><option value="registration">Registration</option><option value="request">Request Access</option><option value="restricted">Restricted / NDA</option></select></label>
         <label><span>Source</span><select data-resource-source><option value="">All sources</option><option value="official">Official</option><option value="open-hmi">Network</option><option value="community">Community</option></select></label>
       </div>
-      <div class="resource-grid" data-resource-grid><div class="resource-loading">Loading resources…</div></div>
+      <div class="resource-grid" data-resource-grid><!-- static-discovery:data-resource-grid -->
+<article class="resource-card"><h3><a href="selector.html">HMI Architecture Selector</a></h3><p>Define display, UI, OS and connectivity needs before choosing a platform.</p><p>OpenHMI Network · public</p></article>
+<article class="resource-card"><h3><a href="projects.html#cluster">2W Cluster HMI Case Study</a></h3><p>A 5-inch LVGL cluster demo covering gauges, status pages and settings.</p><p>OpenHMI Network · public</p></article>
+<article class="resource-card"><h3><a href="projects.html#agriculture">Agricultural Monitoring HMI Case Study</a></h3><p>A 7-inch touch HMI for machine status, monitoring and operator workflows.</p><p>OpenHMI Network · public</p></article>
+<article class="resource-card"><h3><a href="projects.html#appliance">Smart Appliance HMI Case Study</a></h3><p>A consumer-style appliance UI with mode selection, timing and touch interaction.</p><p>OpenHMI Network · public</p></article>
+<article class="resource-card"><h3><a href="partners.html">Global Engineering Network</a></h3><p>Regional GUI, BSP, firmware and product-integration support for HMI projects.</p><p>OpenHMI Network · public</p></article>
+<article class="resource-card"><h3><a href="contributors.html">Contributor Directory</a></h3><p>Discover HMI engineers through published demos, guides and integration work.</p><p>OpenHMI Network · public</p></article>
+<article class="resource-card"><h3><a href="contribute.html">Submit a GitHub Contribution</a></h3><p>Register a contributor-owned GitHub demo, guide or integration without transferring repository ownership.</p><p>OpenHMI Network · public</p></article>
+<article class="resource-card"><h3><a href="guides/serial-hmi-vs-chip-level.html">When Should You Move Beyond a Serial HMI?</a></h3><p>A practical decision guide covering cost, convenience, flexibility, scale and the ecosystem needed for chip-level HMI.</p><p>OpenHMI Network · public</p></article>
+<article class="resource-card"><h3><a href="guides/mcu-mpu-soc-for-hmi.html">MCU, MPU or SoC for Embedded HMI?</a></h3><p>Choose between compact MCU, performance RTOS and Linux / multimedia HMI from product requirements.</p><p>OpenHMI Network · public</p></article>
+<article class="resource-card"><h3><a href="guides/choosing-embedded-gui-tool.html">Choosing the Right GUI Tool for Your Embedded Workflow</a></h3><p>Compare embedded GUI workflows by team ownership, target platform, hand-off, integration and maintenance.</p><p>OpenHMI Network · public</p></article>
+<article class="resource-card"><h3><a href="guides/chip-to-production-hmi.html">From Chip to Production HMI: What Is Actually Needed?</a></h3><p>A practical framework for combining compute, display, BSP, GUI, engineering delivery and production supply.</p><p>OpenHMI Network · public</p></article>
+<article class="resource-card"><h3><a href="https://gitee.com/artinchip/d211">Luban SDK</a></h3><p>Linux SDK source repository.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://gitee.com/artinchip/luban-lite">Luban-Lite SDK</a></h3><p>RTOS SDK source repository.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://gitee.com/artinchip/baremetal">Baremetal SDK</a></h3><p>Bare-metal SDK source repository.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://gitee.com/artinchip/d215">D215 SDK</a></h3><p>Official D215 SDK repository.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://gitee.com/artinchip/ai-toy">AI-Toy SDK</a></h3><p>Official AI-Toy SDK repository.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/sdk/luban-user-guide-luban.html">Luban SDK User Guide</a></h3><p>Official Luban SDK documentation.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/sdk/luban-lite-user-guide-lite.html">Luban-Lite User Guide</a></h3><p>Official Luban-Lite SDK documentation.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/sdk/chapter-baremetal-baremetal.html">Baremetal User Guide</a></h3><p>Official bare-metal SDK documentation.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/revinfo/revInfo_Quickstart-quickstart-d12x.html">D12x Quick Start</a></h3><p>Board, build, flashing and SDK quick-start guidance.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/revinfo/revInfo_Quickstart-quickstart-d125.html">D125 Quick Start</a></h3><p>Board, build, flashing and SDK quick-start guidance.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/revinfo/revInfo_Quickstart-quickstart-d13x.html">D13x Quick Start</a></h3><p>Board, build, flashing and SDK quick-start guidance.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/revinfo/revInfo_Quickstart-quickstart-d21x.html">D21x Quick Start</a></h3><p>Board, build, flashing and SDK quick-start guidance.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/revinfo/revInfo_Quickstart-quickstart-g73x.html">G73x Quick Start</a></h3><p>Board, build, flashing and SDK quick-start guidance.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/product/d12x-doc.html">D12x Product Documentation</a></h3><p>Datasheet, user manual and hardware guidance from the official documentation portal.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/product/d125-doc.html">D125 Product Documentation</a></h3><p>Datasheet, user manual and hardware guidance from the official documentation portal.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/product/d126-doc.html">D126 Product Documentation</a></h3><p>Datasheet, user manual and hardware guidance from the official documentation portal.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/product/d13x-doc-d13x.html">D13x Product Documentation</a></h3><p>Datasheet, user manual and hardware guidance from the official documentation portal.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/product/d21x-doc-d21x.html">D21x Product Documentation</a></h3><p>Datasheet, user manual and hardware guidance from the official documentation portal.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/product/g72x-doc.html">G72x Product Documentation</a></h3><p>Datasheet, user manual and hardware guidance from the official documentation portal.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/product/g73x-doc-g73x.html">G73x Product Documentation</a></h3><p>Datasheet, user manual and hardware guidance from the official documentation portal.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/hardware/layout.html">D12x Reference Design</a></h3><p>Official schematic and hardware reference-design guidance.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/hardware/layout-d13x.html">D13x Reference Design</a></h3><p>Official schematic and hardware reference-design guidance.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/hardware/layout-d21x.html">D21x Reference Design</a></h3><p>Official schematic and hardware reference-design guidance.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/quickstart/dev-boards.html">D12x Development Board</a></h3><p>Official development-board information.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/quickstart/dev-boards-d12xPro.html">D125 Development Board</a></h3><p>Official development-board information.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/product/d13x-dev-board.html">D13x Development Board</a></h3><p>Official development-board information.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/product/d21x-dev-board.html">D21x Development Board</a></h3><p>Official development-board information.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/product/g73x-dev-board.html">G73x Development Board</a></h3><p>Official development-board information.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/3rd-party/third-party-app-qt.html">Qt Integration</a></h3><p>Official Qt integration documentation.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/3rd-party/third-party-app-lvgl.html">LVGL Integration</a></h3><p>Official LVGL integration documentation.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/tools/uibuilder/uibuilder_user_guide.html">UIBuilder User Guide</a></h3><p>Official UIBuilder user guide for HMI interface development.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/tools/AiBurn-user-guide.html">AiBurn User Guide</a></h3><p>Flashing tool user guide.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/tools/AiBurnPro-user-guide.html">AiBurnPro User Guide</a></h3><p>Production flashing tool user guide.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/tools/aiburnID-user-guide.html">AiBurnID User Guide</a></h3><p>UserID programming tool guide.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/tools/aikey-user-guide.html">AiKey User Guide</a></h3><p>Production authorization configuration tool guide.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/tools/aipq_user_gude.html">AiPQ User Guide</a></h3><p>Display image-quality tuning tool guide.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/tools/aivideo-user-guide.html">AiVideo User Guide</a></h3><p>Video-format conversion tool guide.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://gitee.com/artinchip/tools">Official Tools Repository</a></h3><p>UIBuilder, AiBurn, AiBurnPro, AiKey, AiPQ, AiVideo and related official tools.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://aicdoc.artinchip.com/topics/pdf-docs.html">PDF / HTML Resource Center</a></h3><p>Official PDF, HTML and developer-resource download center.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1ma4y1S75y">Luban-Lite: Build Overview</a></h3><p>Build and compilation overview.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1Sa4y1U7k7">Luban-Lite: Eclipse Build</a></h3><p>Eclipse build workflow.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1fc411q7no">Luban-Lite: Flash + Boot</a></h3><p>Flashing and boot tutorial.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1HK4y117y5">Luban-Lite: Eclipse + JTAG Debug</a></h3><p>JTAG online debugging setup.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1rwvkeNE8w">Luban-Lite: VS Code Setup</a></h3><p>VS Code development environment setup.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1r3YeeuEnL">Luban-Lite: Pinmux Tool</a></h3><p>Pinmux tool usage.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV14heweFEvp">Luban-Lite: Serial Debug</a></h3><p>Serial debugging tutorial.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1az2mYyEAL">Luban-Lite: Add an LVGL Demo</a></h3><p>How to add an LVGL demo to the SDK.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV12orrYgEtF">Luban-Lite Bring-up</a></h3><p>Luban-Lite bring-up walkthrough.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1HAGgzLExf">Luban-Lite Memory Usage</a></h3><p>Memory usage guidance.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1v5uWzYEPU">Luban SDK Usage</a></h3><p>Luban SDK usage tutorial.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1pm421T7WH">AiPQ: Introduction &amp; Preparation</a></h3><p>Display tuning preparation and AiPQ introduction.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1QPTNeEEbg">LCD Parameter Tuning</a></h3><p>LCD parameter tuning.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1g7421R71M">LVDS Interface Tuning</a></h3><p>Interface and LVDS parameter tuning.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1Tb421H7wp">MIPI-DSI Parameters</a></h3><p>MIPI-DSI parameter guidance.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1twuuzLEcL">LCD Display Adaptation</a></h3><p>LCD display adaptation workflow.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1AK5s6jEvh">Display Bring-up Guide</a></h3><p>Display bring-up tutorial.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1Q4421S7Qz">OTA Process Overview</a></h3><p>OTA process introduction.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1VM4m1U7Nd">OTA System Configuration</a></h3><p>OTA system configuration.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1Tz421z7RB">OTA Upgrade Introduction</a></h3><p>OTA upgrade introduction.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1nvqrYDEHA">UIBuilder Usage Guide</a></h3><p>UIBuilder usage tutorial.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1aWGGzBEqa">UIBuilder + LVGL</a></h3><p>Develop LVGL UI with UIBuilder.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1ZbrzYDEqm">LVGL Usage Guide</a></h3><p>LVGL usage guidance.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1KfW7zgEoP">LVGL Performance Optimization</a></h3><p>LVGL performance optimization.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1w4uBzQEEK">Touch Driver Porting</a></h3><p>Touch-panel driver porting.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1YU4BzEEKA">4G CAT1 Usage</a></h3><p>4G CAT1 integration tutorial.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1tJW9zkEtJ">Wi-Fi Usage</a></h3><p>Wi-Fi integration tutorial.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1Pvs8zME3r">Bluetooth Debug Guide</a></h3><p>Bluetooth debugging guidance.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1PqyZBJEby">MPP Platform Architecture</a></h3><p>MPP platform architecture overview.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1MuymBZExo">MPP Recording</a></h3><p>MPP recording function introduction.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1n4y4BRE6J">MPP Audio / Video Player</a></h3><p>MPP media player usage.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1PptyzWEao">DVP Debug</a></h3><p>DVP debugging tutorial.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1a51NB7Ey8">DVP Image Processing</a></h3><p>DVP image-processing features.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1NMzYBeE9g">Smart Wired Controller Application</a></h3><p>Application example based on D121BBV.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV1HHXkBXE7u">AI Core Box + Plush Toy</a></h3><p>AI application example based on the D13x series.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV174foBME3M">2W Smart Cluster Application</a></h3><p>Cost-focused 2-wheel smart cluster example based on D121BAV.</p><p>ArtInChip · public</p></article>
+<article class="resource-card"><h3><a href="https://b23.tv/BV19efoBaE3y">AI Companion Robot Application</a></h3><p>AI companion robot application based on D13x.</p><p>ArtInChip · public</p></article>
+<!-- /static-discovery:data-resource-grid --></div>
       <div class="resource-more-row"><button class="btn btn-secondary" type="button" data-resource-more hidden>Show more</button></div>
       <p class="resource-ownership-note">Official vendor resources remain owned and governed by their respective source owners. The network organizes discovery and adds independent guides, demos and community content.</p>
     </div>
@@ -149,7 +243,7 @@
 
   <section class="section--tight"><div class="container"><div class="cta"><div><div class="eyebrow">Building a real product?</div><h2>Use the resources to evaluate — then bring us the requirement.</h2><p>A short project brief can help connect the right platform, display and engineering path.</p></div><div class="hero-actions"><a class="btn btn-primary" href="selector.html">Use HMI Selector →</a><a class="btn btn-dark" href="submit-project.html">Discuss Your HMI Project</a></div></div></div></section>
 <section class="section--tight"><div class="container project-next"><h2>Need help applying these resources?</h2><p>Bring your product requirements, current platform or integration question. The technical stack can still be undecided.</p><a class="btn btn-primary" href="submit-project.html?reference=Developer%20Resources">Discuss Your HMI Project →</a></div></section></main>
-<footer class="oh-footer"><div class="oh-footer-inner"><div class="oh-footer-grid"><div class="oh-footer-brand"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>openhmi.network</span></a><p>From idea to production.</p><a class="oh-footer-social" href="https://www.linkedin.com/in/david-du-18877b70/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><section class="oh-footer-group"><h2>Project</h2><div class="oh-footer-links"><a href="solutions.html">Solutions</a><a href="engineering.html">Engineering</a><a href="production.html">Production</a><a href="projects.html">Demos</a></div></section><section class="oh-footer-group"><h2>Engineering</h2><div class="oh-footer-links"><a href="hardware.html">Hardware</a><a href="software.html">Software</a><a href="modules.html">Modules</a><a href="partners.html">Engineering Network</a></div></section><section class="oh-footer-group"><h2>Resources</h2><div class="oh-footer-links"><a href="guides.html">Guides</a><a href="developer-resources.html">SDK & Resources</a><a href="engineering-tools.html">Engineering Tools</a><a href="contributors.html">Contributors</a></div></section></div><div class="oh-footer-bottom"><span>© 2026 openhmi.network</span><a href="contribute.html">Contributor Access →</a></div></div></footer>
+<footer class="oh-footer"><div class="oh-footer-inner"><div class="oh-footer-grid"><div class="oh-footer-brand"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span>openhmi.network</span></a><p>From idea to production.</p><a class="oh-footer-social" href="https://www.linkedin.com/in/david-du-18877b70/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><section class="oh-footer-group"><h2>Project</h2><div class="oh-footer-links"><a href="solutions.html">Solutions</a><a href="engineering.html">Engineering</a><a href="production.html">Production</a><a href="projects.html">Demos</a></div></section><section class="oh-footer-group"><h2>Engineering</h2><div class="oh-footer-links"><a href="hardware.html">Hardware</a><a href="software.html">Software</a><a href="modules.html">Modules</a><a href="partners.html">Engineering Network</a></div></section><section class="oh-footer-group"><h2>Resources</h2><div class="oh-footer-links"><a href="guides.html">Guides</a><a href="developer-resources.html">SDK & Resources</a><a href="engineering-tools.html">Engineering Tools</a><a href="contributors.html">Contributors</a></div></section></div><div class="oh-footer-bottom"><span>© 2026 openhmi.network</span><a href="contribute.html">Contributor Access →</a></div></div></footer>
 <script src="assets/js/main.js?v=090"></script>
 <script src="assets/js/resources.js?v=1002"></script>
 <script src="assets/js/registry.js?v=031"></script>
