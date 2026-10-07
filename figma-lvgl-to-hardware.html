@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Figma to LVGL to Hardware | LVGL Pro, SquareLine &amp; Embedded Engineering</title>
+  <meta name="description" content="Understand where Figma, LVGL Pro, SquareLine Vision and LVGL fit in an embedded UI workflow — and what still requires hardware, BSP, state logic and prototype engineering.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="https://openhmi.network/figma-lvgl-to-hardware.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="OpenHMI Network">
+  <meta property="og:title" content="Figma to LVGL to Hardware | LVGL Pro, SquareLine &amp; Embedded Engineering">
+  <meta property="og:description" content="Understand where Figma, LVGL Pro, SquareLine Vision and LVGL fit in an embedded UI workflow — and what still requires hardware, BSP, state logic and prototype engineering.">
+  <meta property="og:url" content="https://openhmi.network/figma-lvgl-to-hardware.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css?v=1.0.0">
+  <link rel="stylesheet" href="navigation.css?v=1.0.0">
+  <link rel="stylesheet" href="site-theme.css?v=1.0.0">
+  <link rel="stylesheet" href="assets/css/geo-workflows.css?v=2">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "@id": "https://openhmi.network/figma-lvgl-to-hardware.html#article", "headline": "From Figma to LVGL to Hardware: What Each Tool Solves", "description": "Understand where Figma, LVGL Pro, SquareLine Vision and LVGL fit in an embedded UI workflow — and what still requires hardware, BSP, state logic and prototype engineering.", "inLanguage": "en", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://openhmi.network/figma-lvgl-to-hardware.html"}, "author": {"@type": "Organization", "@id": "https://openhmi.network/#organization", "name": "OpenHMI Network", "url": "https://openhmi.network/"}, "publisher": {"@type": "Organization", "@id": "https://openhmi.network/#organization", "name": "OpenHMI Network", "url": "https://openhmi.network/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "OpenHMI Network", "item": "https://openhmi.network/"}, {"@type": "ListItem", "position": 2, "name": "HMI Guides", "item": "https://openhmi.network/guides.html"}, {"@type": "ListItem", "position": 3, "name": "Figma → LVGL → Hardware", "item": "https://openhmi.network/figma-lvgl-to-hardware.html"}]}]}</script>
+</head>
+<body class="legacy-page">
+<header class="oh-header"><div class="oh-header-inner">
+      <a class="brand" href="/" aria-label="OpenHMI home"><span class="brand-mark" aria-hidden="true"></span><span>openhmi.network</span></a>
+      <a class="oh-mobile-engineering" href="engineering.html">Engineering</a>
+      <button class="oh-menu-toggle" type="button" aria-expanded="false" aria-controls="oh-navigation">Menu <span aria-hidden="true">＋</span></button>
+      <nav class="oh-navigation" id="oh-navigation" aria-label="Main navigation"><a href="solutions.html">Solutions</a><a href="engineering.html">Engineering</a><a href="production.html">Production</a><a href="projects.html">Demos</a><a href="resources.html" aria-current="page">Resources</a><a class="oh-get-started" href="/#intake">Get started <span aria-hidden="true">↗</span></a></nav>
+    </div></header>
+<main>
+  <section class="guide-hero"><div class="container guide-hero-inner">
+    <div class="guide-breadcrumb"><a href="/">Home</a><span>→</span><a href="guides.html">HMI Guides</a><span>→</span><span>Figma → LVGL → Hardware</span></div>
+    <div class="guide-meta"><span>Core workflow</span><span>OpenHMI Network</span></div>
+    <h1>From Figma to LVGL to Hardware: What Each Tool Solves</h1><p>Connect UI authoring with product and hardware engineering.</p>
+  </div></section>
+  <section class="guide-body-section"><div class="container guide-layout">
+    <article class="guide-article">
+<h2 id="short-answer">Short answer</h2>
+<p class="guide-lead">Figma defines the visual design. LVGL Pro and SquareLine Vision can accelerate the transition from Figma into an LVGL project. LVGL provides the embedded UI runtime. A working product still requires product-specific interaction and state logic, device data and I/O, display and touch integration, BSP and drivers, processor and memory validation, and testing on representative hardware.</p>
+<p>OpenHMI focuses on this system-level path from UI implementation to a working embedded prototype and production architecture. OpenHMI connects the UI workflow with the system, hardware, validation and production decisions needed around it.</p>
+<h2 id="workflow">The complete embedded HMI workflow</h2>
+<p><strong>Design-to-code and product-to-hardware are related, but they are not the same engineering problem.</strong></p>
+<ol class="geo-workflow-list">
+<li><h3>Product idea / requirements → Figma</h3><p>Define users, operating conditions and acceptance criteria. Figma describes visual design, components, tokens and prototype flows.</p></li>
+<li><h3>LVGL Pro / SquareLine Vision / manual implementation → LVGL UI</h3><p>Build widgets, layouts, events, bindings, assets and animation. OpenHMI can work with any of these upstream UI workflows; the engineering path does not require one particular authoring tool.</p></li>
+<li><h3>Product engineering → interaction and state</h3><p>Connect the interaction/state model to device data and I/O. Define error handling and recovery before assuming that a screen transition describes the complete product behavior.</p></li>
+<li><h3>System architecture → hardware integration</h3><p>Evaluate MCU / MPU / SoC, RAM / storage, display / touch, BSP / drivers and connectivity as one system.</p></li>
+<li><h3>Representative hardware → measured validation</h3><p>Measure performance, boot, touch response, memory, display behavior and interfaces under the intended workload.</p></li>
+<li><h3>Working HMI prototype → production</h3><p>Carry validated assumptions into BOM, PCB, lifecycle, component availability and supply decisions.</p></li>
+</ol>
+<h2 id="layers">What each layer solves</h2>
+<div class="geo-table-wrap" role="region" aria-label="Embedded HMI workflow layers" tabindex="0"><table class="geo-table"><caption>These are complementary layers, not equivalent competing products.</caption><thead><tr><th scope="col">Layer</th><th scope="col">Primary job</th><th scope="col">Typical output</th><th scope="col">What comes next</th></tr></thead><tbody>
+<tr><td>Figma</td><td>Visual design and UX specification</td><td>Screens, components, tokens, prototype flows</td><td>Embedded implementation</td></tr>
+<tr><td>LVGL Pro</td><td>Figma → LVGL workflow, XML/editor, bindings, preview and C export</td><td>LVGL UI project / code</td><td>Product and hardware integration</td></tr>
+<tr><td>SquareLine Vision</td><td>Visual LVGL development, Figma widget interpretation, events and export</td><td>LVGL UI / code</td><td>Product and hardware integration</td></tr>
+<tr><td>LVGL</td><td>Embedded GUI runtime</td><td>Widgets, rendering, events and layouts</td><td>Device / application integration</td></tr>
+<tr><td>OpenHMI workflow</td><td>Requirements → state → architecture → device integration → hardware validation</td><td>Working embedded prototype within an agreed scope</td><td>Production engineering</td></tr>
+</tbody></table></div>
+<h2 id="lvgl-pro">What LVGL Pro solves</h2>
+<p>LVGL Pro connects Figma screens, components and design tokens to LVGL XML and the Pro Editor. Its workflow includes preview, data bindings, animation, UI testing and C code export. Generated UI code can be integrated into embedded firmware; the selected LVGL version, dependencies and target configuration still need to match.</p>
+<p>If the main problem is “how do I translate and maintain my Figma UI as LVGL?”, LVGL Pro directly addresses that problem. See the official <a href="https://lvgl.io/docs/pro/figma/get-started">Figma workflow</a>, <a href="https://lvgl.io/docs/pro/">LVGL Pro documentation</a> and <a href="https://lvgl.io/docs/pro/integration/using-exported-c-code">exported C integration guide</a>.</p>
+<h2 id="squareline">Where SquareLine Vision fits</h2>
+<p>SquareLine Vision offers a visual LVGL authoring workflow with Figma import, widget detection, events/actions, animation and export. Widget interpretation depends on the design structure and import settings; review detected widgets and styles rather than assuming every Figma effect maps automatically.</p>
+<p>SquareLine Vision is useful when the team prefers a visual embedded UI authoring workflow around LVGL. Consult its <a href="https://docs.vision.squareline.io/docs/figmatovision/">Figma import documentation</a> and <a href="https://docs.vision.squareline.io/">official documentation</a> for supported features and version requirements.</p>
+<h2 id="boundary">Where does the boundary between UI tools and product engineering sit?</h2>
+<p>There is no single fixed boundary. LVGL Pro and SquareLine can cover substantial UI behavior, events, bindings and code generation. The boundary is crossed when the project depends on product-specific device behavior, hardware interfaces, BSP support, system resources, failure handling or measured performance on the target platform.</p>
+<h2 id="behavior">What happens after the LVGL UI exists?</h2>
+<p><strong>Product state → application logic → LVGL state / screen.</strong> A button event may request a mode change, but application logic must decide whether the device can accept it and what feedback the operator receives.</p>
+<ul><li>Sensor data disappears: distinguish stale data from a valid zero and define recovery.</li><li>CAN communication fails: expose connection state, timeouts and retry behavior.</li><li>An operator changes mode: validate transition conditions and device acknowledgement.</li><li>A safety state activates: represent the device's authoritative state; UI code alone is not a safety mechanism.</li><li>A timeout or reboot occurs: define persistence, initialization and safe recovery.</li><li>An error clears: decide whether recovery is automatic or requires operator confirmation.</li></ul>
+<h2 id="hardware">Hardware architecture</h2>
+<p>Choose MCU or MPU, RTOS or Linux, and RAM/storage from the complete workload. Budget framebuffers, draw buffers, fonts, images, caches, application data and OS overhead. Check whether a graphics accelerator supports the required operations and whether memory bandwidth can sustain the display and other workloads.</p>
+<p>Evaluate display interface, resolution, color format, buffer strategy and touch controller together. A UI preview cannot determine a universal RAM minimum or guarantee performance. Use the <a href="guides/mcu-mpu-soc-for-hmi.html">MCU / MPU / SoC guide</a>, <a href="hardware.html">hardware resources</a> and <a href="software.html">software resources</a> to identify candidates and assumptions.</p>
+<h2 id="integration">BSP / device integration</h2>
+<p>Confirm BSP and driver support for display refresh and touch input. Integrate required CAN, UART, RS485, Ethernet, Wi-Fi and sensors through application services with defined data ownership, timing and failure behavior. Camera and video paths may require platform-specific capture, decoding and composition beyond the UI runtime.</p>
+<p>Keep device services and product state separate from screen construction so UI regeneration does not overwrite integration work. Document threading, event delivery, initialization order and the selected tool's regeneration boundaries.</p>
+<h2 id="validation">Real hardware validation</h2>
+<p>Run the intended workflow on a representative processor, display, touch controller and BSP. Record hardware revisions, software versions, workload and acceptance criteria.</p>
+<ul><li>Boot speed: measure power-on to a usable interface, including device readiness.</li><li>RAM usage: measure peak use during navigation, asset loading and recovery.</li><li>Animation smoothness and touch response: measure latency under concurrent I/O.</li><li>Display behavior: check tearing, refresh consistency and graphics bandwidth.</li><li>Video impact: compare CPU, memory and rendering behavior with video active.</li><li>Interface timing: test disconnects, timeouts, bursts and device acknowledgements.</li></ul>
+<p>A desktop preview is useful for UI iteration; hardware measurements establish whether the selected system meets the product requirements. Follow the <a href="embedded-hmi-prototype.html">embedded HMI prototype workflow</a> for a scoped validation plan.</p>
+<h2 id="production">From prototype to production</h2>
+<p>A working prototype validates selected assumptions, not the entire production design. Compare a SoM, module or custom board against cost, volume, integration effort and support needs. Review BOM, PCB, lifecycle, component availability and supply continuity, then plan manufacturing tests and production validation.</p>
+<p>Record which prototype results transfer to the final board and which must be measured again. See the <a href="production.html">production engineering path</a>.</p>
+<h2 id="examples">Related workflows and examples</h2>
+<p>Start with <a href="figma-to-embedded-hmi.html">Figma → Embedded HMI</a> for the broader design handoff, or <a href="prototype-from-sketch.html">Prototype from Sketch</a> if the requirements are still taking shape. Explore <a href="projects.html">projects and demos</a>, <a href="demos/janos-touch-ui-demo.html">OrbitMenu touch interaction</a> and the <a href="demos/janos-ai-robot-gesture-demo.html">AI Robot Gesture demo</a> as examples to inspect when discussing interaction and state. These demos are not performance guarantees for another platform.</p>
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Can Figma be converted directly to LVGL?</h3><p>Tools such as LVGL Pro and SquareLine Vision can translate supported design content into an LVGL project. Review mappings, interaction definitions, assets and framework versions. The resulting UI still needs integration and validation for the intended device.</p>
+<h3>Should I use LVGL Pro or SquareLine for Figma to LVGL?</h3><p>Evaluate both with a representative screen. Compare component maintenance, import fidelity, interaction authoring, generated output, version compatibility and team workflow. Choose the tool that fits those requirements; either can feed a subsequent hardware engineering path.</p>
+<h3>Does LVGL Pro generate production-ready embedded code?</h3><p>LVGL Pro exports C code for integration into firmware. Production readiness belongs to the complete system: verify application behavior, drivers, resource budgets, failure handling and target tests. Code export alone cannot establish that the product is ready for production.</p>
+<h3>What is still required after exporting LVGL code?</h3><p>Integrate the exported UI with product state, device data, I/O, display and touch drivers, initialization and the build system. Validate memory, timing, error recovery and performance on the selected platform.</p>
+<h3>How do I run an LVGL UI on real hardware?</h3><p>Start with a supported board/BSP and a known working LVGL display and input port. Match framework versions, add UI assets and code, connect application services, and test on the real display. Bring up the port separately before debugging complex UI behavior.</p>
+<h3>How do I choose hardware for an LVGL UI?</h3><p>Specify display resolution, color format, animation, video, interfaces, boot and memory requirements. Check the BSP and driver support, then measure the important workload on candidate hardware. The <a href="guides/mcu-mpu-soc-for-hmi.html">architecture guide</a> explains the MCU / MPU / SoC trade-offs.</p>
+<h3>Who can help turn an LVGL UI into a working hardware prototype?</h3><p>Look for embedded engineers who can cover the selected BSP, display/touch port, application state, device interfaces and measured validation. Agree on prototype scope and evidence. OpenHMI provides an <a href="engineering.html">engineering intake path</a> to discuss the UI, hardware and unresolved requirements.</p>
+<h3>How do I take an LVGL prototype to production?</h3><p>Turn validated assumptions into a production architecture and review BOM, PCB, lifecycle, supply, updates and test requirements. Revalidate on the final hardware and document acceptance criteria for manufacturing and field behavior.</p>
+</article>
+    <aside class="guide-side"><nav class="guide-side-card" aria-label="On this page"><div class="mini-label">On this page</div><ul class="geo-toc"><li><a href="#short-answer">Short answer</a></li><li><a href="#workflow">The complete embedded HMI workflow</a></li><li><a href="#layers">What each layer solves</a></li><li><a href="#lvgl-pro">What LVGL Pro solves</a></li><li><a href="#squareline">Where SquareLine Vision fits</a></li><li><a href="#boundary">Where does the boundary between UI tools and product engineering sit?</a></li><li><a href="#behavior">What happens after the LVGL UI exists?</a></li><li><a href="#hardware">Hardware architecture</a></li><li><a href="#integration">BSP / device integration</a></li><li><a href="#validation">Real hardware validation</a></li><li><a href="#production">From prototype to production</a></li><li><a href="#examples">Related workflows and examples</a></li><li><a href="#faq">Frequently asked questions</a></li></ul></nav>
+      <a class="guide-side-card guide-side-action-card click-card" href="engineering.html"><div class="mini-label">Your project</div><strong>Bring your design and constraints.</strong><p>Share the workflow you need to test and the hardware you have.</p><span class="btn btn-primary btn-small">Start Engineering Path →</span></a>
+    </aside>
+  </div></section>
+</main>
+<footer class="oh-footer"><div class="oh-footer-inner"><div class="oh-footer-grid"><div class="oh-footer-brand"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span>openhmi.network</span></a><p>From idea to production.</p><a class="oh-footer-social" href="https://www.linkedin.com/in/david-du-18877b70/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div><section class="oh-footer-group"><h2>Project</h2><div class="oh-footer-links"><a href="solutions.html">Solutions</a><a href="engineering.html">Engineering</a><a href="production.html">Production</a><a href="projects.html">Demos</a></div></section><section class="oh-footer-group"><h2>Engineering</h2><div class="oh-footer-links"><a href="hardware.html">Hardware</a><a href="software.html">Software</a><a href="modules.html">Modules</a><a href="partners.html">Engineering Network</a></div></section><section class="oh-footer-group"><h2>Resources</h2><div class="oh-footer-links"><a href="guides.html">Guides</a><a href="developer-resources.html">SDK & Resources</a><a href="engineering-tools.html">Engineering Tools</a><a href="contributors.html">Contributors</a></div></section></div><div class="oh-footer-bottom"><span>© 2026 openhmi.network</span><a href="contribute.html">Contributor Access →</a></div></div></footer>
+<script src="navigation.js?v=1.0.0" defer></script>
+</body>
+</html>
