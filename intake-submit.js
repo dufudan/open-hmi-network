@@ -13,6 +13,7 @@
     ];
     const section = (title, text) => { if (text) lines.push('', title, text); };
     const rows = values => values.map(row => row.label + ': ' + row.value + ' [' + row.constraintLevel + ']').join('\n');
+    section('Review focus', brief.reviewFocus);
     section('Product Requirements', brief.productRequirements);
     section('Current Architecture Assumptions', rows(brief.currentArchitectureAssumptions));
     section('Other assumptions', brief.architectureNotes);

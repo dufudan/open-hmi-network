@@ -67,7 +67,7 @@ def validate(files, repository_tree=None):
                 errors.append(p+': missing internal link '+href)
             if dest in pages:
                 edges[p].add(dest)
-            if urlparse(resolved).path.endswith('/index.html'):
+            if not href.startswith('#') and urlparse(resolved).path.endswith('/index.html'):
                 errors.append(p+': internal link uses index.html alias '+href)
     try:
         sm = ET.fromstring(files['sitemap.xml'])

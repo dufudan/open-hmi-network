@@ -22,13 +22,13 @@
   <link rel="manifest" href="/site.webmanifest" />
 
   <link rel="stylesheet" href="assets/css/styles.css?v=1.0.0" />
-<link rel="stylesheet" href="navigation.css?v=1.0.0"><link rel="stylesheet" href="site-theme.css?v=1.0.0"></head>
+<link rel="stylesheet" href="/navigation.css?v=all-menus-1"><link rel="stylesheet" href="site-theme.css?v=1.0.0"></head>
 <body class="legacy-page">
 <header class="oh-header"><div class="oh-header-inner">
       <a class="brand" href="/" aria-label="OpenHMI home"><span class="brand-mark" aria-hidden="true"></span><span>openhmi.network</span></a>
       <a class="oh-mobile-engineering" href="engineering.html">Engineering</a>
       <button class="oh-menu-toggle" type="button" aria-expanded="false" aria-controls="oh-navigation">Menu <span aria-hidden="true">＋</span></button>
-      <nav class="oh-navigation" id="oh-navigation" aria-label="Main navigation"><a href="solutions.html">Solutions</a><a href="engineering.html">Engineering</a><a href="production.html">Production</a><a href="projects.html">Demos</a><a href="resources.html" aria-current="page">Resources</a><a class="oh-get-started" href="/#intake">Get started <span aria-hidden="true">↗</span></a></nav>
+      <nav class="oh-navigation" id="oh-navigation" aria-label="Main navigation"><details class="oh-nav-menu" data-nav-menu="solutions"><summary>Solutions<span class="oh-nav-chevron" aria-hidden="true"></span></summary><div class="oh-nav-panel"><a href="/solutions/industrial-equipment-instrumentation-hmi.html"><strong>Industrial equipment</strong><span>Controls, instrumentation &amp; operator interfaces</span></a><a href="/solutions/smart-appliances-consumer-electronics-hmi.html"><strong>Smart appliances</strong><span>Touch interfaces for appliances &amp; consumer products</span></a><a href="/solutions/energy-charging-equipment-hmi.html"><strong>Energy &amp; charging</strong><span>Charging equipment &amp; energy systems</span></a><a href="/solutions/off-highway-mobile-machinery-hmi.html"><strong>Off-highway machinery</strong><span>Field equipment &amp; mobile machinery</span></a><a href="/solutions/two-wheeler-light-ev-hmi.html"><strong>Mobility</strong><span>Two-wheelers &amp; light electric vehicles</span></a><a href="/solutions/medical-healthcare-devices-hmi.html"><strong>Medical &amp; healthcare</strong><span>Device controls &amp; monitoring interfaces</span></a><a href="/solutions.html" class="oh-review-link"><strong>All solutions</strong><span>Explore applications &amp; engineering paths</span></a></div></details><details class="oh-nav-menu oh-engineering-menu" data-nav-menu="engineering"><summary>Engineering<span class="oh-nav-chevron" aria-hidden="true"></span></summary><div class="oh-nav-panel oh-engineering-panel"><a href="/hardware.html"><strong>Hardware</strong><span>Compute, display, memory &amp; connectivity</span></a><a href="/software.html"><strong>Software</strong><span>GUI, BSP &amp; application engineering</span></a><a href="/modules.html"><strong>Modules</strong><span>Embedded modules &amp; platform options</span></a><a href="/engineering.html" class="oh-review-link"><strong>Request Engineering Review</strong><span>Share your architecture &amp; requirements</span></a></div></details><details class="oh-nav-menu" data-nav-menu="production"><summary>Production<span class="oh-nav-chevron" aria-hidden="true"></span></summary><div class="oh-nav-panel"><a href="/engineering.html?stage=prototype&amp;focus=architecture"><strong>Architecture review</strong><span>Review the platform before production</span></a><a href="/engineering.html?stage=prototype&amp;focus=optimization"><strong>Production optimization</strong><span>BOM, availability &amp; lifecycle</span></a><a href="/engineering.html?stage=prototype&amp;focus=validation"><strong>Product validation</strong><span>Testing, certification &amp; manufacturing readiness</span></a><a href="/production.html" class="oh-review-link"><strong>Production overview</strong><span>Choose the next step for your prototype</span></a></div></details><details class="oh-nav-menu" data-nav-menu="demos"><summary>Demos<span class="oh-nav-chevron" aria-hidden="true"></span></summary><div class="oh-nav-panel"><a href="/demos/idea-to-prototype/"><strong>Engineering workflow</strong><span>Explore the interactive HMI workstation</span></a><a href="/demos/janos-touch-ui-demo.html"><strong>OrbitMenu</strong><span>Reusable LVGL 9 touch control</span></a><a href="/demos/janos-ai-robot-gesture-demo.html"><strong>AI Robot Gesture System</strong><span>Explore the embedded gesture-control demo</span></a><a href="/projects.html" class="oh-review-link"><strong>All demos</strong><span>Hardware demonstrations &amp; interface concepts</span></a></div></details><details class="oh-nav-menu" data-nav-menu="resources" data-current-section="resources"><summary>Resources<span class="oh-nav-chevron" aria-hidden="true"></span></summary><div class="oh-nav-panel"><a href="/guides.html"><strong>Guides</strong><span>Practical embedded HMI decisions</span></a><a href="/developer-resources.html"><strong>SDK &amp; developer resources</strong><span>Software, documentation &amp; platform tools</span></a><a href="/engineering-tools.html"><strong>Engineering tools</strong><span>Architecture, boundaries &amp; memory planning</span></a><a href="/contributors.html"><strong>Contributors</strong><span>People behind the demos &amp; contributions</span></a><a href="/resources.html" class="oh-review-link"><strong>All resources</strong><span>Browse the resource library</span></a></div></details><a class="oh-get-started" href="/#intake">Get started <span aria-hidden="true">↗</span></a></nav>
     </div></header>
 <main>
   <section class="page-hero contributor-hero contributor-acquisition-hero">
@@ -91,21 +91,21 @@
         <form data-mail-form data-recipient="project@openhmi.network" data-subject="openhmi.network Contributor Share">
           <div class="form-section">
             <div class="form-grid">
-              <div class="field"><label>Public identity *</label><select name="Public Identity" required><option value="">Select</option><option>Full Name</option><option>Alias / Handle</option><option>Anonymous</option></select></div>
-              <div class="field"><label>Public name / alias</label><input name="Public Name or Alias" placeholder="Leave blank if anonymous"></div>
-              <div class="field"><label>Private contact email *</label><input type="email" name="Work Email" required placeholder="you@example.com"></div>
-              <div class="field"><label>Country / Region</label><input name="Country / Region" placeholder="Optional"></div>
+              <div class="field"><label for="contribute-field-1">Public identity *</label><select name="Public Identity" required id="contribute-field-1"><option value="">Select</option><option>Full Name</option><option>Alias / Handle</option><option>Anonymous</option></select></div>
+              <div class="field"><label for="contribute-field-2">Public name / alias</label><input name="Public Name or Alias" placeholder="Leave blank if anonymous" id="contribute-field-2"></div>
+              <div class="field"><label for="contribute-field-3">Private contact email *</label><input type="email" name="Work Email" required placeholder="you@example.com" id="contribute-field-3"></div>
+              <div class="field"><label for="contribute-field-4">Country / Region</label><input name="Country / Region" placeholder="Optional" id="contribute-field-4"></div>
             </div>
           </div>
 
           <div class="form-section">
             <div class="form-grid">
-              <div class="field full"><label>Contribution title *</label><input name="Contribution Title" required placeholder="7-inch Industrial LVGL HMI"></div>
-              <div class="field full"><label>Link to the work *</label><input type="url" name="Contribution Link" required placeholder="GitHub, YouTube, LinkedIn, personal site or documentation URL"></div>
-              <div class="field"><label>What is it? *</label><select name="Contribution Type" required><option value="">Select</option><option>Demo / Reference Project</option><option>Guide / Porting Note</option><option>Integration / Driver</option><option>Tool</option><option>Board / Hardware Reference</option><option>Other</option></select></div>
-              <div class="field"><label>Available for projects?</label><select name="Project Availability"><option>Through the network only</option><option>Yes — public profile is OK</option><option>Not currently</option></select></div>
-              <div class="field full"><label>Short summary *</label><textarea name="Contribution Summary" required placeholder="What does it demonstrate, solve or teach?"></textarea></div>
-              <div class="field full"><label>Technology / tags</label><input name="Technology Tags" placeholder="LVGL, Qt, Linux, RTOS, CAN, 7-inch, industrial…"></div>
+              <div class="field full"><label for="contribute-field-5">Contribution title *</label><input name="Contribution Title" required placeholder="7-inch Industrial LVGL HMI" id="contribute-field-5"></div>
+              <div class="field full"><label for="contribute-field-6">Link to the work *</label><input type="url" name="Contribution Link" required placeholder="GitHub, YouTube, LinkedIn, personal site or documentation URL" id="contribute-field-6"></div>
+              <div class="field"><label for="contribute-field-7">What is it? *</label><select name="Contribution Type" required id="contribute-field-7"><option value="">Select</option><option>Demo / Reference Project</option><option>Guide / Porting Note</option><option>Integration / Driver</option><option>Tool</option><option>Board / Hardware Reference</option><option>Other</option></select></div>
+              <div class="field"><label for="contribute-field-8">Available for projects?</label><select name="Project Availability" id="contribute-field-8"><option>Through the network only</option><option>Yes — public profile is OK</option><option>Not currently</option></select></div>
+              <div class="field full"><label for="contribute-field-9">Short summary *</label><textarea name="Contribution Summary" required placeholder="What does it demonstrate, solve or teach?" id="contribute-field-9"></textarea></div>
+              <div class="field full"><label for="contribute-field-10">Technology / tags</label><input name="Technology Tags" placeholder="LVGL, Qt, Linux, RTOS, CAN, 7-inch, industrial…" id="contribute-field-10"></div>
             </div>
           </div>
 
@@ -113,15 +113,15 @@
             <summary>Optional technical details <span>Useful for faster review, but not required</span></summary>
             <div class="form-section advanced-contribution-fields">
               <div class="form-grid">
-                <div class="field full"><label>GitHub repository</label><input type="url" name="GitHub Repository" placeholder="Optional — source code does not need to be public"></div>
-                <div class="field"><label>Architecture</label><input name="Architecture" placeholder="Compact RTOS HMI, Linux HMI…"></div>
-                <div class="field"><label>Application</label><input name="Application" placeholder="Industrial, appliance, EV, medical…"></div>
-                <div class="field"><label>GUI</label><input name="GUI" placeholder="LVGL, Qt/QML, TouchGFX…"></div>
-                <div class="field"><label>OS</label><input name="OS" placeholder="RTOS, Linux, bare metal…"></div>
-                <div class="field"><label>Hardware</label><input name="Hardware" placeholder="Board, SoC, display, touch…"></div>
-                <div class="field"><label>Sharing model</label><select name="Sharing Model"><option>Open Reference</option><option>Open Source</option><option>Partner Solution</option></select></div>
-                <div class="field"><label>License / access note</label><input name="License or Access" placeholder="MIT, Apache-2.0, source on request…"></div>
-                <div class="field full"><label>Public profile link</label><input type="url" name="Public Profile Link" placeholder="Optional GitHub, LinkedIn or personal site"></div>
+                <div class="field full"><label for="contribute-field-11">GitHub repository</label><input type="url" name="GitHub Repository" placeholder="Optional — source code does not need to be public" id="contribute-field-11"></div>
+                <div class="field"><label for="contribute-field-12">Architecture</label><input name="Architecture" placeholder="Compact RTOS HMI, Linux HMI…" id="contribute-field-12"></div>
+                <div class="field"><label for="contribute-field-13">Application</label><input name="Application" placeholder="Industrial, appliance, EV, medical…" id="contribute-field-13"></div>
+                <div class="field"><label for="contribute-field-14">GUI</label><input name="GUI" placeholder="LVGL, Qt/QML, TouchGFX…" id="contribute-field-14"></div>
+                <div class="field"><label for="contribute-field-15">OS</label><input name="OS" placeholder="RTOS, Linux, bare metal…" id="contribute-field-15"></div>
+                <div class="field"><label for="contribute-field-16">Hardware</label><input name="Hardware" placeholder="Board, SoC, display, touch…" id="contribute-field-16"></div>
+                <div class="field"><label for="contribute-field-17">Sharing model</label><select name="Sharing Model" id="contribute-field-17"><option>Open Reference</option><option>Open Source</option><option>Partner Solution</option></select></div>
+                <div class="field"><label for="contribute-field-18">License / access note</label><input name="License or Access" placeholder="MIT, Apache-2.0, source on request…" id="contribute-field-18"></div>
+                <div class="field full"><label for="contribute-field-19">Public profile link</label><input type="url" name="Public Profile Link" placeholder="Optional GitHub, LinkedIn or personal site" id="contribute-field-19"></div>
               </div>
             </div>
           </details>
@@ -159,4 +159,4 @@
 <!-- Cloudflare Web Analytics -->
 <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2225a1474800498ebd3f45242de300e6"}'></script>
 <!-- End Cloudflare Web Analytics -->
-<script src="navigation.js?v=1.0.0" defer></script></body></html>
+<script src="/navigation.js?v=all-menus-1" defer></script></body></html>

@@ -18,6 +18,10 @@
     if (pending) return;
     if (window.OpenHMIWebsiteFields) window.OpenHMIWebsiteFields.sync(form);
     if (!form.reportValidity()) return;
+    if (form.hasAttribute('data-memory-review')) {
+      const names = ['Processor', 'Current Memory PN', 'Capacity / Requirements', 'Temperature', 'Estimated Annual Volume'];
+      form.elements.namedItem('Memory Design-in Summary').value = names.map(name => name + ': ' + form.elements.namedItem(name).value.trim()).join('\n');
+    }
     const data = new FormData(form);
     if (data.get('botcheck')) return;
     const payload = {};
@@ -31,6 +35,7 @@
       say('Please enter your email and complete the checklist.', true);
       return;
     }
+    const subject = form.hasAttribute('data-memory-review') ? 'OpenHMI Memory Compatibility Review' : 'OpenHMI Memory Part Match / Quote Request';
     const lines = Object.entries(payload).map(([key, value]) => key + ': ' + value).join('\n');
     if (lines === accepted) {
       say('This request has already been submitted.', false);
@@ -38,10 +43,10 @@
     }
     brief.value = lines;
     preview.hidden = true;
-    emailLink.href = 'mailto:project@openhmi.network?subject=' + encodeURIComponent('OpenHMI Memory Part Match / Quote Request') + '&body=' + encodeURIComponent(lines);
+    emailLink.href = 'mailto:project@openhmi.network?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines);
     payload.email = payload.Email;
     payload.name = payload.Name || 'OpenHMI sourcing visitor';
-    payload.subject = 'OpenHMI Memory Part Match / Quote Request';
+    payload.subject = subject;
     payload.access_key = form.dataset.accessKey;
     payload.botcheck = false;
     pending = true;

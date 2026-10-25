@@ -80,6 +80,19 @@
   if(form.dataset.intake==='engineering') {
     if(stages[params.get('stage')]) $('#project-stage').value=params.get('stage');
     if(params.get('som')==='1') {$('#description').value='We have a working SoM prototype and want to evaluate the path to production.';$('#compute').value='Existing SoM — model to be confirmed';$('#architecture-notes').value='Compare keeping the current SoM, an optimized module, and a custom SoC board.';}
+    const reviewFocusOptions = {
+      architecture:['Architecture review','We have a working prototype and want to review the architecture before production.','Review the current platform, interfaces and production constraints.'],
+      optimization:['Production optimization','We have a working prototype and want to review BOM cost, availability and lifecycle.','Review component availability, cost, supply continuity and production volume.'],
+      validation:['Product validation','We have a working prototype and need a product validation plan.','Review test coverage, operating conditions, certification needs and manufacturing readiness.']
+    };
+    const focusKey=params.get('focus');
+    const reviewFocus=Object.hasOwn(reviewFocusOptions,focusKey)?reviewFocusOptions[focusKey]:null;
+    if (reviewFocus) {
+      const input=document.createElement('input');input.type='hidden';input.name='reviewFocus';input.value=reviewFocus[0];form.append(input);
+      const context=document.createElement('p');context.className='section-hint';context.textContent='Production review · '+reviewFocus[0];document.querySelector('.engineering-heading').append(context);
+      if (!$('#description').value) $('#description').value=reviewFocus[1];
+      if (!$('#architecture-notes').value) $('#architecture-notes').value=reviewFocus[2];
+    }
     const optimization=$('[name="optimizationAllowed"]',form);
     optimization.addEventListener('change',()=>$('.switch-label').textContent=optimization.checked?'Allowed':'Not allowed');
   }
@@ -92,7 +105,7 @@
     const description=$('#description',form).value.trim();const data=new FormData(form);
     const entries=fields=>fields.map(([key,label])=>({key,label,value:String(data.get(key)||'').trim(),constraintLevel:data.get(key+'Level')||'Open'})).filter(entry=>entry.value);
     return {schemaVersion:'1.0',source:form.dataset.intake,createdAt:new Date().toISOString(),description,
-      projectStage:data.get('stage')||inferStage(description),productRequirements:data.get('requirements')||'',
+      projectStage:data.get('stage')||inferStage(description),reviewFocus:data.get('reviewFocus')||'',productRequirements:data.get('requirements')||'',
       currentArchitectureAssumptions:entries(architecture),architectureNotes:data.get('architectureNotes')||'',
       productSpecifications:entries(advanced),productionOptimizationAllowed:form.dataset.intake==='engineering'?data.get('optimizationAllowed')==='on':null,
       links:[...state.links],attachments:[]};
