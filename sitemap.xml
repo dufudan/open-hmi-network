@@ -4,9 +4,9 @@
   <url><loc>https://openhmi.network/boundary-assessment.html</loc></url>
   <url><loc>https://openhmi.network/selector.html</loc></url>
   <url><loc>https://openhmi.network/hardware.html</loc></url>
-  <url><loc>https://openhmi.network/resources.html</loc></url>
+  <url><loc>https://openhmi.network/resources.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://openhmi.network/tools/embedded-memory-checklist/</loc></url>
-  <url><loc>https://openhmi.network/guides.html</loc></url>
+  <url><loc>https://openhmi.network/guides.html</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://openhmi.network/projects.html</loc></url>
   <url><loc>https://openhmi.network/software.html</loc></url>
   <url><loc>https://openhmi.network/partners.html</loc></url>
@@ -41,12 +41,12 @@
   <url><loc>https://openhmi.network/embedded-hmi-prototype.html</loc></url>
   <url><loc>https://openhmi.network/figma-lvgl-to-hardware.html</loc></url>
   <url><loc>https://openhmi.network/demos/idea-to-prototype/</loc></url>
-  <url><loc>https://openhmi.network/hardware/memory/</loc></url>
-  <url><loc>https://openhmi.network/hardware/memory/embedded-memory-storage-selection-guide/</loc></url>
-  <url><loc>https://openhmi.network/hardware/memory/nxp-imx-memory-compatibility-guide/</loc></url>
-  <url><loc>https://openhmi.network/hardware/memory/lpddr4-lpddr4x-second-source-qualification/</loc></url>
-  <url><loc>https://openhmi.network/hardware/memory/industrial-emmc-selection-replacement/</loc></url>
-  <url><loc>https://openhmi.network/hardware/memory/embedded-memory-lifecycle-supply-continuity/</loc></url>
-  <url><loc>https://openhmi.network/hardware/memory/review/</loc></url>
+  <url><loc>https://openhmi.network/hardware/memory/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://openhmi.network/hardware/memory/embedded-memory-storage-selection-guide/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://openhmi.network/hardware/memory/nxp-imx-memory-compatibility-guide/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://openhmi.network/hardware/memory/lpddr4-lpddr4x-second-source-qualification/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://openhmi.network/hardware/memory/industrial-emmc-selection-replacement/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://openhmi.network/hardware/memory/embedded-memory-lifecycle-supply-continuity/</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://openhmi.network/hardware/memory/review/</loc><lastmod>2026-10-25</lastmod></url>
 </urlset>
 
