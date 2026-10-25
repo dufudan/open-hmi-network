@@ -1,85 +1,95 @@
-# OpenHMI V1 prototype
+# OpenHMI — From Idea to Working HMI
 
-## Crawl foundations and deployment
+Production style: OpenHMI's white background, Arial typography, original four-dot identity, blue buttons, shared navigation and footer. Target route: `https://openhmi.network/demos/idea-to-prototype/`.
 
-Public pages use canonical URLs in navigation, sitemap and JSON-LD. Run
-`python scripts/render_discovery.py` after changing resource or contributor data,
-then commit the generated directory HTML. SEO validation runs in CI.
+Open `index.html` directly in a modern browser. No build, server, installation, external font, CDN or API is needed. All illustration geometry, styles, content and interaction code are inside the file.
 
-`canonical-navigation.js` redirects browser visits to `/index.html` to `/`,
-preserving query parameters and fragments. GitHub Pages still returns HTTP 200
-for both paths; this is a browser redirect, not an HTTP 301. A permanent HTTP
-redirect requires a hosting or edge configuration that supports it.
+## Files
 
-Before notifying IndexNow, the workflow compares every sitemap page, canonical
-alias and crawl-control file against the checked-out revision on the public
-site. Stale or failed deployments stop the notification. Full commit history
-is fetched so changed-page detection also handles pushes containing multiple
-commits. The public IndexNow key remains a separate check.
+- `index.html`: responsive interactive page and inline static fallback.
+- `architecture.svg`: editable vector illustration. Named groups identify physical parts; screen artwork is clipped to the display plane. Open it in a vector editor such as Figma, Illustrator or Inkscape.
+- `README.md`: integration instructions and engineering assumptions.
 
-Open `index.html` in a browser. No installation or build step is required.
+The SVG is an independent export. Editing it does not automatically update the inline SVG inside `index.html`; preserve the inline element IDs and `data-*` attributes when transferring illustration edits to the interactive version.
 
-- Homepage: concise project intake with descriptions and sharing links, one-click Engineering Path, three starting points, SoM production options, process, concept demos and engineering capabilities.
-- Engineering Path: project materials, product requirements, current architecture assumptions, per-field Open / Preferred / Mandatory choices, optional advanced fields and production optimization permission.
-- Both pages: responsive layout, keyboard navigation, removable links, link validation and project-brief review. Local files are not accepted; visitors can share them later by replying to the follow-up email.
+## Controls
 
-The new homepage and Engineering Path send project briefs through Web3Forms using the same public form access key as the supplied old site. The visitor reviews their brief, provides a required reply email, then explicitly sends the request. Only an HTTP success with API `success: true` displays confirmation. Failure or timeout retains the details; repeated acceptance of the same brief in the current page session is suppressed. No AI analysis is performed. Reloading or leaving these pages clears unsaved input. Homepage concept demos are illustrative interfaces, not claimed customer work.
+Choose one of six modes. The five stage buttons reveal inputs, outputs and responsibilities. Hardware component keys and numbered hotspots expose component details. Touch, rendering and connectivity modes offer Play/Pause, Next step and Replay. Use the zoom controls and Reset; when the drawing region has focus, Left/Right select stages, +/− zoom and Escape resets.
 
-`intake-config.js` configures delivery; `intake-submit.js` formats a readable email and submits descriptions, engineering details and sharing links as JSON through Web3Forms. Both pages use Add a link instead of a file picker. Links appear in the review and email; no attachment bytes are transmitted. Rejected requests display an error and retain the brief and links. Actual inbox delivery has not been verified. The access key determines the recipient according to the existing Web3Forms account; the website does not reassign the mailbox.
+On narrow screens the overview bench scrolls horizontally. Selecting a stage or hardware mode fits that subject in the available width. Reduced-motion preferences disable automatic flows; Next step remains available. The short overview tour stops when the reader interacts. Flow timing illustrates causal order and is not a benchmark.
 
-Delivery validation: isolated tests cover the JSON email payload, readable constraints and sharing links, distinct engineering subject, API rejection, HTTP/network/response failures, rejection of unsupported attachments and custom backend compatibility. Browser checks cover link validation, required email, retained details after simulated rejection, successful retry and duplicate prevention. No real email was sent during these tests.
+The final prototype's Start/Stop control changes a local GUI simulation. It sends no commands to real equipment. JavaScript-disabled browsers retain the complete inline illustration, a static-view notice, engineering notes and all five handoffs.
 
-## Navigation update
+## Embed on openhmi.network
 
-The confirmed navigation is Solutions · Engineering · Production · Demos · Resources · Get started. The original logo remains unchanged. On mobile, Engineering stays visible beside a collapsible Menu; Escape closes the menu.
-
-- Solutions opens a concise application hub linked to the supplied application pages and robot demo.
-- Engineering opens Engineering Path directly.
-- Production opens a new page titled Prototype to Production, covering architecture, optimization and validation.
-- Demos opens the supplied `projects.html` with its original videos, detail pages and contributor attribution.
-- Resources opens Guides, SDK & Developer Resources, Engineering Tools and Contributors. Memory Checklist remains at `tools/embedded-memory-checklist/index.html` and is linked from Engineering Tools.
-
-The supplied site's public pages and assets are included, with a consistent header. Existing technical data and inquiry mechanisms are retained: some legacy forms still use Web3Forms or open an email application. No legacy form was submitted or delivery verified during this update. Memory Checklist's return-to-project workflow and Engineering Path contextual link remain planned for the next integration step; Hardware now links to the checklist.
-
-## Unified visual system
-
-48 content pages now share `site-theme.css`, the original logo and a common footer with Project, Engineering and Resources links. Four historical redirect pages retain their redirects. The footer includes Contributor Access and the existing LinkedIn profile link.
-
-The original content pages use the homepage's Arial typography, restrained blue, white background, smaller card corners and simpler buttons. Hardware copy is shortened with optional architecture guidance; Demos keeps all five real videos and author attribution; Modules keeps its models, technical values and accurate statuses, with selection/status explanations collapsed by default. Resource catalogues, contributor profiles, articles and engineering tools use the same visual foundation while retaining their layouts and information density. Dark review panels remain where they distinguish results from editable inputs.
-
-Visual checks covered desktop Hardware, Modules, Demos, the developer resource catalogue and Memory Checklist, plus narrow mobile layouts. Resource search, vendor filtering, contributor profile links and module status disclosure were checked. All local HTML/assets and fragment links resolve. Existing Web3Forms delivery logic is unchanged by the visual update.
-
-Use the local HTTP preview to access the original data-driven resources and contributor pages. Opening them directly as local files may prevent data loading.
-
-## Future intake integration
-
-Before loading `app.js`, configure:
+1. Upload `index.html` to `/demos/idea-to-prototype/index.html`. The SVG is optional for embedding; the page does not fetch it.
+2. Add the following to the host page. The `embed=1` variant removes the standalone masthead, footer and repeated closing CTA. The title, main CTA and component remain visible.
 
 ```html
+<iframe
+  id="openhmi-workflow"
+  src="/demos/idea-to-prototype/?embed=1"
+  title="OpenHMI interactive idea-to-prototype engineering workflow"
+  loading="lazy"
+  style="display:block;width:100%;height:1500px;border:0;border-radius:10px"
+></iframe>
 <script>
-window.OPENHMI_CONFIG = {
-  intakeEndpoint: '/api/intake',
-  engineeringEndpoint: '/api/engineering-review'
-};
+  const workflowFrame = document.getElementById('openhmi-workflow');
+  window.addEventListener('message', (event) => {
+    if (event.origin !== location.origin ||
+        event.source !== workflowFrame.contentWindow ||
+        event.data?.type !== 'openhmi:resize') return;
+    const height = Number(event.data.height);
+    if (Number.isFinite(height) && height > 200 && height < 10000) {
+      workflowFrame.style.height = `${Math.ceil(height)}px`;
+    }
+  });
 </script>
 ```
 
-Explicit custom endpoints override Web3Forms for the respective page. Both submission actions then post multipart form data with `brief` as a JSON string (including `contact.email` and sharing links). No files are included. Only a successful HTTP response displays a received confirmation. Without a custom endpoint, both pages use the existing Web3Forms configuration.
+The optional height message stays on the same origin. It sends only the component height, with no tracking or network request. If you omit the host script, set a suitable fixed iframe height and keep normal iframe scrolling enabled.
 
-Brief schema: version, source, creation time, description, project stage, product requirements, architecture assumptions, architecture notes, specifications, optimization permission and links. The reserved `attachments` array is empty. Every populated architecture/specification field includes `constraintLevel`. Empty fields are omitted; unknown values are not invented. Mandatory choices must remain fixed even when production optimization is allowed. Apply this rule server-side before any AI architecture recommendations.
+For a static embed, use:
 
-If adding a custom backend, implement validation, file storage and request tracking at the configured endpoints. Keep private credentials and future AI calls on the server. The existing Web3Forms route does not require this backend.
-
-## Optional local preview
-
-Run from this folder:
-
-```text
-python -m http.server 8765 --bind 127.0.0.1
+```html
+<img src="/demos/idea-to-prototype/architecture.svg"
+     alt="Five stages from product idea and UI design through LVGL integration and ArtInChip hardware to a working HMI prototype"
+     width="1320" height="650"
+     style="display:block;max-width:100%;height:auto">
 ```
 
-Open `http://127.0.0.1:8765/`.
+The CTA links to the existing OpenHMI intake at `https://openhmi.network/#intake`. Brand navigation returns to the homepage; all navigation URLs remain valid when the demo is in its nested directory.
 
-## Brand identity
+### Content security policy
 
-The header and footer preserve the original openhmi.network wordmark and four-color dot mark. `brand.css` preserves the original geometry and colors from the live site CSS; `favicon.svg` is the unchanged original site asset. New page typography remains separate from the brand styling. Source: https://openhmi.network/index.html and https://openhmi.network/assets/css/styles.css?v=080.
+The page contains inline CSS and inline scripts. If your site enforces CSP, serve the standalone document with hashes for its exact inline blocks, or attach your server-generated nonce to each block. Do the same for the optional host resize listener. No `connect-src`, image, font or third-party script allowance is needed. Hashes change when you edit a block. Normal outbound navigation to OpenHMI and source documentation is user initiated.
+
+To merge into a CMS instead of using an iframe, scope the stylesheet to a dedicated wrapper, prefix IDs, preserve the inline SVG definitions, and update script selectors. The iframe avoids stylesheet and ID collisions.
+
+## Engineering model
+
+This is a conceptual architecture, not a PCB schematic, production qualification, executable LVGL application or hardware benchmark.
+
+- Reference part: **ArtInChip D211BBV**, with **integrated 64 MB DDR2**. No separate external DDR chip is shown or required for this selected package. The DDR annotation is not a die floorplan.
+- External SPI NOR stores firmware/assets. Boot loading, memory mapping, partitioning and storage capacity depend on the BSP and board.
+- The example TFT is **800 × 480 RGB565**. It illustrates a compatible RGB panel choice, not the SoC's maximum resolution or frame rate. One full buffer consumes **768,000 bytes / 750 KiB**; two consume **1,536,000 bytes / 1,500 KiB**. Add alignment/stride, images, fonts, stacks, application state and OS allocations to a real memory budget. Partial rendering can use smaller draw buffers, while the display port may still need scanout memory.
+- The capacitive sensor uses an **external touch controller** with an illustrative I²C/interrupt connection. The panel, reset wiring, bus and pin assignment must be selected and validated.
+- Wi-Fi/Bluetooth is an **optional external module**. SDIO/UART are example host choices subject to pin multiplexing, drivers and module selection. No integrated radio is implied.
+- CAN needs an **external physical-layer transceiver**. RS485 uses **UART + external RS485 transceiver**. Protocols, termination, direction control, isolation, protection and certification remain project work.
+- Board-level regulators, power sequencing, backlight driver, protection, thermal design and EMC need actual hardware engineering.
+- Figma-style authoring screens are **design artifacts**. Mapping them to LVGL may use code-generation tools and manual implementation. Application callbacks, the state model, the board port and testing are explicit engineering responsibilities.
+- Runtime diagrams show touch input, application events, rendering, buffers and scanout. They do not claim a GPU path or automatic LVGL hardware acceleration. Any acceleration needs a compatible BSP/driver.
+- Glass and LCD separation is a service illustration, not scale or a depiction of permanently disconnected interconnects. Overlay paths are semantic relationships with implementation-dependent segments, not wires or asserted pin routing.
+- All displayed process values are illustrative. The Start/Stop simulation never operates a machine.
+
+## Sources
+
+Checked 25 October 2026:
+
+- [ArtInChip D21x product selection / D211BBV memory and peripheral table](https://www.artinchip.com/en/p/10.html)
+- [ArtInChip D21x platform documentation](https://aicdoc.artinchip.com/topics/product/d21x-quick-start-chapter-soc-quickstart-d21x.html)
+- [LVGL 9.2 display interface and draw-buffer modes](https://docs.lvgl.io/9.2/porting/display.html)
+- [LVGL 9.2 input device port](https://docs.lvgl.io/9.2/porting/indev.html)
+- [OpenHMI Network: current positioning and project intake](https://openhmi.network/)
+
+Illustration geometry was authored with the installed [Anatomy](https://github.com/wheresryan22/anatomy) SVG kit (MIT). No Anatomy library or third-party runtime is required by the delivered page.
